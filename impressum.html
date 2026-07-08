@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum · chudina.me</title>
+<style>
+/* ═══════════════════════════════════════════════════════════
+   CHUDINA.ME — Bold Editorial Collage · общий движок стиля
+   Чакральная палитра + Inter 900 + Fraunces italic + Caveat
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Caveat:wght@400;700&display=swap');
+
+:root {
+  --muladhara: #E94560;
+  --svadhisthana: #E87543;
+  --manipura: #E0B821;
+  --anahata: #3DBF74;
+  --vishuddha: #2BA7C2;
+  --ajna: #8B61C2;
+  --ajna-light: #B395D6;
+  --ajna-dark: #5E3D8E;
+
+  --bg-ajna: #F0E7FA;
+  --bg-warm: #F8F6F3;
+  --bg-peach: #F4F1F7;
+  --bg-cream: #F9F7F4;
+
+  --text: #2A2A2A;
+  --text-soft: #545454;
+  --text-mute: #888;
+  --paper-edge: rgba(0,0,0,0.06);
+
+  --accent: var(--ajna);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--bg-cream);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern" 1, "liga" 1;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Playfair для кириллицы под именем Fraunces (как в брифе) */
+.serif, .subtitle, .reflect, .where, .col h4, .answer-card p, .lede {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+}
+:lang(ru) .serif { font-family: 'Playfair Display', 'Fraunces', serif; }
+
+/* ─────────── NAV ─────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 48px;
+  background: rgba(248,244,237,0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 2px solid rgba(0,0,0,0.06);
+}
+.nav .brand {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  text-transform: lowercase;
+  background: linear-gradient(120deg,#5B3E8F 0%,#8B61C2 55%,#A971E0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.nav .brand .fire { color: #A971E0; -webkit-text-fill-color: #A971E0; }
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.nav-links a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ajna); }
+.nav-links a.active { color: var(--ajna); }
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 3px;
+  background: var(--ajna);
+  border-radius: 2px;
+}
+.nav-burger { display: none; font-size: 28px; background: none; border: none; cursor: pointer; color: var(--text); }
+
+/* ─────────── SECTION SHELL ─────────── */
+.sect {
+  position: relative;
+  padding: 100px 48px;
+  overflow: hidden;
+}
+.wrap { max-width: 1180px; margin: 0 auto; position: relative; z-index: 2; }
+.bg-ajna  { background: var(--bg-ajna); }
+.bg-warm  { background: var(--bg-warm); }
+.bg-peach { background: var(--bg-peach); }
+.bg-cream { background: var(--bg-cream); }
+
+/* tinted accents per section */
+.acc-ajna  { --accent: var(--ajna); }
+.acc-mula  { --accent: var(--muladhara); }
+.acc-svad  { --accent: var(--svadhisthana); }
+.acc-anah  { --accent: var(--anahata); }
+.acc-vish  { --accent: var(--vishuddha); }
+.acc-manp  { --accent: var(--manipura); }
+
+/* ─────────── TYPE ─────────── */
+.shout {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+.shout.xxl { font-size: clamp(60px, 10vw, 150px); }
+.shout.xl  { font-size: clamp(46px, 7.5vw, 112px); }
+.shout.l   { font-size: clamp(38px, 6vw, 84px); }
+.shout.m   { font-size: clamp(30px, 4.4vw, 60px); }
+.shout.s   { font-size: clamp(24px, 3vw, 40px); }
+
+.it {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 900;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+:lang(ru) .it, .it:lang(ru) { font-family: 'Playfair Display', serif; font-weight: 700; }
+
+.kicker {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+  display: inline-block;
+}
+
+.subtitle {
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(22px, 3vw, 40px);
+  line-height: 1.22;
+  color: var(--text);
+  max-width: 820px;
+}
+.lede {
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(19px, 2.2vw, 28px);
+  line-height: 1.4;
+  color: var(--text-soft);
+  max-width: 740px;
+}
+.body-p {
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.6;
+  color: var(--text-soft);
+  max-width: 640px;
+}
+.body-p + .body-p { margin-top: 16px; }
+.body-p strong { color: var(--text); font-weight: 800; }
+
+/* mix-size */
+.mix { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 22px; }
+.mix-small {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(40px, 7vw, 104px);
+  text-transform: lowercase;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+}
+
+/* ─────────── DEVICES ─────────── */
+.tape {
+  display: inline-block;
+  background: var(--text);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  transform: rotate(-1.5deg);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+}
+.tape.ajna { background: var(--ajna); }
+.tape.mula { background: var(--muladhara); }
+.tape.svad { background: var(--svadhisthana); }
+.tape.anah { background: var(--anahata); }
+.tape.vish { background: var(--vishuddha); }
+.tape.manp { background: var(--manipura); color: var(--text); }
+.tape.tilt-right { transform: rotate(1.8deg); }
+.tape.tilt-left  { transform: rotate(-2.5deg); }
+
+.hl {
+  background-color: var(--hl-c, rgba(139,97,194,0.50));
+  padding: 0.04em 0.16em;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.hl.ajna { --hl-c: rgba(139,97,194,0.45); }
+.hl.svad { --hl-c: rgba(232,117,67,0.50); }
+.hl.mula { --hl-c: rgba(233,69,96,0.45); }
+.hl.anah { --hl-c: rgba(61,191,116,0.45); }
+.hl.vish { --hl-c: rgba(43,167,194,0.45); }
+.hl.manp { --hl-c: rgba(224,184,33,0.60); }
+
+.scribble {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: clamp(28px, 3.5vw, 46px);
+  color: var(--accent);
+  display: inline-block;
+  line-height: 1;
+}
+.scribble.small { font-size: clamp(22px, 2.4vw, 32px); font-weight: 400; }
+.scribble.big   { font-size: clamp(40px, 5vw, 68px); }
+
+/* decorative */
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 1;
+}
+.deco-dots {
+  position: absolute;
+  width: 200px; height: 200px;
+  background-image: radial-gradient(currentColor 1.4px, transparent 1.4px);
+  background-size: 16px 16px;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 28px;
+  border-radius: 999px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+  border: none;
+}
+.btn-solid {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 3px 12px -4px rgba(139,97,194,0.5);
+  
+}
+.btn-solid:hover { transform: rotate(-1deg) translateY(-2px); box-shadow: 0 5px 0 rgba(0,0,0,0.12); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid rgba(46,46,51,0.25);
+}
+.btn-ghost:hover { background: var(--text); color: #fff; }
+
+/* ─────────── STAT STRIP ─────────── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 56px;
+}
+.stat {
+  background: #fff;
+  border: 1px solid var(--paper-edge);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.025);
+}
+.stat .num {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+}
+.stat .lbl {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--text-soft);
+}
+
+/* ─────────── CARDS ─────────── */
+.cards { display: grid; gap: 24px; margin-top: 50px; }
+.cards.c2 { grid-template-columns: repeat(2, 1fr); }
+.cards.c3 { grid-template-columns: repeat(3, 1fr); }
+.card {
+  background: #fff;
+  border: 1px solid var(--paper-edge);
+  border-radius: 16px;
+  padding: 30px 30px 34px;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.025);
+  position: relative;
+}
+.card .card-num {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+.card .card-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.card h4 {
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.12;
+  margin: 8px 0 12px;
+}
+.card p {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+.card p.it-q {
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(17px, 1.9vw, 21px);
+  color: var(--text-soft);
+}
+
+/* answer card with left bar */
+.answer-card {
+  background: #fff;
+  border: 1px solid var(--paper-edge);
+  border-left: 6px solid var(--accent);
+  border-radius: 16px;
+  padding: 32px 36px;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.025);
+  max-width: 760px;
+  margin-top: 40px;
+}
+.answer-card .lbl {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.answer-card p {
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-size: clamp(19px, 2.1vw, 27px);
+  line-height: 1.45;
+}
+.answer-card p strong { font-weight: 700; }
+
+/* reflect block */
+.reflect {
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 2.3vw, 30px);
+  line-height: 1.5;
+  color: var(--text-soft);
+  max-width: 780px;
+  padding-left: 24px;
+  border-left: 3px solid var(--accent);
+  margin-top: 40px;
+}
+.reflect strong { color: var(--text); font-weight: 700; }
+
+/* ─────────── PROJECT CARDS (image) ─────────── */
+.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 54px; }
+.proj {
+  background: #fff;
+  border: 1px solid var(--paper-edge);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.proj:hover { transform: translateY(-4px); box-shadow: 0 10px 0 rgba(0,0,0,0.04); }
+.proj .ph {
+  aspect-ratio: 4/3;
+  width: 100%;
+  object-fit: cover;
+  background:
+    repeating-linear-gradient(-45deg, rgba(0,0,0,0.03) 0 12px, transparent 12px 24px),
+    var(--bg-peach);
+  display: block;
+}
+/* graceful fallback for portrait images */
+.hero-portrait img {
+  background:
+    repeating-linear-gradient(-45deg, rgba(0,0,0,0.03) 0 12px, transparent 12px 24px),
+    var(--bg-peach);
+  min-height: 220px;
+}
+.proj .pbody { padding: 24px 26px 28px; display: flex; flex-direction: column; flex: 1; }
+.proj .pname {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.proj .ptag {
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--accent);
+  margin: 6px 0 12px;
+}
+.proj .pdesc { font-size: 16px; line-height: 1.5; color: var(--text-soft); flex: 1; }
+.proj .plink {
+  margin-top: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.proj .plink:hover { gap: 12px; }
+
+/* ─────────── PATH / TIMELINE ─────────── */
+.path {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 46px;
+}
+.path .node {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(15px, 1.6vw, 19px);
+  padding: 12px 20px;
+  background: #fff;
+  border: 1px solid var(--paper-edge);
+  border-radius: 40px;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.03);
+}
+.path .node.final {
+  background: var(--ajna);
+  color: #fff;
+  font-weight: 900;
+  font-size: clamp(17px, 1.9vw, 22px);
+}
+.path .arr { color: var(--accent); font-size: 22px; font-weight: 700; }
+
+/* ─────────── ECOSYSTEM (6 проектов вокруг арта) ─────────── */
+.eco {
+  display: grid;
+  grid-template-columns: 1fr minmax(340px, 460px) 1fr;
+  gap: 30px;
+  align-items: center;
+  margin-top: 50px;
+}
+.eco-col { display: flex; flex-direction: column; gap: 26px; }
+.eco-center { position: relative; }
+.eco-center img { width: 100%; display: block; filter: drop-shadow(0 18px 24px rgba(139,97,194,0.18)); }
+.eco-center .halo {
+  position: absolute; inset: -6% -6% 4% -6%;
+  background: radial-gradient(circle at 50% 42%, rgba(179,149,214,0.30), transparent 62%);
+  z-index: -1;
+}
+
+.eco-item {
+  background: #fff;
+  border: 1px solid var(--paper-edge);
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.03);
+  text-decoration: none;
+  display: block;
+  border-left: 5px solid var(--accent);
+  transition: transform 0.16s, box-shadow 0.16s;
+}
+.eco-item:hover { transform: translateY(-3px); box-shadow: 0 9px 0 rgba(0,0,0,0.04); }
+.eco-col.right .eco-item { border-left: none; border-right: 5px solid var(--accent); text-align: right; }
+.eco-item .en {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: clamp(20px, 2.1vw, 26px);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  line-height: 1.05;
+}
+.eco-item .url {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin: 4px 0 8px;
+}
+.eco-item .desc { font-size: 15px; line-height: 1.4; color: var(--text-soft); }
+.eco-item .tag {
+  display: inline-block;
+  font-family: 'Fraunces','Playfair Display',serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-mute);
+}
+
+.eco-caption { text-align: center; margin-top: 42px; }
+
+/* SPA / meet card */
+.meet-card {
+  background: #fff;
+  border: 1px solid var(--paper-edge);
+  border-radius: 18px;
+  padding: 32px 34px;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.03);
+  border-top: 6px solid var(--accent);
+}
+.meet-card .mc-num {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  color: var(--accent);
+  line-height: 1;
+}
+.meet-card h4 {
+  font-family: 'Fraunces','Playfair Display',serif;
+  font-weight: 700;
+  font-size: clamp(21px, 2.2vw, 27px);
+  margin: 10px 0 12px;
+  line-height: 1.1;
+}
+.meet-card p { font-size: 17px; line-height: 1.5; color: var(--text-soft); }
+.meet-card p strong { color: var(--text); font-weight: 800; }
+.meet-card .mlink {
+  margin-top: 16px;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'Inter', sans-serif; font-weight: 800; font-size: 14px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--accent); text-decoration: none;
+}
+.meet-card .mlink:hover { gap: 12px; }
+
+/* ─────────── FOOTER ─────────── */
+.site-footer {
+  background: var(--bg-ajna);
+  border-top: 2px solid rgba(0,0,0,0.08);
+  padding: 48px 48px 44px;
+}
+.site-footer .fwrap { max-width: 1180px; margin: 0 auto; }
+.site-footer .frow { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.site-footer .ch {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  color: var(--ajna);
+  letter-spacing: -0.01em;
+}
+.site-footer .sep { color: var(--text-mute); font-size: 24px; }
+.site-footer .where {
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  color: var(--text-soft);
+}
+.site-footer .socials { display: flex; gap: 22px; margin-top: 30px; flex-wrap: wrap; }
+.site-footer .socials a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.site-footer .socials a:hover { color: var(--ajna); border-color: var(--ajna); }
+.site-footer .legal { margin-top: 34px; font-size: 14px; color: var(--text-mute); }
+
+/* ─────────── HERO PORTRAIT ─────────── */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+}
+.hero-portrait {
+  position: relative;
+}
+.hero-portrait img {
+  width: 100%;
+  border-radius: 18px;
+  display: block;
+  box-shadow: 0 12px 0 rgba(139,97,194,0.14);
+  transform: rotate(1.4deg);
+  border: 6px solid #fff;
+}
+.hero-portrait .ptape {
+  position: absolute;
+  top: -18px; left: -10px;
+  z-index: 3;
+}
+
+/* page hero (inner pages) */
+.page-hero { padding: 80px 48px 70px; position: relative; overflow: hidden; }
+.page-hero .pn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 22px;
+}
+
+/* ─────────── RESPONSIVE ─────────── */
+@media (max-width: 920px) {
+  .sect { padding: 70px 28px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .hero-portrait { max-width: 440px; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .cards.c3, .proj-grid { grid-template-columns: 1fr 1fr; }
+  .eco { grid-template-columns: 1fr; }
+  .eco-center { order: -1; max-width: 420px; margin: 0 auto 10px; }
+  .eco-col.right .eco-item { border-right: none; border-left: 5px solid var(--accent); text-align: left; }
+  .nav { padding: 18px 24px; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg-cream);
+    border-bottom: 2px solid rgba(0,0,0,0.08);
+    padding: 10px 24px 20px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 14px 0; border-bottom: 1px solid var(--paper-edge); }
+  .nav-burger { display: block; }
+}
+@media (max-width: 560px) {
+  .stats, .cards.c2, .cards.c3, .proj-grid { grid-template-columns: 1fr; }
+  .page-hero, .sect { padding-left: 22px; padding-right: 22px; }
+}
+
+.site-footer .foot-legal-info { margin-top: 30px; font-size: 14px; color: var(--text-soft); line-height: 1.6; }
+.site-footer .foot-legal-info .fli-name { font-weight: 700; color: var(--text); }
+.site-footer .foot-links { margin-top: 20px; display: flex; gap: 12px; align-items: baseline; flex-wrap: nowrap; }
+.site-footer .foot-links .fl-sep { color: var(--text-mute); }
+.site-footer .foot-links a { font-size: 13px; color: var(--text-mute); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; }
+.site-footer .foot-links a:hover { color: var(--ajna); border-color: var(--ajna); }
+.site-footer .foot-invite { margin-top: 0; }
+.site-footer .socials { display: flex; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+.site-footer .foot-legal-info { margin-top: 22px; font-size: 14px; color: var(--text-soft); line-height: 1.55; }
+.site-footer .foot-links { margin-top: 16px; display: flex; gap: 12px; align-items: baseline; flex-wrap: nowrap; }
+.site-footer .legal { margin-top: 22px; font-size: 13px; color: var(--text-mute); }
+</style>
+<style>
+.legal-page { max-width: 760px; }
+.legal-page h1 { font-family:'Inter',sans-serif; font-weight:900; font-size:clamp(34px,5vw,56px); text-transform:uppercase; letter-spacing:-0.02em; margin-bottom:10px; }
+.legal-page h2 { font-family:'Inter',sans-serif; font-weight:800; font-size:22px; margin:34px 0 12px; color:var(--text); }
+.legal-page p, .legal-page li { font-size:16px; line-height:1.65; color:var(--text-soft); margin-bottom:12px; }
+.legal-page strong { color:var(--text); }
+.legal-page a { color:var(--ajna); }
+.legal-page .updated { font-size:14px; color:var(--text-mute); margin-top:8px; }
+.legal-page ul { padding-left:22px; margin-bottom:12px; }
+</style></head>
+<body>
+<nav class="nav">
+  <a class="brand" href="index.html">chudina<span class="fire">.me</span></a>
+  <button class="nav-burger" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+  <div class="nav-links" id="navlinks">
+    <a href="index.html">Главная</a>
+    <a href="put.html" class="active">Мой путь</a>
+    <a href="proekty.html">Проекты</a>
+    <a href="igry.html">Игры</a>
+    <a href="kontakty.html">Встречи</a>
+    <a href="team.html">В команду</a>
+    <a href="partnerstvo.html">Партнёрство</a>
+  </div>
+</nav>
+<section class="sect bg-ajna acc-ajna" style="padding-top:60px;padding-bottom:50px;">
+  <div class="wrap">
+    <span class="kicker">правовая информация</span>
+  </div>
+</section>
+<section class="sect bg-cream acc-ajna">
+  <div class="wrap">
+    <div class="legal-page">
+      <h1>Impressum</h1>
+      
+<h2>Angaben gemäss schweizerischem Recht</h2>
+<p><strong>Kseniia Chudina Art + Event</strong><br>
+Inhaberin: Kseniia Chudina<br>
+Bäderstrasse 28<br>
+5400 Baden<br>
+Schweiz 🇨🇭</p>
+
+<h2>Kontakt</h2>
+<p>Website: <a href="https://chudina.me">chudina.me</a><br>
+E-Mail: main@chudina.me</p>
+
+<h2>Handelsregister</h2>
+<p>Unternehmens-Identifikationsnummer (UID): <strong>CHE-202.191.691</strong></p>
+
+<h2>Haftungsausschluss</h2>
+<p>Die Autorin übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen die Autorin wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen entstanden sind, werden ausgeschlossen.</p>
+
+<h2>Haftung für Links</h2>
+<p>Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr der Nutzerin oder des Nutzers.</p>
+
+<h2>Urheberrecht</h2>
+<p>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich Kseniia Chudina oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung im Voraus einzuholen.</p>
+
+<p class="updated">Stand: Juli 2026</p>
+
+    </div>
+  </div>
+</section>
+<footer class="site-footer" id="footer">
+  <div class="fwrap">
+    <div class="foot-invite">Наблюдать и участвовать можно в соцсетях:</div>
+    <div class="socials">
+      <a href="https://www.instagram.com/chudina_fire" target="_blank">Instagram</a>
+      <a href="https://www.threads.com/@chudina_fire" target="_blank">Threads</a>
+      <a href="https://t.me/chudina_fire" target="_blank">Telegram</a>
+    </div>
+    <div class="foot-legal-info">
+      <p class="fli-name">Kseniia Chudina Art + Event</p>
+      <p class="fli-line">Bäderstrasse 28, 5400 Baden, Schweiz 🇨🇭</p>
+      <p class="fli-line">CHE-202.191.691</p>
+    </div>
+    <div class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <span class="fl-sep">·</span>
+      <a href="agb.html">AGB</a>
+      <span class="fl-sep">·</span>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="legal">© 2026 Kseniia Chudina · chudina.me · Baden, Schweiz</div>
+  </div>
+</footer>
+</body></html>

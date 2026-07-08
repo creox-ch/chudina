@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Стать частью команды · Ксения Чудина</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Caveat:wght@400;700&display=swap');
+:root{
+--muladhara:#E94560;--svadhisthana:#E87543;--manipura:#E0B821;--anahata:#3DBF74;
+--vishuddha:#2BA7C2;--ajna:#8B61C2;--ajna-light:#B395D6;
+--bg-ajna:#F0E7FA;--bg-warm:#FAF4EA;--bg-peach:#FCEFE3;--bg-cream:#F8F4ED;
+--text:#2A2A2A;--text-soft:#545454;--text-mute:#888;--paper-edge:rgba(0,0,0,.06);--accent:var(--ajna);}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden;}
+.serif,.subtitle,.reflect,.where,.q-text,.opt .it,.res-lead,.dim-desc{font-family:'Playfair Display',Georgia,serif;}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(248,244,237,.9);backdrop-filter:blur(14px);border-bottom:2px solid rgba(0,0,0,.06);}
+.brand{font-family:'Inter';font-weight:900;font-size:24px;letter-spacing:-.02em;text-decoration:none;text-transform:lowercase;cursor:pointer;background:linear-gradient(120deg,#5B3E8F 0%,#8B61C2 55%,#A971E0 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.brand .fire{color:#A971E0;-webkit-text-fill-color:#A971E0;}
+.back{font-family:'Inter';font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--text);text-decoration:none;}
+.back:hover{color:var(--ajna);}
+.sect{position:relative;padding:70px 40px;overflow:hidden;}
+.wrap{max-width:920px;margin:0 auto;position:relative;z-index:2;}
+.bg-ajna{background:var(--bg-ajna);}.bg-warm{background:var(--bg-warm);}.bg-peach{background:var(--bg-peach);}.bg-cream{background:var(--bg-cream);}
+.shout{font-family:'Inter';font-weight:900;text-transform:uppercase;line-height:.94;letter-spacing:-.03em;}
+.shout.xl{font-size:clamp(42px,7vw,92px);}.shout.l{font-size:clamp(32px,5vw,68px);}.shout.m{font-size:clamp(26px,3.6vw,44px);}
+.it{font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.01em;font-family:'Playfair Display',serif;}
+.kicker{font-family:'Inter';font-weight:700;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:inline-block;}
+.subtitle{font-style:italic;font-weight:400;font-size:clamp(19px,2.4vw,30px);line-height:1.25;max-width:760px;color:var(--text-soft);}
+.body-p{font-size:clamp(16px,1.5vw,18px);line-height:1.6;color:var(--text-soft);max-width:660px;}
+.body-p+.body-p{margin-top:14px;}.body-p strong{color:var(--text);font-weight:800;}
+.tape{display:inline-block;background:var(--text);color:#fff;font-family:'Inter';font-weight:700;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:9px 17px;transform:rotate(-1.5deg);box-shadow:0 2px 0 rgba(0,0,0,.08);margin-bottom:22px;}
+.tape.ajna{background:var(--ajna);}.tape.mula{background:var(--muladhara);}.tape.anah{background:var(--anahata);}.tape.vish{background:var(--vishuddha);}.tape.svad{background:var(--svadhisthana);}
+.hl{padding:.04em .16em;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;background:rgba(139,97,194,.45);}
+.hl.svad{background:rgba(232,117,67,.5);}.hl.anah{background:rgba(61,191,116,.45);}
+.scribble{font-family:'Caveat',cursive;font-weight:700;font-size:clamp(26px,3vw,40px);color:var(--accent);display:inline-block;line-height:1;}
+.deco-circle{position:absolute;border-radius:50%;border:2px solid currentColor;opacity:.1;pointer-events:none;z-index:1;}
+.deco-dots{position:absolute;width:180px;height:180px;background-image:radial-gradient(currentColor 1.3px,transparent 1.3px);background-size:15px 15px;opacity:.16;pointer-events:none;z-index:1;}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Inter';font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;padding:15px 26px;border-radius:2px;cursor:pointer;border:none;transition:transform .15s,box-shadow .15s;}
+.btn-solid{background:var(--accent);color:#fff;box-shadow:0 3px 0 rgba(0,0,0,.12);transform:rotate(-1deg);}
+.btn-solid:hover{transform:rotate(-1deg) translateY(-2px);box-shadow:0 5px 0 rgba(0,0,0,.12);}
+.btn-ghost{background:transparent;color:var(--text);border:2px solid var(--text);}
+.btn-ghost:hover{background:var(--text);color:#fff;}
+.btn:disabled{opacity:.35;cursor:not-allowed;transform:none;box-shadow:none;}
+/* intro cards */
+.tcards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px;}
+.tcard{background:#fff;border:1px solid var(--paper-edge);border-radius:18px;padding:30px 30px 34px;box-shadow:0 5px 0 rgba(0,0,0,.03);border-top:6px solid var(--accent);display:flex;flex-direction:column;}
+.tcard .tc-label{font-family:'Inter';font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.tcard h3{font-family:'Inter';font-weight:900;text-transform:uppercase;font-size:clamp(22px,2.4vw,30px);line-height:1.02;letter-spacing:-.02em;}
+.tcard .tc-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--text-soft);margin:8px 0 14px;}
+.tcard p{font-size:16px;line-height:1.55;color:var(--text-soft);flex:1;}
+.tcard .tc-meta{font-family:'Inter';font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-mute);margin:16px 0 18px;}
+/* quiz */
+.quiz{background:#fff;border:1px solid var(--paper-edge);border-radius:22px;box-shadow:0 6px 0 rgba(0,0,0,.03);padding:38px 38px 34px;margin-top:40px;position:relative;overflow:hidden;}
+.quiz-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px;}
+.quiz-name{font-family:'Inter';font-weight:900;text-transform:uppercase;font-size:20px;letter-spacing:-.01em;}
+.quiz-count{font-family:'Inter';font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--text-mute);}
+.pbar{height:8px;border-radius:20px;background:rgba(0,0,0,.07);overflow:hidden;margin-bottom:30px;}
+.pbar > i{display:block;height:100%;width:0;background:var(--accent);border-radius:20px;transition:width .35s ease;}
+.q-text{font-size:clamp(20px,2.4vw,27px);line-height:1.3;color:var(--text);margin-bottom:26px;font-style:italic;}
+.opts{display:flex;flex-direction:column;gap:12px;}
+.opt{text-align:left;background:var(--bg-cream);border:2px solid transparent;border-radius:14px;padding:16px 20px;font-family:'Inter';font-size:16px;font-weight:600;color:var(--text);cursor:pointer;transition:border-color .15s,background .15s,transform .1s;display:flex;align-items:center;gap:14px;}
+.opt:hover{border-color:var(--accent);background:#fff;}
+.opt:active{transform:scale(.99);}
+.opt .dotn{width:26px;height:26px;flex-shrink:0;border-radius:50%;border:2px solid var(--accent);color:var(--accent);font-family:'Inter';font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.opt.sel{border-color:var(--accent);background:#fff;}
+.opt.sel .dotn{background:var(--accent);color:#fff;}
+.quiz-nav{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:30px;}
+.linkbtn{background:none;border:none;font-family:'Inter';font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-mute);cursor:pointer;padding:8px 4px;}
+.linkbtn:hover{color:var(--accent);}
+.linkbtn:disabled{opacity:.3;cursor:not-allowed;}
+/* result */
+.result{display:none;}
+.result.show{display:block;animation:fade .4s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+.res-badge{display:inline-block;font-family:'Inter';font-weight:900;text-transform:uppercase;font-size:clamp(30px,4vw,52px);letter-spacing:-.02em;line-height:1;color:var(--accent);}
+.name-box{margin-top:34px;max-width:520px;background:#fff;border:1px solid var(--paper-edge);border-radius:18px;padding:24px 26px;box-shadow:0 5px 0 rgba(0,0,0,.03);}
+.name-lbl{display:block;font-family:'Inter';font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ajna);margin-bottom:10px;}
+.name-input{width:100%;font-family:'Inter';font-size:18px;font-weight:600;color:var(--text);border:none;border-bottom:2px solid rgba(0,0,0,.14);background:transparent;padding:8px 2px;outline:none;transition:border-color .2s;}
+.name-input:focus{border-color:var(--ajna);}
+.name-input::placeholder{color:var(--text-mute);font-weight:400;}
+.name-hint{font-size:13.5px;line-height:1.4;color:var(--text-mute);margin-top:12px;}
+.time-chip{font-family:'Inter';font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-mute);}
+.tdesc{max-width:640px;margin-top:22px;padding-left:20px;border-left:4px solid var(--accent);}
+.tdesc p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,2vw,23px);line-height:1.45;color:var(--text-soft);}
+.tdesc p strong{color:var(--text);font-weight:700;font-style:normal;}
+.tdesc-meta{font-family:'Inter';font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mute);margin-top:12px;}
+.send-card{margin-top:30px;max-width:560px;background:#fff;border:1px solid var(--paper-edge);border-radius:18px;padding:14px 26px;box-shadow:0 5px 0 rgba(0,0,0,.03);}
+.send-line{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--paper-edge);}
+.send-line:last-child{border-bottom:none;}
+.send-lbl{font-family:'Inter';font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mute);flex-shrink:0;}
+.send-val{font-family:'Inter';font-weight:800;font-size:16px;color:var(--text);text-align:right;}
+.send-msg{margin-top:16px;font-family:'Inter';font-weight:700;font-size:14px;color:var(--muladhara);min-height:18px;}
+.send-hint{margin-top:14px;font-size:13px;color:var(--text-mute);}
+.mail-pick{font-family:'Inter';font-weight:800;color:var(--ajna);background:rgba(139,97,194,.12);padding:2px 8px;border-radius:6px;-webkit-user-select:all;user-select:all;}
+.send-plain{display:none;margin-top:16px;white-space:pre-wrap;font-family:'Inter';font-size:13px;line-height:1.5;color:var(--text-soft);background:var(--bg-cream);border:1px solid var(--paper-edge);border-radius:14px;padding:16px 18px;max-height:220px;overflow:auto;-webkit-user-select:all;user-select:all;}
+.res-scroll{margin-top:26px;font-family:'Caveat',cursive;font-weight:700;font-size:26px;color:var(--text-mute);}
+.zones{display:flex;gap:6px;margin-top:14px;}
+.zone{flex:1;height:10px;border-radius:20px;opacity:.28;transition:opacity .3s;}
+.zone.on{opacity:1;}
+.zone-legend{display:flex;justify-content:space-between;margin-top:8px;font-family:'Inter';font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-mute);}
+.res-lead{font-style:italic;font-size:clamp(19px,2.2vw,26px);line-height:1.35;color:var(--text-soft);margin:14px 0 24px;max-width:640px;}
+.dims{display:flex;flex-direction:column;gap:18px;margin-top:26px;}
+.dim{}
+.dim-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:7px;}
+.dim-name{font-family:'Inter';font-weight:800;font-size:15px;letter-spacing:.03em;text-transform:uppercase;}
+.dim-val{font-family:'Inter';font-weight:800;font-size:14px;color:var(--text-mute);}
+.dim-track{height:12px;border-radius:20px;background:rgba(0,0,0,.06);overflow:hidden;}
+.dim-track > i{display:block;height:100%;border-radius:20px;transition:width .8s cubic-bezier(.2,.8,.2,1);}
+.dim-desc{font-size:15px;line-height:1.45;color:var(--text-soft);margin-top:8px;font-style:italic;}
+.res-note{background:var(--bg-cream);border-radius:14px;padding:20px 24px;margin-top:28px;font-size:15.5px;line-height:1.55;color:var(--text-soft);}
+.res-note strong{color:var(--text);}
+.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+.pill{font-family:'Inter';font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:9px 15px;border-radius:30px;background:#fff;border:2px solid var(--accent);color:var(--accent);}
+.footer-site{background:var(--bg-ajna);border-top:2px solid rgba(0,0,0,.08);padding:50px 40px 44px;margin-top:20px;}
+.fwrap{max-width:920px;margin:0 auto;}
+.frow{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.frow .ch{font-family:'Inter';font-weight:800;font-size:30px;color:var(--ajna);}
+.frow .sep{color:var(--text-mute);font-size:20px;}
+.frow .where{font-style:italic;font-family:'Playfair Display',serif;font-size:24px;color:var(--text-soft);}
+.legal{margin-top:22px;font-size:13px;color:var(--text-mute);}
+@media(max-width:760px){.sect{padding:52px 22px;}.tcards{grid-template-columns:1fr;}.quiz{padding:26px 22px 26px;}.nav{padding:15px 20px;}}
+.site-footer .foot-legal-info { margin-top: 30px; font-size: 14px; color: var(--text-soft); line-height: 1.6; }
+.site-footer .foot-legal-info .fli-name { font-weight: 700; color: var(--text); }
+.site-footer .foot-links { margin-top: 20px; display: flex; gap: 12px; align-items: baseline; flex-wrap: nowrap; }
+.site-footer .foot-links .fl-sep { color: var(--text-mute); }
+.site-footer .foot-links a { font-size: 13px; color: var(--text-mute); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; }
+.site-footer .foot-links a:hover { color: var(--ajna); border-color: var(--ajna); }
+.site-footer .foot-invite { margin-top: 0; }
+.site-footer .socials { display: flex; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+.site-footer .foot-legal-info { margin-top: 22px; font-size: 14px; color: var(--text-soft); line-height: 1.55; }
+.site-footer .foot-links { margin-top: 16px; display: flex; gap: 12px; align-items: baseline; flex-wrap: nowrap; }
+.site-footer .legal { margin-top: 22px; font-size: 13px; color: var(--text-mute); }
+</style>
+</head>
+<body>
+<nav class="nav">
+<a class="brand" href="#" onclick="scrollTop();return false;">chudina<span class="fire">.me</span></a>
+<a class="back" href="index.html">← на сайт</a>
+</nav>
+
+<!-- INTRO -->
+<div class="sect bg-ajna" id="top">
+
+<span class="deco-dots" style="top:40px;right:30px;color:var(--ajna);"></span>
+<div class="wrap">
+<span class="tape ajna">команда · chudina.me</span>
+<h1 class="shout xl">стать частью <span class="it" style="color:var(--ajna);">команды</span></h1>
+<div class="subtitle" style="margin-top:22px;">Со мной работают <span class="hl" style="font-weight:700;">свои</span> люди. Прежде чем познакомиться поближе — пройди два теста. Они не про «прошёл / не прошёл», а про то, что тебя усиливает и в чём твоя сила.</div>
+<div class="body-p" style="margin-top:22px;">Это не экзамен и не оценка. Просто честный профиль — чтобы мы оба понимали, где тебе будет хорошо и интересно. Результат увидишь сразу, а в конце сможешь отправить его мне.</div>
+<div class="body-p" style="margin-top:24px;">Ниже — два теста подряд. Перед каждым короткое описание: что за модель и что она показывает. Время старта зафиксируется, как начнёшь первый тест.</div>
+</div>
+</div>
+
+<!-- TEST 1: MADDI -->
+<div class="sect bg-warm" id="maddi" style="--accent:var(--muladhara);">
+
+<div class="wrap">
+<span class="kicker">тест 01 · жизнестойкость</span>
+<h2 class="shout l">твоя внутренняя <span class="it" style="color:var(--muladhara);">опора</span></h2>
+<div class="tdesc" style="--accent:var(--muladhara);">
+<p>По модели психолога Сальваторе Мадди: три опоры внутренней устойчивости — <strong>вовлечённость, контроль и принятие вызова</strong>. Показывает, как встречаются трудности и перемены.</p>
+<div class="tdesc-meta">45 вопросов · шкала 0–3 · ~6 минут</div>
+</div>
+<div class="quiz" id="quiz-maddi">
+<div class="quiz-top"><span class="quiz-name" style="color:var(--muladhara);">Жизнестойкость</span><span class="quiz-count" id="cnt-maddi">1 / 45</span></div>
+<div class="pbar"><i id="bar-maddi" style="background:var(--muladhara);"></i></div>
+<div id="body-maddi"></div>
+</div>
+</div>
+</div>
+
+<!-- TEST 2: ADIZES -->
+<div class="sect bg-peach" id="adizes" style="--accent:var(--vishuddha);">
+<span class="deco-dots" style="bottom:40px;left:30px;color:var(--vishuddha);"></span>
+<div class="wrap">
+<span class="kicker">тест 02 · роль в команде</span>
+<h2 class="shout l">какая <span class="it" style="color:var(--vishuddha);">роль</span> в деле</h2>
+<div class="tdesc" style="--accent:var(--vishuddha);">
+<p>По модели менеджмента Ицхака Адизеса (PAEI): четыре роли — <strong>Результат, Порядок, Идеи и Люди</strong>. Показывает, какая функция естественно закрывается в общем деле.</p>
+<div class="tdesc-meta">40 вопросов · выбор одного варианта · ~7 минут</div>
+</div>
+<div class="quiz" id="quiz-adizes">
+<div class="quiz-top"><span class="quiz-name" style="color:var(--vishuddha);">Роль в команде</span><span class="quiz-count" id="cnt-adizes">1 / 40</span></div>
+<div class="pbar"><i id="bar-adizes" style="background:var(--vishuddha);"></i></div>
+<div id="body-adizes"></div>
+</div>
+</div>
+</div>
+
+<!-- SEND RESULT -->
+<div class="sect bg-ajna" id="send" style="--accent:var(--ajna);">
+
+<div class="wrap">
+<span class="scribble" style="transform:rotate(-2deg);">оба теста позади? 🔥</span>
+<h2 class="shout l" style="margin-top:10px;">отправь свой <span class="it" style="color:var(--ajna);">результат</span></h2>
+<div class="body-p" style="margin-top:20px;">Нажми кнопку — соберётся письмо с обоими профилями (жизнестойкость + код PAEI), именем и временем. Останется отправить.</div>
+<div class="send-card" id="send-card">
+<div class="send-line"><span class="send-lbl">Начало</span><span class="send-val" id="sv-start">—</span></div>
+<div class="send-line"><span class="send-lbl">Завершение</span><span class="send-val" id="sv-end">—</span></div>
+<div class="send-line"><span class="send-lbl">Жизнестойкость</span><span class="send-val" id="sv-maddi">пройди тест 01</span></div>
+<div class="send-line"><span class="send-lbl">Роль (PAEI)</span><span class="send-val" id="sv-adizes">пройди тест 02</span></div>
+</div>
+<div id="send-msg" class="send-msg"></div>
+<div style="margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;">
+<button class="btn btn-solid" id="send-btn" onclick="sendResult()">Отправить результат →</button>
+<a class="btn btn-ghost" href="index.html">Вернуться на сайт</a>
+</div>
+<div class="send-hint">Кнопка копирует результат. Открой любую почту, создай письмо на assistant@creox.ch и вставь текст.</div>
+<pre class="send-plain" id="send-plain"></pre>
+</div>
+</div>
+
+<footer class="site-footer" id="footer">
+  <div class="fwrap">
+    <div class="foot-invite">Наблюдать и участвовать можно в соцсетях:</div>
+    <div class="socials">
+      <a href="https://www.instagram.com/chudina_fire" target="_blank">Instagram</a>
+      <a href="https://www.threads.com/@chudina_fire" target="_blank">Threads</a>
+      <a href="https://t.me/chudina_fire" target="_blank">Telegram</a>
+    </div>
+    <div class="foot-legal-info">
+      <p class="fli-name">Kseniia Chudina Art + Event</p>
+      <p class="fli-line">Bäderstrasse 28, 5400 Baden, Schweiz 🇨🇭</p>
+      <p class="fli-line">CHE-202.191.691</p>
+    </div>
+    <div class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <span class="fl-sep">·</span>
+      <a href="agb.html">AGB</a>
+      <span class="fl-sep">·</span>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="legal">© 2026 Kseniia Chudina · chudina.me · Baden, Schweiz</div>
+  </div>
+</footer>
+
+<script>
+function scrollTop(){window.scrollTo({top:0,behavior:'smooth'});}
+function jump(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+
+/* ===== Shared session state ===== */
+var SESSION = {
+  startedAt: null,
+  finishedAt: null,
+  maddi: null,   // {total, dims:{C,K,V}, top}
+  adizes: null   // {code, top, second, pct:{P,A,E,I}}
+};
+function fmtTime(d){
+  if(!d) return "—";
+  var p=function(n){return (n<10?'0':'')+n;};
+  return p(d.getDate())+'.'+p(d.getMonth()+1)+'.'+d.getFullYear()+' '+p(d.getHours())+':'+p(d.getMinutes());
+}
+function markStart(){
+  if(!SESSION.startedAt){ SESSION.startedAt = new Date(); }
+}
+function markFinishIfDone(){
+  if(SESSION.maddi && SESSION.adizes){ SESSION.finishedAt = new Date(); }
+}
+
+/* ===== Likert options (0-3 scale, like the original hardiness format) ===== */
+var LIK = [
+  {t:"Совсем не так", v:0},
+  {t:"Скорее не так", v:1},
+  {t:"Скорее так", v:2},
+  {t:"Полностью так", v:3}
+];
+
+/* ===== TEST 1 — Maddi hardiness (own items by dimension, ~45 items, 0-3 scale) =====
+   dims: C=вовлечённость(commitment), K=контроль(control), V=вызов(challenge)
+   Формулировки авторские, по опубликованной трёхкомпонентной структуре модели. */
+var MADDI = [
+  /* Вовлечённость */
+  {d:"C", q:"Мне важно быть в гуще дел, а не наблюдать со стороны."},
+  {d:"C", q:"В том, чем занимаюсь, обычно нахожу смысл — даже в мелочах."},
+  {d:"C", q:"Когда дело захватывает, забываю о времени."},
+  {d:"C", q:"Мне интересны люди вокруг и то, чем они живут."},
+  {d:"C", q:"Утром обычно есть ради чего вставать."},
+  {d:"C", q:"Редко ощущаю, что просто отбываю день."},
+  {d:"C", q:"Легко включаюсь в общее дело и остаюсь в нём."},
+  {d:"C", q:"Мне не всё равно, чем закончится то, во что вложены силы."},
+  {d:"C", q:"Скучные периоды переношу спокойно, но живу ради насыщенных."},
+  {d:"C", q:"В работе важно чувствовать личную причастность."},
+  {d:"C", q:"Обычно есть дело, в которое хочется погружаться."},
+  {d:"C", q:"Даже рутину стараюсь наполнить смыслом."},
+  {d:"C", q:"Редко чувствую отстранённость от того, что происходит вокруг."},
+  {d:"C", q:"Мне важно быть нужной там, где я есть."},
+  {d:"C", q:"Проще жить, когда понятно, зачем всё это."},
+  /* Контроль */
+  {d:"K", q:"Верю, что многое в жизни зависит от моих действий."},
+  {d:"K", q:"Столкнувшись с проблемой, ищу, что можно сделать, а не жду, пока само решится."},
+  {d:"K", q:"Даже в трудной ситуации нахожу зону, где всё ещё что-то в моих руках."},
+  {d:"K", q:"Редко ощущаю себя игрушкой обстоятельств."},
+  {d:"K", q:"Если что-то не устраивает, стараюсь это изменить."},
+  {d:"K", q:"Решения предпочитаю принимать сама, а не пускать на самотёк."},
+  {d:"K", q:"Чувствую, что влияю на ход событий вокруг."},
+  {d:"K", q:"Планирую наперёд, а не только реагирую на случившееся."},
+  {d:"K", q:"Даже при плохом раскладе ищу следующий возможный шаг."},
+  {d:"K", q:"Ответственность за свою жизнь беру на себя."},
+  {d:"K", q:"Редко перекладываю вину на других за то, что идёт не так."},
+  {d:"K", q:"Верю, что усилия в итоге дают результат."},
+  {d:"K", q:"Мне спокойнее, когда понимаю, на что могу повлиять, а на что нет."},
+  {d:"K", q:"Трудности воспринимаю как задачу, которую можно решать."},
+  {d:"K", q:"Обычно нахожу выход, даже если он не очевиден сразу."},
+  /* Принятие вызова */
+  {d:"V", q:"Перемены для меня скорее возможность, чем угроза."},
+  {d:"V", q:"Мне нравятся задачи, которые выводят из зоны комфорта."},
+  {d:"V", q:"Ошибки воспринимаю как опыт, а не как приговор."},
+  {d:"V", q:"Неопределённость скорее заряжает, чем пугает."},
+  {d:"V", q:"Новое пробую охотнее, чем держусь за привычное."},
+  {d:"V", q:"Трудный период — это ещё и шанс вырасти."},
+  {d:"V", q:"Готова рискнуть ради того, что важно."},
+  {d:"V", q:"Стабильность люблю, но застой быстро надоедает."},
+  {d:"V", q:"Незнакомая ситуация вызывает интерес, а не только тревогу."},
+  {d:"V", q:"Из сложных историй обычно выношу урок."},
+  {d:"V", q:"Мне ближе развитие, чем покой любой ценой."},
+  {d:"V", q:"Вызовы скорее бодрят меня, чем истощают."},
+  {d:"V", q:"Могу поменять планы, если этого требует ситуация."},
+  {d:"V", q:"Смотрю на будущее скорее с любопытством, чем со страхом."},
+  {d:"V", q:"Верю, что через сложное проходят и становятся сильнее."}
+];
+
+/* ===== TEST 2 — Adizes PAEI: forced-choice (24 items) =====
+   Каждый пункт — набор из 4 вариантов, по одному на роль. Выбираешь тот, что БОЛЬШЕ про тебя.
+   roles: P=результат(producer), A=порядок(administrator), E=идеи(entrepreneur), I=люди(integrator)
+   Формулировки авторские, по опубликованной модели PAEI (4 управленческие роли). */
+var ADIZES = [
+  {q:"В работе меня больше всего заряжает…", o:[
+    {d:"P", t:"закрытая задача и виден результат"},
+    {d:"A", t:"когда всё выстроено в чёткую систему"},
+    {d:"E", t:"новая идея и простор её воплотить"},
+    {d:"I", t:"когда команда сработалась и в ней тепло"}]},
+  {q:"Начиная проект, первым делом я…", o:[
+    {d:"E", t:"придумываю концепцию и вижу картину целиком"},
+    {d:"A", t:"расписываю план, этапы и сроки"},
+    {d:"P", t:"берусь за самое важное и делаю"},
+    {d:"I", t:"собираю людей и распределяю роли"}]},
+  {q:"Меня раздражает, когда…", o:[
+    {d:"P", t:"всё буксует и нет результата"},
+    {d:"A", t:"бардак и никто не соблюдает договорённости"},
+    {d:"E", t:"всё делают по-старому и боятся нового"},
+    {d:"I", t:"в команде напряжение и люди не слышат друг друга"}]},
+  {q:"Коллеги скорее скажут про меня…", o:[
+    {d:"P", t:"«с ней дело двигается»"},
+    {d:"A", t:"«у неё всё по полочкам»"},
+    {d:"E", t:"«у неё всегда идеи»"},
+    {d:"I", t:"«с ней комфортно работать»"}]},
+  {q:"В команде я чаще беру на себя…", o:[
+    {d:"A", t:"порядок, процессы и контроль качества"},
+    {d:"P", t:"довести до результата любой ценой"},
+    {d:"I", t:"атмосферу и связи между людьми"},
+    {d:"E", t:"направление и новые возможности"}]},
+  {q:"Мой типичный вопрос на встрече…", o:[
+    {d:"P", t:"«что конкретно делаем и кто?»"},
+    {d:"A", t:"«как это регламентируем?»"},
+    {d:"E", t:"«а что если попробовать иначе?»"},
+    {d:"I", t:"«все ли согласны и всем ли ок?»"}]},
+  {q:"Успех для меня — это прежде всего…", o:[
+    {d:"P", t:"достигнутый результат"},
+    {d:"A", t:"отлаженная, стабильная система"},
+    {d:"E", t:"прорыв и что-то новое"},
+    {d:"I", t:"сильная, сплочённая команда"}]},
+  {q:"Под давлением я склонна…", o:[
+    {d:"P", t:"собраться и продавливать результат"},
+    {d:"A", t:"держаться за правила и порядок"},
+    {d:"E", t:"искать нестандартный ход"},
+    {d:"I", t:"беречь людей и отношения"}]},
+  {q:"Мне тяжелее всего даётся…", o:[
+    {d:"E", t:"рутина и однообразие"},
+    {d:"I", t:"жёсткие решения, которые ранят людей"},
+    {d:"A", t:"работа без структуры и правил"},
+    {d:"P", t:"бесконечные обсуждения без действия"}]},
+  {q:"Идеальный рабочий день — это когда…", o:[
+    {d:"P", t:"много сделано и видно результат"},
+    {d:"A", t:"всё прошло по плану, без сбоев"},
+    {d:"E", t:"родилась и завертелась новая идея"},
+    {d:"I", t:"с людьми было легко и по-настоящему"}]},
+  {q:"Про мой стол и заметки скажут…", o:[
+    {d:"A", t:"всё аккуратно, списки и папки"},
+    {d:"E", t:"хаос из идей и набросков"},
+    {d:"P", t:"список задач, всё вычеркнуто"},
+    {d:"I", t:"стикеры с днями рождения и договорённостями о людях"}]},
+  {q:"Когда что-то идёт не так, я думаю…", o:[
+    {d:"P", t:"«что сделать прямо сейчас?»"},
+    {d:"A", t:"«где сломался процесс?»"},
+    {d:"E", t:"«как обернуть это в возможность?»"},
+    {d:"I", t:"«как это переживают люди?»"}]},
+  {q:"Меня заряжают книги и разговоры про…", o:[
+    {d:"E", t:"тренды, будущее, идеи"},
+    {d:"A", t:"системы, процессы, порядок"},
+    {d:"P", t:"результаты, кейсы, эффективность"},
+    {d:"I", t:"людей, отношения, психологию"}]},
+  {q:"В новом коллективе я быстро становлюсь той, кто…", o:[
+    {d:"P", t:"тащит задачи"},
+    {d:"A", t:"наводит порядок"},
+    {d:"E", t:"фонтанирует идеями"},
+    {d:"I", t:"всех объединяет"}]},
+  {q:"Мне важно, чтобы решение было прежде всего…", o:[
+    {d:"P", t:"работающим и быстрым"},
+    {d:"A", t:"правильным и обоснованным"},
+    {d:"E", t:"смелым и небанальным"},
+    {d:"I", t:"принятым всеми"}]},
+  {q:"Слабое место, которое за собой замечаю…", o:[
+    {d:"P", t:"нетерпеливость, гоню к результату"},
+    {d:"A", t:"придирчивость к деталям"},
+    {d:"E", t:"хватаюсь за много идей сразу"},
+    {d:"I", t:"избегаю жёстких, но нужных решений"}]},
+  {q:"На проекте мне ближе роль…", o:[
+    {d:"E", t:"визионера, который задаёт курс"},
+    {d:"P", t:"локомотива, который тянет"},
+    {d:"A", t:"архитектора, который выстраивает"},
+    {d:"I", t:"дирижёра, который сводит всех вместе"}]},
+  {q:"Похвала, которая мне приятнее всего…", o:[
+    {d:"P", t:"«ты добиваешься результата»"},
+    {d:"A", t:"«на тебя можно положиться, всё чётко»"},
+    {d:"E", t:"«с тобой не соскучишься, сколько идей»"},
+    {d:"I", t:"«с тобой команда становится семьёй»"}]},
+  {q:"Если проект под угрозой срыва, я в первую очередь…", o:[
+    {d:"P", t:"беру и делаю критичное сама"},
+    {d:"A", t:"пересобираю план и процессы"},
+    {d:"E", t:"ищу нестандартный выход"},
+    {d:"I", t:"удерживаю команду от паники"}]},
+  {q:"Мне скучно там, где…", o:[
+    {d:"E", t:"нет места новому"},
+    {d:"P", t:"нет движения к цели"},
+    {d:"I", t:"нет живого общения"},
+    {d:"A", t:"всё держится на хаосе"}]},
+  {q:"В споре я обычно опираюсь на…", o:[
+    {d:"P", t:"факты и результат"},
+    {d:"A", t:"правила и логику"},
+    {d:"E", t:"видение и возможности"},
+    {d:"I", t:"чувства и отношения людей"}]},
+  {q:"Мой вклад в общее дело чаще всего — это…", o:[
+    {d:"E", t:"направление и смысл"},
+    {d:"P", t:"скорость и результат"},
+    {d:"A", t:"надёжность и порядок"},
+    {d:"I", t:"тепло и связи"}]},
+  {q:"Когда всё наконец налажено и стабильно, я…", o:[
+    {d:"A", t:"наслаждаюсь порядком"},
+    {d:"P", t:"ищу следующую цель"},
+    {d:"E", t:"начинаю придумывать, что улучшить"},
+    {d:"I", t:"забочусь, чтобы людям было хорошо"}]},
+  {q:"Больше всего горжусь, когда…", o:[
+    {d:"P", t:"довела трудное дело до конца"},
+    {d:"A", t:"выстроила систему, которая работает сама"},
+    {d:"E", t:"придумала то, чего ещё не было"},
+    {d:"I", t:"собрала команду, которая держится вместе"}]},
+  {q:"На старте недели я в первую очередь…", o:[
+    {d:"A", t:"составляю план и раскладываю задачи по дням"},
+    {d:"P", t:"выбираю главное и начинаю делать"},
+    {d:"E", t:"прикидываю, что можно запустить новое"},
+    {d:"I", t:"проверяю, как настрой у команды"}]},
+  {q:"Меня выбивает из колеи, когда…", o:[
+    {d:"P", t:"работа стоит на месте"},
+    {d:"A", t:"всё делается кое-как, без порядка"},
+    {d:"E", t:"заставляют повторять одно и то же"},
+    {d:"I", t:"в команде холод и напряжение"}]},
+  {q:"Друзья зовут меня, когда нужно…", o:[
+    {d:"P", t:"взять и сделать, а не рассуждать"},
+    {d:"A", t:"всё организовать и не забыть деталей"},
+    {d:"E", t:"придумать необычную идею"},
+    {d:"I", t:"выслушать и помирить"}]},
+  {q:"В путешествии я обычно…", o:[
+    {d:"A", t:"держу маршрут, брони и расписание"},
+    {d:"E", t:"еду за впечатлениями и спонтанностью"},
+    {d:"P", t:"успеваю обойти максимум за день"},
+    {d:"I", t:"забочусь, чтобы всем в компании было хорошо"}]},
+  {q:"Хороший руководитель для меня — тот, кто…", o:[
+    {d:"P", t:"добивается результата и не буксует"},
+    {d:"A", t:"выстроил чёткие правила и процессы"},
+    {d:"E", t:"ведёт к большой цели и вдохновляет"},
+    {d:"I", t:"заботится о людях и слышит их"}]},
+  {q:"Когда задача скучная, но нужная, я…", o:[
+    {d:"A", t:"делаю аккуратно и по порядку"},
+    {d:"P", t:"быстро закрываю и иду дальше"},
+    {d:"E", t:"пытаюсь придумать, как сделать иначе"},
+    {d:"I", t:"делаю вместе с кем-то, так веселее"}]},
+  {q:"Мой вклад в проект чаще всего замечают как…", o:[
+    {d:"P", t:"«всё сделано в срок»"},
+    {d:"A", t:"«ничего не потеряно, всё учтено»"},
+    {d:"E", t:"«свежий взгляд и новые ходы»"},
+    {d:"I", t:"«команда держится вместе»"}]},
+  {q:"Если дать мне свободный день на работе, я…", o:[
+    {d:"E", t:"накидаю идей и запущу что-то новое"},
+    {d:"A", t:"наведу порядок в делах и документах"},
+    {d:"P", t:"закрою всё, что давно висело"},
+    {d:"I", t:"пообщаюсь с людьми, которых давно не слышала"}]},
+  {q:"В конфликте я скорее…", o:[
+    {d:"P", t:"ищу решение, чтобы двигаться дальше"},
+    {d:"A", t:"опираюсь на правила и договорённости"},
+    {d:"E", t:"предлагаю неожиданный компромисс"},
+    {d:"I", t:"стараюсь всех услышать и примирить"}]},
+  {q:"Меня заряжает, когда план…", o:[
+    {d:"A", t:"сработал точно, как задумано"},
+    {d:"P", t:"привёл к быстрому результату"},
+    {d:"E", t:"вдруг открыл новую возможность"},
+    {d:"I", t:"сплотил команду по ходу дела"}]},
+  {q:"Про меня в команде говорят: без неё…", o:[
+    {d:"P", t:"дело бы встало"},
+    {d:"A", t:"был бы бардак"},
+    {d:"E", t:"было бы скучно и без идей"},
+    {d:"I", t:"все бы перессорились"}]},
+  {q:"Я быстрее всего устаю от…", o:[
+    {d:"E", t:"рутины и предсказуемости"},
+    {d:"I", t:"холодных, формальных отношений"},
+    {d:"A", t:"хаоса и вечного «на авось»"},
+    {d:"P", t:"разговоров, которые не ведут к делу"}]},
+  {q:"Идеальная роль для меня — быть…", o:[
+    {d:"P", t:"тем, кто делает и добивается"},
+    {d:"A", t:"тем, кто держит систему"},
+    {d:"E", t:"тем, кто задаёт направление"},
+    {d:"I", t:"тем, кто объединяет людей"}]},
+  {q:"Когда прихожу в новый проект, сразу вижу…", o:[
+    {d:"P", t:"что нужно сделать в первую очередь"},
+    {d:"A", t:"где нет порядка и что стоит наладить"},
+    {d:"E", t:"какие есть скрытые возможности"},
+    {d:"I", t:"кто с кем и как ладит в команде"}]},
+  {q:"В итоге для меня важнее всего…", o:[
+    {d:"P", t:"результат, который есть"},
+    {d:"A", t:"надёжность, на которую можно положиться"},
+    {d:"E", t:"смысл и движение вперёд"},
+    {d:"I", t:"люди, которые рядом"}]},
+  {q:"Меня точнее всего описывает фраза…", o:[
+    {d:"E", t:"«вижу, каким всё может стать»"},
+    {d:"P", t:"«берусь и довожу до конца»"},
+    {d:"A", t:"«держу всё под контролем»"},
+    {d:"I", t:"«собираю людей вокруг общего»"}]}
+];
+
+/* ===== Engine ===== */
+function makeQuiz(key, items, accent, dimsMeta, resultFn, mode){
+  // mode: 'likert' (шкала 0-3, оценка по it.d) или 'forced' (выбор одного варианта, у каждого своя роль)
+  var state = {i:0, ans:new Array(items.length).fill(null)};
+  var body = document.getElementById('body-'+key);
+  var bar = document.getElementById('bar-'+key);
+  var cnt = document.getElementById('cnt-'+key);
+  var anchorId = key;
+
+  function render(){
+    if(state.i >= items.length){ renderResult(); return; }
+    var it = items[state.i];
+    cnt.textContent = (state.i+1)+' / '+items.length;
+    bar.style.width = (state.i/items.length*100)+'%';
+    var opts;
+    if(mode==='forced'){
+      opts = it.o.map(function(o,idx){
+        var sel = state.ans[state.i]===idx ? ' sel':'';
+        return '<button class="opt'+sel+'" data-idx="'+idx+'"><span class="dotn">'+(idx+1)+'</span>'+o.t+'</button>';
+      }).join('');
+    } else {
+      opts = LIK.map(function(o){
+        var sel = state.ans[state.i]===o.v ? ' sel':'';
+        return '<button class="opt'+sel+'" data-v="'+o.v+'"><span class="dotn">'+o.v+'</span>'+o.t+'</button>';
+      }).join('');
+    }
+    body.innerHTML =
+      '<div class="q-text">'+it.q+'</div>'+
+      '<div class="opts">'+opts+'</div>'+
+      '<div class="quiz-nav">'+
+        '<button class="linkbtn" id="prev-'+key+'"'+(state.i===0?' disabled':'')+'>← назад</button>'+
+        (mode==='forced' ? '' : '<button class="linkbtn" id="skip-'+key+'">пропустить</button>')+
+      '</div>';
+    body.querySelectorAll('.opt').forEach(function(b){
+      b.onclick=function(){
+        markStart();
+        state.ans[state.i] = mode==='forced' ? parseInt(b.dataset.idx,10) : parseInt(b.dataset.v,10);
+        setTimeout(function(){ state.i++; render(); }, 170);
+      };
+    });
+    var pv=document.getElementById('prev-'+key); if(pv) pv.onclick=function(){ if(state.i>0){state.i--; render();} };
+    var sk=document.getElementById('skip-'+key); if(sk) sk.onclick=function(){ if(state.ans[state.i]===null) state.ans[state.i]=1; state.i++; render(); };
+  }
+
+  function renderResult(){
+    bar.style.width='100%';
+    cnt.textContent='готово';
+    var scores={};
+    dimsMeta.forEach(function(dm){ scores[dm.k]={sum:0,n:0}; });
+    if(mode==='forced'){
+      // счёт по ролям: каждый выбранный вариант добавляет очко своей роли
+      dimsMeta.forEach(function(dm){ scores[dm.k].n=0; });
+      var total=0;
+      items.forEach(function(it,idx){
+        var a=state.ans[idx];
+        if(a===null) return;
+        var role=it.o[a].d;
+        scores[role].sum++; total++;
+      });
+      scores.__total=total;
+    } else {
+      items.forEach(function(it,idx){
+        var v = state.ans[idx]===null?1:state.ans[idx];
+        scores[it.d].sum+=v; scores[it.d].n++;
+      });
+    }
+    body.innerHTML = resultFn(scores, dimsMeta, accent);
+    var rb=body.querySelector('.restart-'+key);
+    if(rb) rb.onclick=function(){ state.i=0; state.ans=new Array(items.length).fill(null); render(); document.getElementById(anchorId).scrollIntoView({behavior:'smooth'}); };
+    setTimeout(function(){ body.querySelectorAll('.dim-track > i').forEach(function(el){ el.style.width=el.dataset.w+'%'; }); },60);
+  }
+
+  render();
+}
+
+/* ---- Maddi result ---- */
+var MADDI_DIMS=[
+  {k:"C", name:"Вовлечённость", color:"var(--muladhara)", desc:"Показывает, насколько человек включён в жизнь и находит смысл в том, что делает."},
+  {k:"K", name:"Контроль", color:"var(--svadhisthana)", desc:"Показывает веру в то, что своими действиями можно влиять на ход событий."},
+  {k:"V", name:"Принятие вызова", color:"var(--anahata)", desc:"Показывает, воспринимаются ли перемены и трудности как возможность роста."}
+];
+function maddiResult(scores, dims, accent){
+  var pct={}; dims.forEach(function(d){ var s=scores[d.k]; pct[d.k]=Math.round(s.sum/(s.n*3)*100); });
+  var total=Math.round((pct.C+pct.K+pct.V)/3);
+  // Зоны по уровню (как в оригинальной трактовке жизнестойкости): низкая / средняя / высокая
+  function zoneOf(v){ return v<40 ? 'low' : (v<66 ? 'mid' : 'high'); }
+  function zoneColor(z){ return z==='low' ? '#E94560' : (z==='mid' ? '#E0B821' : '#3DBF74'); }
+  function zoneWord(z){ return z==='low' ? 'красная зона' : (z==='mid' ? 'жёлтая зона' : 'зелёная зона'); }
+  var tz=zoneOf(total);
+  var lead;
+  if(tz==='high') lead="Зелёная зона: высокий уровень жизнестойкости. Такая опора помогает держать удар и расти через сложное.";
+  else if(tz==='mid') lead="Жёлтая зона: средний уровень. База есть, и есть куда расти — устойчивость тренируется.";
+  else lead="Красная зона: сейчас ресурса немного. Это не приговор — опора собирается заново, шаг за шагом.";
+  var top=dims.slice().sort(function(a,b){return pct[b.k]-pct[a.k];})[0];
+  SESSION.maddi={total:total, pct:{C:pct.C,K:pct.K,V:pct.V}, top:top.name, zone:zoneWord(tz)};
+  markFinishIfDone();
+  // общая зональная шкала
+  function zoneBar(v){
+    var z=zoneOf(v);
+    return '<div class="zones">'+
+      '<div class="zone'+(z==='low'?' on':'')+'" style="background:#E94560"></div>'+
+      '<div class="zone'+(z==='mid'?' on':'')+'" style="background:#E0B821"></div>'+
+      '<div class="zone'+(z==='high'?' on':'')+'" style="background:#3DBF74"></div>'+
+    '</div>'+
+    '<div class="zone-legend"><span>низкая</span><span>средняя</span><span>высокая</span></div>';
+  }
+  var dimHtml=dims.map(function(d){
+    var z=zoneOf(pct[d.k]);
+    return '<div class="dim">'+
+      '<div class="dim-head"><span class="dim-name" style="color:'+d.color+'">'+d.name+'</span><span class="dim-val" style="color:'+zoneColor(z)+'">'+pct[d.k]+'% · '+zoneWord(z)+'</span></div>'+
+      '<div class="dim-track"><i data-w="'+pct[d.k]+'" style="background:'+zoneColor(z)+'"></i></div>'+
+      '<div class="dim-desc">'+d.desc+'</div>'+
+    '</div>';
+  }).join('');
+  return '<div class="result show">'+
+    '<div class="res-badge" style="color:'+zoneColor(tz)+';">'+total+'% · '+zoneWord(tz)+'</div>'+
+    '<div class="res-lead">'+lead+'</div>'+
+    zoneBar(total)+
+    '<div class="pill-row" style="margin-top:22px;"><span class="pill" style="border-color:'+top.color+';color:'+top.color+'">сильнее всего выражена: '+top.name.toLowerCase()+'</span></div>'+
+    '<div class="dims">'+dimHtml+'</div>'+
+    '<div class="res-note">Это профиль, а не оценка. Жизнестойкость по Мадди — <strong>тренируемый навык</strong>: вовлечённость, контроль и вызов растут с опытом. Цвет полоски показывает зону: красная — низкая, жёлтая — средняя, зелёная — высокая.</div>'+
+    '<div class="res-scroll">↓ листай ниже — тест роли в команде</div>'+
+  '</div>';
+}
+
+/* ---- Adizes result ---- */
+var ADIZES_DIMS=[
+  {k:"P", name:"Результат", letter:"P", color:"var(--muladhara)", desc:"Делать и доводить до конца. Двигатель, который закрывает задачи."},
+  {k:"A", name:"Порядок", letter:"A", color:"var(--vishuddha)", desc:"Строить систему и держать качество. Опора структуры."},
+  {k:"E", name:"Идеи", letter:"E", color:"var(--svadhisthana)", desc:"Придумывать новое и видеть на шаг вперёд. Источник движения."},
+  {k:"I", name:"Люди", letter:"I", color:"var(--anahata)", desc:"Объединять и создавать тепло. Клей команды."}
+];
+function adizesResult(scores, dims, accent){
+  var total=scores.__total||1;
+  var pct={}; dims.forEach(function(d){ pct[d.k]=Math.round(scores[d.k].sum/total*100); });
+  var sorted=dims.slice().sort(function(a,b){return pct[b.k]-pct[a.k];});
+  var top=sorted[0], second=sorted[1];
+  // код PAEI: заглавная если роль заметно выражена (>=25% выборов), иначе строчная
+  var code=dims.map(function(d){ return pct[d.k]>=25 ? d.letter : d.letter.toLowerCase(); }).join('');
+  var lead="Ведущая роль — «"+top.name+"», с сильной поддержкой «"+second.name+"». Именно эту функцию ты закрываешь в общем деле в первую очередь.";
+  SESSION.adizes={code:code, top:top.name, second:second.name, pct:{P:pct.P,A:pct.A,E:pct.E,I:pct.I}};
+  markFinishIfDone();
+  var dimHtml=dims.map(function(d){
+    return '<div class="dim">'+
+      '<div class="dim-head"><span class="dim-name" style="color:'+d.color+'">'+d.letter+' · '+d.name+'</span><span class="dim-val">'+pct[d.k]+'%</span></div>'+
+      '<div class="dim-track"><i data-w="'+pct[d.k]+'" style="background:'+d.color+'"></i></div>'+
+      '<div class="dim-desc">'+d.desc+'</div>'+
+    '</div>';
+  }).join('');
+  return '<div class="result show">'+
+    '<div class="res-badge" style="color:var(--vishuddha);">код '+code+'</div>'+
+    '<div class="res-lead">'+lead+'</div>'+
+    '<div class="pill-row"><span class="pill" style="border-color:'+top.color+';color:'+top.color+'">ведущая: '+top.name.toLowerCase()+'</span><span class="pill" style="border-color:'+second.color+';color:'+second.color+'">поддержка: '+second.name.toLowerCase()+'</span></div>'+
+    '<div class="dims">'+dimHtml+'</div>'+
+    '<div class="res-note">По Адизесу <strong>ни один человек не закрывает все четыре роли сразу</strong> — и это нормально. Сильная команда собирается из разных PAEI-профилей. Код <strong>'+code+'</strong> показывает, чем ты усиливаешь общее дело.</div>'+
+    '<div class="res-scroll">↓ листай ниже — отправка результата</div>'+
+  '</div>';
+}
+
+function syncSendCard(){
+  document.getElementById('sv-start').textContent=fmtTime(SESSION.startedAt);
+  document.getElementById('sv-end').textContent=fmtTime(SESSION.finishedAt);
+  if(SESSION.maddi){
+    var m=SESSION.maddi;
+    document.getElementById('sv-maddi').textContent=m.total+'% · опора: '+m.top.toLowerCase()+' (В '+m.pct.C+' / К '+m.pct.K+' / Выз '+m.pct.V+')';
+  }
+  if(SESSION.adizes){
+    var a=SESSION.adizes;
+    document.getElementById('sv-adizes').textContent='код '+a.code+' · ведущая: '+a.top.toLowerCase();
+  }
+}
+setInterval(syncSendCard, 800);
+
+function sendResult(){
+  syncSendCard();
+  var msg=document.getElementById('send-msg');
+  if(!SESSION.maddi || !SESSION.adizes){
+    msg.style.color='var(--muladhara)';
+    msg.textContent='Пройди оба теста — тогда в письмо попадут оба результата.';
+    return;
+  }
+  var m=SESSION.maddi, a=SESSION.adizes;
+  var L='%0D%0A';
+  var body=
+    'Результаты тестов — стать частью команды chudina.me'+L+L+
+    'Начало: '+fmtTime(SESSION.startedAt)+L+
+    'Завершение: '+fmtTime(SESSION.finishedAt)+L+L+
+    '— ТЕСТ 01 · ЖИЗНЕСТОЙКОСТЬ (Мадди) —'+L+
+    'Общий уровень: '+m.total+'% ('+(m.zone||'')+')'+L+
+    'Вовлечённость: '+m.pct.C+'%'+L+
+    'Контроль: '+m.pct.K+'%'+L+
+    'Принятие вызова: '+m.pct.V+'%'+L+
+    'Сильная сторона: '+m.top+L+L+
+    '— ТЕСТ 02 · РОЛЬ В КОМАНДЕ (Адизес PAEI) —'+L+
+    'Код PAEI: '+a.code+L+
+    'Результат (P): '+a.pct.P+'%'+L+
+    'Порядок (A): '+a.pct.A+'%'+L+
+    'Идеи (E): '+a.pct.E+'%'+L+
+    'Люди (I): '+a.pct.I+'%'+L+
+    'Ведущая роль: '+a.top+L+
+    'Поддержка: '+a.second+L+L+
+    'Отправлено со страницы chudina.me / команда';
+  var subject='Результаты тестов — chudina.me / команда';
+  // Текстовая версия для копирования (с реальными переносами строк)
+  var plain=body.split('%0D%0A').join('\n');
+  var plainFull='Кому: assistant@creox.ch\nТема: '+subject+'\n\n'+plain;
+
+  function ok(copied){
+    msg.style.color=copied?'var(--anahata)':'var(--muladhara)';
+    msg.innerHTML = copied
+      ? 'Готово — результат <strong>скопирован</strong> 📋<br>Открой почту, создай письмо на <span class="mail-pick">assistant@creox.ch</span> и вставь текст (⌘/долгое нажатие → «Вставить»).'
+      : 'Не получилось скопировать автоматически. Выдели текст ниже вручную и отправь на <span class="mail-pick">assistant@creox.ch</span>.';
+    // показать сам текст для ручного копирования как запасной вариант
+    var pre=document.getElementById('send-plain');
+    if(pre){ pre.textContent=plainFull; pre.style.display='block'; }
+  }
+
+  var copyDone=false;
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(plainFull).then(function(){ ok(true); }).catch(function(){ fallbackCopy(); });
+      copyDone=true;
+    }
+  }catch(e){}
+  if(!copyDone){ fallbackCopy(); }
+
+  function fallbackCopy(){
+    try{
+      var ta=document.createElement('textarea'); ta.value=plainFull; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      ok(true);
+    }catch(e2){ ok(false); }
+  }
+}
+
+makeQuiz('maddi', MADDI, 'var(--muladhara)', MADDI_DIMS, maddiResult, 'likert');
+makeQuiz('adizes', ADIZES, 'var(--vishuddha)', ADIZES_DIMS, adizesResult, 'forced');
+</script>
+</body>
+</html>
