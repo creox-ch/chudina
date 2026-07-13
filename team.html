@@ -35,6 +35,13 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream)
 .brand .fire{color:#A971E0;-webkit-text-fill-color:#A971E0;}
 .back{font-family:'Inter';font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--text);text-decoration:none;}
 .back:hover{color:var(--ajna);}
+.nav-links{display:flex;gap:30px;align-items:center;}
+.nav-links a{font-family:'Inter';font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--text);text-decoration:none;position:relative;padding:4px 0;transition:color .2s;}
+.nav-links a:hover{color:var(--ajna);}
+.nav-links a.active{color:var(--ajna);}
+.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:3px;background:var(--ajna);border-radius:2px;}
+.nav-burger{display:none;font-size:28px;background:none;border:none;cursor:pointer;color:var(--text);}
+@media(max-width:760px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg-cream);border-bottom:2px solid rgba(0,0,0,.08);padding:10px 24px 20px;}.nav-links.open{display:flex;}.nav-links a{padding:14px 0;border-bottom:1px solid var(--paper-edge);}.nav-burger{display:block;}}
 .sect{position:relative;padding:70px 40px;overflow:hidden;}
 .wrap{max-width:920px;margin:0 auto;position:relative;z-index:2;}
 .bg-ajna{background:var(--bg-ajna);}.bg-warm{background:var(--bg-warm);}.bg-peach{background:var(--bg-peach);}.bg-cream{background:var(--bg-cream);}
@@ -215,8 +222,17 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream)
 </head>
 <body>
 <nav class="nav">
-<a class="brand" href="#" onclick="scrollTop();return false;">chudina<span class="fire">.me</span></a>
-<a class="back" href="/">← на сайт</a>
+<a class="brand" href="/">chudina<span class="fire">.me</span></a>
+<button class="nav-burger" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+<div class="nav-links" id="navlinks">
+<a href="/">Главная</a>
+<a href="/put">Мой путь</a>
+<a href="/proekty">Проекты</a>
+<a href="/igry">Игры</a>
+<a href="/kontakty">Встречи</a>
+<a href="/team" class="active">В команду</a>
+<a href="/partnerstvo">Партнёрство</a>
+</div>
 </nav>
 
 <!-- INTRO -->
