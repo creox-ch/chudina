@@ -960,7 +960,29 @@ function pick(btn){
   group.querySelectorAll('button').forEach(function(b){ b.classList.remove('on'); });
   btn.classList.add('on');
 }
-// Сборка заявки в текст (для практик — вместе с результатами тестов)
+// Приём заявок: шлём на общий бэкенд платформы (Supabase + письмо). Текст-копия — fallback.
+var FORMS_ENDPOINT = 'https://slswiss-tickets.vercel.app/api/forms';
+
+// В каждую мини-форму добавляем контактные поля (email обяз. + Telegram) и honeypot.
+(function injectContactFields(){
+  document.querySelectorAll('.mini-form').forEach(function(form){
+    if(form.querySelector('[data-contact="email"]')) return;
+    var block = document.createElement('div');
+    block.innerHTML =
+      '<div class="row2">'+
+        '<div><label>Email <span style="font-weight:400;opacity:.6">(по нему свяжемся)</span></label>'+
+        '<input data-contact="email" type="email" inputmode="email" placeholder="you@example.com"></div>'+
+        '<div><label>Telegram / телефон <span style="font-weight:400;opacity:.6">(по желанию)</span></label>'+
+        '<input data-contact="telegram" placeholder="@ник или телефон"></div>'+
+      '</div>'+
+      '<input data-hp tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="Website" '+
+        'style="position:absolute;left:-9999px;width:0;height:0;opacity:0">';
+    var ref = form.firstChild;
+    Array.prototype.slice.call(block.childNodes).forEach(function(node){ form.insertBefore(node, ref); });
+  });
+})();
+
+// Сборка заявки: отправка на сервер (+ результаты тестов для практик), fallback — копирование.
 function buildForm(btn){
   var form = btn.closest('.mini-form');
   var role = form.getAttribute('data-role');
@@ -973,82 +995,94 @@ function buildForm(btn){
     var miss = [];
     if(!SESSION.maddi) miss.push('Тест 01 · Жизнестойкость');
     if(!SESSION.adizes) miss.push('Тест 02 · Роль в команде');
-    out.textContent = 'Чтобы отправить заявку, пройди оба теста ниже — они добавятся в письмо автоматически.\n\nОсталось пройти: ' + miss.join(', ');
+    out.textContent = 'Чтобы отправить заявку, пройди оба теста ниже — они добавятся автоматически.\n\nОсталось пройти: ' + miss.join(', ');
     out.classList.add('show');
-    // подсветим и промотаем к первому непройденному тесту
     var target = !SESSION.maddi ? 'maddi' : 'adizes';
     var el = document.getElementById(target);
     if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
     return;
   }
 
-  var lines = ['— ЗАЯВКА · '+role.toUpperCase()+' —', ''];
-  // текстовые поля
-  form.querySelectorAll('[data-f]').forEach(function(el){
-    var name = el.getAttribute('data-f');
-    if(el.classList.contains('pills-sel')){
-      var on = el.querySelector('button.on');
-      lines.push(name+': '+(on ? on.textContent : '—'));
-    } else if(el.tagName==='INPUT' || el.tagName==='TEXTAREA'){
-      lines.push(name+': '+(el.value.trim() || '—'));
-    }
-  });
+  // Контакт
+  function val(sel){ var el=form.querySelector(sel); return el && el.value ? el.value.trim() : ''; }
+  var email = val('[data-contact="email"]');
+  var telegram = val('[data-contact="telegram"]');
+  var hp = val('[data-hp]');
 
-  // Для практик — добавляем результаты обоих тестов
-  if(needTests){
-    var m=SESSION.maddi, a=SESSION.adizes;
-    lines.push('');
-    lines.push('— РЕЗУЛЬТАТЫ ТЕСТОВ —');
-    lines.push('Начало: '+fmtTime(SESSION.startedAt));
-    lines.push('Завершение: '+fmtTime(SESSION.finishedAt));
-    lines.push('');
-    lines.push('Тест 01 · Жизнестойкость (Мадди)');
-    lines.push('  Общий уровень: '+m.total+'% ('+(m.zone||'')+')');
-    lines.push('  Вовлечённость: '+m.pct.C+'%');
-    lines.push('  Контроль: '+m.pct.K+'%');
-    lines.push('  Принятие вызова: '+m.pct.V+'%');
-    lines.push('  Сильная сторона: '+m.top);
-    lines.push('');
-    lines.push('Тест 02 · Роль в команде (Адизес PAEI)');
-    lines.push('  Код PAEI: '+a.code);
-    lines.push('  Результат (P): '+a.pct.P+'%');
-    lines.push('  Порядок (A): '+a.pct.A+'%');
-    lines.push('  Идеи (E): '+a.pct.E+'%');
-    lines.push('  Люди (I): '+a.pct.I+'%');
-    lines.push('  Ведущая роль: '+a.top);
-    lines.push('  Поддержка: '+a.second);
+  if(!email || email.indexOf('@') < 1){
+    out.textContent = 'Укажи email — по нему мы свяжемся с тобой.';
+    out.classList.add('show');
+    var ei = form.querySelector('[data-contact="email"]'); if(ei){ ei.focus(); }
+    return;
   }
 
-  lines.push('');
-  lines.push('Отправить на: main@chudina.me');
-  var txt = lines.join(L);
-  var full = 'Кому: main@chudina.me\nТема: Заявка · '+role+(needTests?' (с тестами)':'')+'\n\n'+txt;
+  // Поля формы → payload (для БД) + текст (для fallback-копии)
+  var payload = {};
+  var lines = ['— ЗАЯВКА · '+role.toUpperCase()+' —', ''];
+  form.querySelectorAll('[data-f]').forEach(function(el){
+    var name = el.getAttribute('data-f');
+    var v;
+    if(el.classList.contains('pills-sel')){
+      var on = el.querySelector('button.on'); v = on ? on.textContent.trim() : '';
+    } else if(el.tagName==='INPUT' || el.tagName==='TEXTAREA'){
+      v = el.value.trim();
+    } else { return; }
+    payload[name] = v;
+    lines.push(name+': '+(v || '—'));
+  });
+  var name = payload['Имя'] || payload['Имя / название'] || payload['Имя / как обращаться'] || '';
 
-  function done(copied){
-    if(copied){
-      out.textContent = '✓ ' + (needTests?'Заявка и результаты тестов скопированы':'Заявка скопирована') + '. Открой почту, создай письмо на main@chudina.me и вставь текст (⌘/долгое нажатие → «Вставить»):\n\n'+full;
-    } else {
-      out.textContent = 'Скопируй этот текст и отправь на main@chudina.me:\n\n'+full;
-    }
+  // Результаты тестов (для практик)
+  var tests = null;
+  if(needTests){
+    var m=SESSION.maddi, a=SESSION.adizes;
+    tests = {
+      started: fmtTime(SESSION.startedAt), finished: fmtTime(SESSION.finishedAt),
+      maddi: { total:m.total, zone:m.zone, pct:m.pct, top:m.top },
+      adizes: { code:a.code, pct:a.pct, top:a.top, second:a.second }
+    };
+    lines.push('', '— РЕЗУЛЬТАТЫ ТЕСТОВ —');
+    lines.push('Мадди: '+m.total+'% ('+(m.zone||'')+'), сильная сторона — '+m.top);
+    lines.push('Адизес PAEI: '+a.code+', ведущая роль — '+a.top+', поддержка — '+a.second);
+  }
+
+  var full = 'Кому: main@chudina.me'+L+'Тема: Заявка · '+role+(needTests?' (с тестами)':'')+
+    L+'От: '+email+(telegram?(' · '+telegram):'')+L+L+lines.join(L);
+
+  // Отправка на сервер
+  out.textContent = 'Отправляю…'; out.classList.add('show');
+  var btnOld = btn.textContent; btn.disabled = true;
+  function restore(){ btn.disabled=false; btn.textContent=btnOld; }
+
+  function fallbackCopy(){
+    try{
+      var ta=document.createElement('textarea'); ta.value=full; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      var okc=document.execCommand('copy'); document.body.removeChild(ta);
+      out.textContent = (okc?'Не получилось отправить автоматически — заявка скопирована. ':'Скопируй и ')+'Отправь текст на main@chudina.me:\n\n'+full;
+    }catch(e){ out.textContent='Не получилось отправить. Напиши на main@chudina.me:\n\n'+full; }
     out.classList.add('show');
   }
 
-  var copied=false;
-  try{
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(full).then(function(){ done(true); }).catch(function(){ fb(); });
-      copied=true;
-    }
-  }catch(e){}
-  if(!copied){ fb(); }
+  var data = {
+    source:'chudina', form_key:'team', source_url: location.href,
+    role: role, name: name, email: email, telegram: telegram,
+    payload: payload, tests: tests, hp: hp
+  };
 
-  function fb(){
-    try{
-      var ta=document.createElement('textarea'); ta.value=full; ta.style.position='fixed'; ta.style.opacity='0';
-      document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
-      done(true);
-    }catch(e2){ done(false); }
-  }
+  if(!window.fetch){ restore(); fallbackCopy(); return; }
+
+  fetch(FORMS_ENDPOINT, {
+    method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)
+  }).then(function(r){
+    return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok && j && j.ok }; });
+  }).then(function(res){
+    restore();
+    if(res.ok){
+      out.textContent = '✓ Заявка отправлена'+(needTests?' вместе с результатами тестов':'')+'. Мы свяжемся с тобой по '+email+'.';
+      out.classList.add('show');
+    } else { fallbackCopy(); }
+  }).catch(function(){ restore(); fallbackCopy(); });
 }
 </script>
 </body>
