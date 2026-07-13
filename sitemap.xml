@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://chudina.me/</loc><priority>1.0</priority></url>
+  <url><loc>https://chudina.me/put</loc><priority>0.8</priority></url>
+  <url><loc>https://chudina.me/proekty</loc><priority>0.8</priority></url>
+  <url><loc>https://chudina.me/igry</loc><priority>0.8</priority></url>
+  <url><loc>https://chudina.me/cashflow</loc><priority>0.8</priority></url>
+  <url><loc>https://chudina.me/kontakty</loc><priority>0.7</priority></url>
+  <url><loc>https://chudina.me/partnerstvo</loc><priority>0.7</priority></url>
+  <url><loc>https://chudina.me/team</loc><priority>0.7</priority></url>
+  <url><loc>https://chudina.me/impressum</loc><priority>0.3</priority></url>
+  <url><loc>https://chudina.me/agb</loc><priority>0.3</priority></url>
+  <url><loc>https://chudina.me/datenschutz</loc><priority>0.3</priority></url>
+</urlset>
