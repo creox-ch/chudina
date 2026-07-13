@@ -235,7 +235,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream)
         <input data-f="Ставка" placeholder="напр. CHF/час или в месяц">
         <label>Коротко о себе / опыт</label>
         <textarea data-f="Опыт" placeholder="образование, опыт, что умеешь..."></textarea>
-        <div class="form-note">📎 К письму приложи <strong>резюме</strong> или примеры работ.</div>
+        <div class="form-note">📎 Резюме/портфолио — вставь <strong>ссылку</strong> (Google Drive, соцсети) в поле «Коротко о себе».</div>
         <button class="btn btn-solid" style="margin-top:16px;" onclick="buildForm(this)">Собрать заявку с результатами тестов →</button>
         <div class="form-out"></div>
       </div>
@@ -269,7 +269,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream)
         <input data-f="Ставка" placeholder="напр. CHF/час или в месяц">
         <label>Стек / опыт (коротко)</label>
         <textarea data-f="Опыт" placeholder="языки, технологии, проекты..."></textarea>
-        <div class="form-note">📎 К письму приложи <strong>резюме / CV</strong> или ссылку на GitHub, портфолио.</div>
+        <div class="form-note">📎 Резюме/CV — вставь <strong>ссылку</strong> (GitHub, Google Drive, соцсети) в поле «Стек / опыт».</div>
         <button class="btn btn-solid" style="margin-top:16px;" onclick="buildForm(this)">Собрать заявку с результатами тестов →</button>
         <div class="form-out"></div>
       </div>
@@ -303,7 +303,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream)
         <input data-f="Инструменты" placeholder="напр. Instagram, Canva, Meta Ads, AI, CRM...">
         <label>Коротко о себе / опыт</label>
         <textarea data-f="Опыт" placeholder="тексты, соцсети, кампании, автоматизация — что умеешь..."></textarea>
-        <div class="form-note">📎 К письму приложи <strong>резюме / CV</strong> или ссылку на портфолио, соцсети, тексты.</div>
+        <div class="form-note">📎 Резюме/CV и работы — вставь <strong>ссылку</strong> (портфолио, соцсети, тексты) в поле «Коротко о себе».</div>
         <button class="btn btn-solid" style="margin-top:16px;" onclick="buildForm(this)">Собрать заявку с результатами тестов →</button>
         <div class="form-out"></div>
       </div>
@@ -347,7 +347,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream)
         <textarea data-f="Объём" placeholder="только мебель / мебель + стены / всё под ключ..."></textarea>
         <label>Портфолио / ссылка (если есть)</label>
         <input data-f="Портфолио" placeholder="ссылка или соцсеть">
-        <div class="form-note">📎 К письму можно приложить <strong>примеры работ</strong> или фото.</div>
+        <div class="form-note">📎 Примеры работ — вставь <strong>ссылку</strong> в поле «Портфолио / ссылка».</div>
         <button class="btn btn-solid" style="margin-top:16px;" onclick="buildForm(this)">Собрать заявку →</button>
         <div class="form-out"></div>
       </div>
@@ -389,7 +389,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream)
         </div>
         <label>Что можете предложить</label>
         <textarea data-f="Предложение" placeholder="материалы, подход, опыт..."></textarea>
-        <div class="form-note">📎 К письму можно приложить <strong>примеры работ / фото</strong> прошлых проектов.</div>
+        <div class="form-note">📎 Примеры работ/фото — вставь <strong>ссылку</strong> в поле «Что можете предложить».</div>
         <button class="btn btn-solid" style="margin-top:16px;" onclick="buildForm(this)">Собрать заявку →</button>
         <div class="form-out"></div>
       </div>
@@ -962,6 +962,7 @@ function pick(btn){
 }
 // Приём заявок: шлём на общий бэкенд платформы (Supabase + письмо). Текст-копия — fallback.
 var FORMS_ENDPOINT = 'https://slswiss-tickets.vercel.app/api/forms';
+var FORM_T0 = Date.now(); // для time-trap: мгновенный сабмит = бот
 
 // В каждую мини-форму добавляем контактные поля (email обяз. + Telegram) и honeypot.
 (function injectContactFields(){
@@ -1067,7 +1068,8 @@ function buildForm(btn){
   var data = {
     source:'chudina', form_key:'team', source_url: location.href,
     role: role, name: name, email: email, telegram: telegram,
-    payload: payload, tests: tests, hp: hp
+    payload: payload, tests: tests, hp: hp,
+    elapsed_ms: Date.now() - FORM_T0
   };
 
   if(!window.fetch){ restore(); fallbackCopy(); return; }
