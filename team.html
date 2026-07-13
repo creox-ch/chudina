@@ -155,6 +155,21 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream)
 .ref-grid img { width:100%; height:120px; object-fit:cover; border-radius:10px; border:2px solid #fff; box-shadow:0 4px 12px -6px rgba(0,0,0,.25); }
 .ref-cap { font-size:13px; font-weight:700; color:var(--jc,var(--ajna)); margin:14px 0 6px; text-transform:uppercase; letter-spacing:.04em; }
 @media(max-width:600px){ .ref-grid{grid-template-columns:1fr 1fr;} .ref-grid img{height:100px;} }
+/* официальная плашка + интро к тестам */
+.official-note{display:flex;gap:14px;align-items:flex-start;margin-top:24px;background:#fff;border:1px solid var(--paper-edge);border-left:4px solid var(--anahata);border-radius:14px;padding:18px 20px;max-width:680px;box-shadow:0 6px 18px -12px rgba(0,0,0,.25);}
+.official-note .on-ico{font-size:24px;line-height:1;flex-shrink:0;}
+.official-note .on-h{font-family:'Inter';font-weight:800;font-size:15.5px;color:var(--text);margin-bottom:6px;}
+.official-note .on-body p{font-size:14.5px;line-height:1.55;color:var(--text-soft);margin:0;}
+.official-note .on-body a{color:var(--anahata);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(61,191,116,.4);}
+.official-note .on-body a:hover{border-color:var(--anahata);}
+.tintro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
+.tintro-card{background:#fff;border:1px solid var(--paper-edge);border-radius:14px;padding:20px 18px;}
+.tintro-card .ti-ico{font-size:26px;line-height:1;margin-bottom:10px;}
+.tintro-card .ti-h{font-family:'Inter';font-weight:800;font-size:15px;color:var(--text);margin-bottom:6px;}
+.tintro-card .ti-p{font-size:14px;line-height:1.5;color:var(--text-soft);}
+.tintro-note{margin-top:26px;background:var(--bg-warm);border:1px dashed var(--paper-edge);border-radius:12px;padding:16px 18px;font-size:14.5px;line-height:1.55;color:var(--text-soft);max-width:680px;}
+.tintro-note strong{color:var(--text);}
+@media(max-width:700px){.tintro-grid{grid-template-columns:1fr;gap:12px;}}
 /* мини-форма */
 .mini-form { margin-top:16px; background:var(--bg-cream); border-radius:12px; padding:18px; }
 .mini-form label { display:block; font-size:13px; font-weight:700; color:var(--text); margin:12px 0 5px; }
@@ -195,9 +210,15 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream)
 <span class="tape ajna">команда · chudina.me</span>
 <h1 class="shout xl">стать частью <span class="it" style="color:var(--ajna);">команды</span></h1>
 <div class="subtitle" style="margin-top:22px;">Со мной работают <span class="hl" style="font-weight:700;">свои</span> люди. Сейчас есть несколько возможностей сотрудничать — выбирай формат, который тебе близок.</div>
-<div class="body-p" style="margin-top:20px;">Форматы разные. Для <strong>позиций в команде</strong> (офис-менеджер, IT и маркетинг) первый шаг — пройти <strong>два коротких теста</strong> (они ниже) и заполнить форму. Для <strong>проектных подрядчиков</strong> (дизайнер, мебельщик) тесты не нужны — там сразу референсы и форма. Тесты не про «прошёл / не прошёл», а про то, что тебя усиливает и в чём твоя сила.</div>
-<div class="body-p" style="margin-top:22px;">Это не экзамен и не оценка. Просто честный профиль — чтобы мы оба понимали, где тебе будет хорошо и интересно. Результат увидишь сразу, а в конце сможешь отправить его мне.</div>
-<div class="body-p" style="margin-top:24px;">Ниже — два теста подряд (только для позиций в команде, 01–03). Перед каждым короткое описание: что за модель и что она показывает. Время старта зафиксируется, как начнёшь первый тест.</div>
+<div class="body-p" style="margin-top:20px;">Я ищу людей во <a href="proekty.html" style="color:var(--ajna);font-weight:700;border-bottom:1px solid var(--ajna-light);">все мои проекты →</a>. Форматы разные — выбирай, что тебе ближе. Детали и форма раскрываются по клику на должность ниже.</div>
+
+<div class="official-note">
+  <div class="on-ico">🧾</div>
+  <div class="on-body">
+    <div class="on-h">Сотрудничаем только официально</div>
+    <p>Во всех проектах — по <strong>счетам и договорам</strong> или с <strong>оплатой картой</strong>. Наличные и Twint не предусмотрены. Для удалённой работы у нас есть сервис <a href="https://mellow.io" target="_blank">Mellow.io</a> — через него оформляем сотрудничество с теми, кто не в Швейцарии. Учитывай это заранее.</p>
+  </div>
+</div>
 </div>
 </div>
 
@@ -205,7 +226,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream)
 <div class="sect bg-cream" style="--accent:var(--ajna);">
 <div class="wrap">
 <span class="kicker">возможности · сотрудничество</span>
-<h2 class="shout l">кого мы <span class="it" style="color:var(--ajna);">ищем</span></h2>
+<h2 class="shout l">кого я <span class="it" style="color:var(--ajna);">ищу</span></h2>
 <div class="body-p" style="margin-top:18px;max-width:680px;">Нажми на должность — раскроются детали и форма. Практики (01–03) сначала проходят <strong>два теста ниже</strong>, потом заполняют форму. Проекты (04–05) — сразу референсы и форма, без тестов — так мы сразу поймём, подходим ли друг другу.</div>
 
 <div class="jobs">
@@ -343,6 +364,8 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream)
         <input data-f="Имя" placeholder="Имя">
         <label>Художественный опыт</label>
         <div class="pills-sel" data-f="Опыт"><button onclick="pick(this)">Есть</button><button onclick="pick(this)">Нет</button></div>
+        <label>Форма сотрудничества</label>
+        <div class="pills-sel" data-f="Форма"><button onclick="pick(this)">Einzelfirma</button><button onclick="pick(this)">GmbH</button><button onclick="pick(this)">Другое</button></div>
         <label>Какой объём готов взять</label>
         <textarea data-f="Объём" placeholder="только мебель / мебель + стены / всё под ключ..."></textarea>
         <label>Портфолио / ссылка (если есть)</label>
@@ -397,6 +420,35 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg-cream)
   </div>
 
 </div>
+</div>
+</div>
+
+<!-- INTRO TO TESTS -->
+<div class="sect bg-cream" id="tests-intro" style="--accent:var(--ajna);">
+<div class="wrap">
+<span class="kicker">перед тем как начать</span>
+<h2 class="shout l">про эти <span class="it" style="color:var(--ajna);">тесты</span></h2>
+<div class="body-p" style="margin-top:18px;max-width:680px;">Два коротких теста — только для позиций в команде (01–03). Проектным подрядчикам (дизайнер, мебельщик) их проходить не нужно. Это не экзамен: здесь нет «правильных» ответов и нельзя «завалить». Отвечай честно и как есть — так профиль получится точнее.</div>
+
+<div class="tintro-grid">
+  <div class="tintro-card">
+    <div class="ti-ico">🧭</div>
+    <div class="ti-h">Что это</div>
+    <div class="ti-p">Тест 01 — жизнестойкость (модель Мадди). Тест 02 — роль в команде (Адизес, PAEI). Вместе они показывают, как ты справляешься с задачами и что тебе ближе в работе.</div>
+  </div>
+  <div class="tintro-card">
+    <div class="ti-ico">🎯</div>
+    <div class="ti-h">Зачем</div>
+    <div class="ti-p">Чтобы мы оба понимали, где тебе будет хорошо и интересно, и как выстроить задачи под твои сильные стороны. Результат — не приговор, а точка старта разговора.</div>
+  </div>
+  <div class="tintro-card">
+    <div class="ti-ico">⏱️</div>
+    <div class="ti-h">Как</div>
+    <div class="ti-p">Два теста подряд, примерно 6 и 7 минут. Результат увидишь сразу. Время старта фиксируется, как начнёшь первый тест.</div>
+  </div>
+</div>
+
+<div class="tintro-note">📌 Результаты обоих тестов <strong>уйдут вместе с заявкой</strong> — отдельно ничего отправлять не нужно. Пройди оба, вернись к своей позиции (01–03) и нажми «Собрать заявку».</div>
 </div>
 </div>
 
