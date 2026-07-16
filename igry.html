@@ -492,6 +492,19 @@ body {
   gap: 6px;
 }
 .proj .plink:hover { gap: 12px; }
+.plink.plink-btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 13px 22px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px -4px rgba(0,0,0,.3);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14.5px;
+  transition: filter .15s, gap .15s;
+}
+.plink.plink-btn:hover { filter: brightness(.95); gap: 10px; }
+.plink.plink-btn.on-light { color: #3a2f00; }
 
 /* ─────────── PATH / TIMELINE ─────────── */
 .path {
@@ -767,13 +780,13 @@ body {
         <span class="card-label">игра · онлайн и офлайн</span>
         <h4>«Денежный поток»</h4>
         <p>Про деньги, жизнь, осознанность и внутреннюю силу. Для частных клиентов и групп.</p>
-        <a class="plink" href="/cashflow" target="_blank" style="margin-top:18px;">Записаться на игру →</a>
+        <a class="plink plink-btn on-light" href="/cashflow" target="_blank" style="margin-top:18px;">Записаться на игру →</a>
       </div>
       <div class="card" style="--accent:var(--vishuddha);">
         <span class="card-label">telegram · практики</span>
         <h4>Канал с практиками</h4>
         <p>Практики, инструменты и наблюдения — подписывайтесь, будет полезно и неожиданно.</p>
-        <a class="plink" href="https://t.me/+bYWWQL6CX6c5MzIy" target="_blank" style="margin-top:18px;color:var(--vishuddha);">Перейти в канал →</a>
+        <a class="plink plink-btn" href="https://t.me/+bYWWQL6CX6c5MzIy" target="_blank" style="margin-top:18px;">Перейти в канал →</a>
       </div>
     </div>
   </div>
