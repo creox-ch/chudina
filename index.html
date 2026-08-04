@@ -10,12 +10,14 @@
 <meta property="og:title" content="Ксения Чудина · Магия Огня">
 <meta property="og:description" content="Ксения Чудина — предприниматель и соединитель из Швейцарии. Экосистема проектов: SVOI, Свои Люди, MOTO-ZÜRICH, Frankenplatz, Kunstwerkstube, Atlas Integra, Creox.">
 <meta property="og:url" content="https://chudina.me/">
-<meta property="og:image" content="https://chudina.me/img/ksenia_hero.jpg">
+<meta property="og:image" content="https://chudina.me/img/ksenia-chudina-baden-zurich-schweiz.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ксения Чудина · Магия Огня">
 <meta name="twitter:description" content="Ксения Чудина — предприниматель и соединитель из Швейцарии. Экосистема проектов SVOI, Свои Люди, MOTO-ZÜRICH, Kunstwerkstube, Atlas Integra и другие.">
-<meta name="twitter:image" content="https://chudina.me/img/ksenia_hero.jpg">
+<meta name="twitter:image" content="https://chudina.me/img/ksenia-chudina-baden-zurich-schweiz.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/favicon.svg">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ксения Чудина","url":"https://chudina.me/","image":"https://chudina.me/img/ksenia_hero.jpg","jobTitle":"Предприниматель, соединитель","sameAs":["https://t.me/chudina_fire","https://www.instagram.com/chudina_fire"]}</script>
@@ -79,7 +81,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 48px;
+  padding: clamp(15px, 2vw, 22px) clamp(20px, 4.5vw, 48px);
   background: rgba(248,244,237,0.82);
   backdrop-filter: blur(14px);
   border-bottom: 2px solid rgba(0,0,0,0.06);
@@ -99,6 +101,13 @@ body {
 .nav .brand .fire { color: #A971E0; -webkit-text-fill-color: #A971E0; }
 .grad-hero { background: linear-gradient(155deg,#2E2E33 0%,#5B3E8F 42%,#8B61C2 72%,#A971E0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .grad-ajna { background: linear-gradient(155deg,#5B3E8F 0%,#8B61C2 55%,#A971E0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.it.grad-ajna { padding-left: .12em; margin-left: -.12em; }
+.txt-photo{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,400px);gap:48px;align-items:start}
+.txt-frame{position:sticky;top:110px;background:#fff;border:6px solid #fff;border-radius:18px;box-shadow:0 12px 0 color-mix(in srgb,var(--ajna) 20%,transparent);transform:rotate(1.6deg);overflow:hidden;margin-top:30px}
+.txt-frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px}
+.txt-frame .tf-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;aspect-ratio:4/5;border-radius:12px;background:repeating-linear-gradient(-45deg,color-mix(in srgb,var(--ajna) 7%,transparent) 0 12px,transparent 12px 24px),#FAF6EF;color:var(--text-mute);font-family:'Inter',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;text-align:center;padding:20px}
+.txt-frame .tf-empty .em{font-size:34px}
+@media(max-width:920px){.txt-photo{grid-template-columns:1fr;gap:24px}.txt-frame{position:static;transform:rotate(-1.4deg);max-width:400px;margin-top:8px}}
 .nav-links {
   display: flex;
   gap: 30px;
@@ -131,7 +140,7 @@ body {
 /* ─────────── SECTION SHELL ─────────── */
 .sect {
   position: relative;
-  padding: 100px 48px;
+  padding: clamp(56px, 8vw, 100px) clamp(20px, 4.5vw, 48px);
   overflow: hidden;
 }
 .wrap { max-width: 1180px; margin: 0 auto; position: relative; z-index: 2; }
@@ -205,7 +214,7 @@ body {
   font-size: clamp(16px, 1.5vw, 19px);
   line-height: 1.6;
   color: var(--text-soft);
-  max-width: 640px;
+  max-width: 780px;
 }
 .body-p + .body-p { margin-top: 16px; }
 .body-p strong { color: var(--text); font-weight: 800; }
@@ -455,7 +464,7 @@ body {
   font-size: clamp(20px, 2.3vw, 30px);
   line-height: 1.5;
   color: var(--text-soft);
-  max-width: 780px;
+  max-width: 1000px;
   padding-left: 24px;
   border-left: 3px solid var(--accent);
   margin-top: 40px;
@@ -788,7 +797,7 @@ body {
 }
 
 /* page hero (inner pages) */
-.page-hero { padding: 80px 48px 70px; position: relative; overflow: hidden; }
+.page-hero { padding: clamp(56px, 6.5vw, 80px) clamp(20px, 4.5vw, 48px) clamp(48px, 5.5vw, 70px); position: relative; overflow: hidden; }
 .page-hero .pn {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -800,15 +809,8 @@ body {
 }
 
 /* ─────────── RESPONSIVE ─────────── */
-@media (max-width: 920px) {
-  .sect { padding: 52px 28px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-  .hero-portrait { max-width: 440px; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .cards.c3, .proj-grid { grid-template-columns: 1fr 1fr; }
-  .eco { grid-template-columns: 1fr; }
-  .eco-item.right { border-right: none; border-left: 5px solid var(--accent); text-align: left; }
-  .nav { padding: 18px 24px; }
+@media (max-width: 1024px) {
+  .nav { padding: clamp(13px,1.8vw,18px) clamp(20px,4.5vw,48px); }
   .nav-links {
     display: none;
     position: absolute;
@@ -823,12 +825,19 @@ body {
   .nav-links a { padding: 14px 0; border-bottom: 1px solid var(--paper-edge); }
   .nav-burger { display: block; }
 }
+@media (max-width: 920px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .hero-portrait { max-width: 440px; order: 2; margin: 4px auto 0; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .cards.c3, .proj-grid { grid-template-columns: 1fr 1fr; }
+  .eco { grid-template-columns: 1fr; }
+  .eco-item.right { border-right: none; border-left: 5px solid var(--accent); text-align: left; }
+}
 @media (max-width: 560px) {
   .cards.c2, .cards.c3, .proj-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .stat { padding: 20px 16px 18px; border-radius: 14px; }
   .stat .lbl { font-size: 12.5px; }
-  .page-hero, .sect { padding-left: 22px; padding-right: 22px; }
 }
 
 /* ── Анимации появления при прокрутке ── */
@@ -867,6 +876,90 @@ body {
 .site-footer .foot-legal-info { margin-top: 22px; font-size: 14px; color: var(--text-soft); line-height: 1.55; }
 .site-footer .foot-links { margin-top: 16px; display: flex; gap: 12px; align-items: baseline; flex-wrap: nowrap; }
 .site-footer .legal { margin-top: 22px; font-size: 13px; color: var(--text-mute); }
+
+/* ─────────── FOOTER v2 ─────────── */
+.site-footer{background:var(--bg-ajna,#F0E7FA);border-top:2px solid rgba(0,0,0,.08);padding:56px 48px 46px}
+.site-footer .fwrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:44px;align-items:start}
+.site-footer .fbrand{display:inline-block;font-family:'Inter',sans-serif;font-weight:900;font-size:32px;letter-spacing:-.02em;color:var(--text);text-decoration:none}
+.site-footer .fbrand .fire{color:var(--ajna)}
+.site-footer .foot-legal-info{margin-top:20px;font-size:14px;color:var(--text-soft);line-height:1.6}
+.site-footer .foot-legal-info .fli-name{font-weight:700;color:var(--text)}
+.site-footer .foot-links{margin-top:16px;display:flex;gap:12px;align-items:baseline}
+.site-footer .foot-links .fl-sep{color:var(--text-mute)}
+.site-footer .foot-links a{font-size:13px;color:var(--text-mute);text-decoration:none;border-bottom:1px solid transparent}
+.site-footer .foot-links a:hover{color:var(--ajna);border-color:var(--ajna)}
+.site-footer .legal{margin-top:20px;font-size:13px;color:var(--text-mute)}
+.site-footer .fright{justify-self:end;text-align:right}
+.site-footer .foot-invite{margin:0;font-family:'Fraunces','Playfair Display',serif;font-style:italic;font-weight:400;font-size:22px;line-height:1.35;color:var(--text-soft)}
+.site-footer .socials{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;justify-content:flex-end}
+.site-footer .socials a{font-family:'Inter',sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--text);border:2px solid var(--text);border-radius:999px;padding:10px 18px;transition:background .18s,color .18s,border-color .18s}
+.site-footer .socials a:hover{background:var(--ajna);border-color:var(--ajna);color:#fff}
+@media(max-width:760px){.site-footer{padding:44px 24px 38px}.site-footer .fwrap{grid-template-columns:1fr;gap:30px}.site-footer .fright{justify-self:start;text-align:left}.site-footer .socials{justify-content:flex-start}}
+
+/* nav выровнен с контентом (1180px) на широких экранах */
+.nav{gap:32px}
+@media(min-width:1277px){.nav{padding-left:calc((100% - 1180px)/2);padding-right:calc((100% - 1180px)/2)}}
+
+/* ─────────── FOOTER v3 ─────────── */
+.site-footer{background:#26202E;border-top:2px solid rgba(0,0,0,.08);padding:clamp(42px,6vw,56px) clamp(20px,4.5vw,48px) 40px;position:relative}
+.site-footer .fwrap{max-width:1180px;margin:0 auto;display:block}
+.site-footer .ftop{display:flex;justify-content:space-between;align-items:flex-start;gap:44px;flex-wrap:wrap}
+.site-footer .fbrand{display:inline-block;font-family:'Inter',sans-serif;font-weight:900;font-size:44px;letter-spacing:-.03em;color:#fff;text-decoration:none;line-height:1}
+.site-footer .fbrand .fire{color:#B395D6}
+.site-footer .fnote{margin-top:14px;font-family:'Caveat',cursive;font-size:24px;color:rgba(255,255,255,.66)}
+.site-footer .fright{text-align:right}
+.site-footer .foot-invite{margin:0;font-family:'Fraunces','Playfair Display',serif;font-style:italic;font-weight:400;font-size:21px;line-height:1.35;color:rgba(255,255,255,.85)}
+.site-footer .socials{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;justify-content:flex-end}
+.site-footer .socials a{font-family:'Inter',sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:#fff;border:2px solid rgba(255,255,255,.4);border-radius:999px;padding:10px 18px;transition:background .18s,color .18s,border-color .18s}
+.site-footer .socials a:hover{background:#fff;border-color:#fff;color:#26202E}
+.site-footer .fdivider{height:1px;background:rgba(255,255,255,.14);margin:44px 0 22px}
+.site-footer .fbottom{display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap}
+.site-footer .foot-legal-info{margin:0;font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.6}
+.site-footer .foot-legal-info .fli-name{font-weight:700;color:rgba(255,255,255,.8)}
+.site-footer .fli-dot{color:rgba(255,255,255,.3);padding:0 6px}
+.site-footer .foot-links{margin:0;display:flex;gap:22px;align-items:baseline}
+.site-footer .foot-links a{font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.site-footer .foot-links a:hover{color:#B395D6;border-color:#B395D6}
+.site-footer .legal{margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.35)}
+@media(max-width:920px){.site-footer .ftop{flex-direction:column;align-items:flex-start;text-align:left;gap:28px}.site-footer .fleft,.site-footer .fright{width:100%}.site-footer .fright{text-align:left}.site-footer .fnote{margin-top:12px}.site-footer .foot-invite br{display:none}.site-footer .socials{justify-content:flex-start;margin-top:20px}.site-footer .fbrand{font-size:40px}.site-footer .fdivider{margin:32px 0 24px}.site-footer .fbottom{flex-direction:column;align-items:flex-start;text-align:left;gap:16px}.site-footer .foot-legal-info{line-height:2}.site-footer .foot-links{justify-content:flex-start;flex-wrap:wrap;gap:14px 24px}.site-footer .legal{text-align:left}}
+@media(max-width:560px){.site-footer .fbrand{font-size:36px}}
+
+/* ─────────── FOOTER v3 light ─────────── */
+.site-footer{background:var(--bg-ajna,#F0E7FA)}
+.site-footer .fbrand{color:var(--text)}
+.site-footer .fbrand .fire{color:var(--ajna)}
+.site-footer .fnote{color:var(--text-soft)}
+.site-footer .foot-invite{color:var(--text-soft)}
+.site-footer .socials a{color:var(--text);border-color:var(--text)}
+.site-footer .socials a:hover{background:var(--ajna);border-color:var(--ajna);color:#fff}
+.site-footer .fdivider{background:rgba(0,0,0,.1)}
+.site-footer .foot-legal-info{color:var(--text-soft)}
+.site-footer .foot-legal-info .fli-name{color:var(--text)}
+.site-footer .fli-dot{color:var(--text-mute)}
+.site-footer .foot-links a{color:var(--text-mute)}
+.site-footer .foot-links a:hover{color:var(--ajna);border-color:var(--ajna)}
+.site-footer .legal{color:var(--text-mute)}
+
+/* цветные соцсети */
+.site-footer .socials a{border-width:2px}
+.site-footer .socials a[href*="instagram"]{color:var(--muladhara);border-color:var(--muladhara)}
+.site-footer .socials a[href*="instagram"]:hover{background:var(--muladhara);border-color:var(--muladhara);color:#fff}
+.site-footer .socials a[href*="threads"]{color:var(--vishuddha);border-color:var(--vishuddha)}
+.site-footer .socials a[href*="threads"]:hover{background:var(--vishuddha);border-color:var(--vishuddha);color:#fff}
+.site-footer .socials a[href*="t.me"]{color:var(--ajna);border-color:var(--ajna)}
+.site-footer .socials a[href*="t.me"]:hover{background:var(--ajna);border-color:var(--ajna);color:#fff}
+
+.site-footer{background:var(--bg-cream,var(--bg,#F8F4ED))}
+
+/* соцкнопки футера = стиль .btn дизайн-системы */
+.site-footer .socials a{font-family:'Inter',sans-serif;font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;padding:16px 28px;border-radius:999px;border:2px solid;display:inline-flex;align-items:center;transition:transform .15s,box-shadow .15s,background .15s,color .15s}
+.site-footer .socials a:hover{transform:rotate(-1deg) translateY(-2px);box-shadow:0 5px 0 rgba(0,0,0,.12)}
+.site-footer .socials a[href*="instagram"]{color:var(--muladhara);border-color:var(--muladhara)}
+.site-footer .socials a[href*="instagram"]:hover{background:var(--muladhara);color:#fff}
+.site-footer .socials a[href*="threads"]{color:var(--vishuddha);border-color:var(--vishuddha)}
+.site-footer .socials a[href*="threads"]:hover{background:var(--vishuddha);color:#fff}
+.site-footer .socials a[href*="t.me"]{color:var(--ajna);border-color:var(--ajna)}
+.site-footer .socials a[href*="t.me"]:hover{background:var(--ajna);color:#fff}
 </style>
 </head>
 <body>
@@ -893,7 +986,7 @@ body {
       </div>
       <div>
         <div class="shout xl grad-hero" style="margin-top:6px;">привет.<br><span class="grad-ajna it">рада тебе.</span></div>
-        <div class="subtitle" style="margin-top:28px;">
+        <div class="subtitle" style="margin-top:28px;font-size:36px;">
           Я <span class="name-badge">Ксения Чудина</span> — здесь обо мне
           и обо всех чудесатых процессах моей жизни, вытворятельствах и огнях.
         </div>
@@ -923,7 +1016,7 @@ body {
   <div class="wrap">
     <span class="kicker">мой путь</span>
     <h2 class="shout l" style="max-width:840px;">как я <span class="it" style="color:var(--ajna);">докатилась</span> до такой жизни</h2>
-    <div style="margin-top:28px;max-width:700px;">
+    <div style="margin-top:28px;max-width:800px;">
       <p class="body-p">Огонь, вода и медные трубы были пройдены не раз. Но теперь я точно знаю, где можно <strong>обойти, обогнуть, срезать</strong> — или вообще туда не ходить.</p>
       <p class="body-p">Путь, который привёл меня в <strong>Баден</strong>, был длинным — и это только начало.</p>
     </div>
@@ -950,11 +1043,14 @@ body {
   <div class="wrap">
     <span class="kicker">чем я занимаюсь</span>
     <h2 class="shout l" style="max-width:900px;">много всего <span class="it" style="color:var(--ajna);">и разного</span> — но всегда про людей, знания и огонь</h2>
-    <div style="margin-top:30px;max-width:720px;">
+    <div class="txt-photo">
+    <div style="margin-top:30px;max-width:800px;">
       <p class="body-p">В бизнесе я <span class="hl ajna" style="font-weight:700;">с 17 лет</span> — это уже больше половины моей жизни. Кем я только не была — пожалуй, только сварщиком и электриком. Карьеру начинала <strong>продавцом цветов</strong>, писала курсовые и дипломные работы (от руки!), работала <strong>официантом</strong>. Потом — стажёр аудитора, бухгалтер, оператор 1С; менеджер по кредитным картам, руководитель агентской сети в банке, директор ипотечного центра.</p>
       <p class="body-p">В 18 лет — первые бизнесы: страховой консалтинг и агентство. Продавала Infiniti, оформляла таможенные декларации для судов, продавала людям интернет. Дальше — <span class="hl mula" style="font-weight:700;">ресторанный, клубный и концертный бизнес в Ростове</span>. Потом — бухгалтер-калькулятор, директор по качеству, по сервису, по клиентскому сервису в лайк-центре; предприниматель, инвестор, сетевой бизнес. Длинный путь — <strong>подробнее в мемуарах</strong>.</p>
       <p class="body-p">Где-то была <strong>владельцем</strong>, где-то <strong>партнёром и помогателем</strong>, где-то <strong>инвестором</strong>. В какой-то момент поняла: меня интересуют не бизнесы. Меня интересуют <span class="hl vish" style="font-weight:700;">люди и их изменения</span>.</p>
       <p class="body-p">Сейчас у меня несколько разнонаправленных проектов в Швейцарии. Разных — но база у всех одна: <span class="hl anah" style="font-weight:700;">бизнес, система и люди</span>. Строю галереи, не умея рисовать. Делаю выставку мотоциклов, не умея ездить. Создаю сообщества там, где никого не знаю. Это не хаос — <strong>это система</strong>. Я делаю это просто потому, что <span class="hl svad" style="font-weight:700;">не могу этого не делать</span> — и делюсь.</p>
+    </div>
+    <aside class="txt-frame"><img src="img/mnogo-raznogo.jpg" alt="Команда и гости на открытии галереи в Бадене"></aside>
     </div>
 
     <div class="cards c2" style="margin-top:34px;">
@@ -1073,25 +1169,36 @@ body {
 
 <footer class="site-footer" id="footer">
   <div class="fwrap">
-    <div class="foot-invite">Наблюдать и участвовать можно в соцсетях:</div>
-    <div class="socials">
-      <a href="https://www.instagram.com/chudina_fire" target="_blank">Instagram</a>
-      <a href="https://www.threads.com/@chudina_fire" target="_blank">Threads</a>
-      <a href="https://t.me/chudina_fire" target="_blank">Telegram</a>
+    <div class="ftop">
+      <div class="fleft">
+        <a class="fbrand" href="/">chudina<span class="fire">.me</span></a>
+        <div class="fnote">огонь, люди и проекты — Baden, Schweiz 🇨🇭</div>
+      </div>
+      <div class="fright">
+        <div class="foot-invite">Наблюдать и участвовать —<br>в соцсетях:</div>
+        <div class="socials">
+          <a href="https://www.instagram.com/chudina_fire" target="_blank">Instagram</a>
+          <a href="https://www.threads.com/@chudina_fire" target="_blank">Threads</a>
+          <a href="https://t.me/chudina_fire" target="_blank">Telegram</a>
+        </div>
+      </div>
     </div>
-    <div class="foot-legal-info">
-      <p class="fli-name">Kseniia Chudina Art + Event</p>
-      <p class="fli-line">Bäderstrasse 28, 5400 Baden, Schweiz 🇨🇭</p>
-      <p class="fli-line">CHE-202.191.691</p>
+    <div class="fdivider"></div>
+    <div class="fbottom">
+      <div class="foot-legal-info">
+        <span class="fli-name">Kseniia Chudina Art + Event</span>
+        <span class="fli-dot">·</span>
+        <span class="fli-line">Bäderstrasse 28, 5400 Baden</span>
+        <span class="fli-dot">·</span>
+        <span class="fli-line">CHE-202.191.691</span>
+      </div>
+      <div class="foot-links">
+        <a href="/impressum">Impressum</a>
+        <a href="/agb">AGB</a>
+        <a href="/datenschutz">Datenschutz</a>
+      </div>
     </div>
-    <div class="foot-links">
-      <a href="/impressum">Impressum</a>
-      <span class="fl-sep">·</span>
-      <a href="/agb">AGB</a>
-      <span class="fl-sep">·</span>
-      <a href="/datenschutz">Datenschutz</a>
-    </div>
-    <div class="legal">© 2026 Kseniia Chudina · chudina.me · Baden, Schweiz</div>
+    <div class="legal">© 2026 Kseniia Chudina · chudina.me</div>
   </div>
 </footer>
 
@@ -1126,5 +1233,6 @@ body {
 })();
 </script>
 <script defer src="/cookie-consent.js"></script>
+<script src="_localnav.js"></script>
 </body>
 </html>

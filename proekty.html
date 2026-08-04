@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
+<html lang="ru"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Проекты · Ксения Чудина</title>
@@ -11,12 +10,14 @@
 <meta property="og:title" content="Проекты · Ксения Чудина">
 <meta property="og:description" content="Проекты Ксении Чудиной: SVOI, Свои Люди, MOTO-ZÜRICH, Frankenplatz, Kunstwerkstube, Atlas Integra, Creox — сообщество, искусство и предпринимательство.">
 <meta property="og:url" content="https://chudina.me/proekty">
-<meta property="og:image" content="https://chudina.me/img/ksenia_hero.jpg">
+<meta property="og:image" content="https://chudina.me/img/proekty-ksenia-chudina-baden-schweiz.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Проекты · Ксения Чудина">
 <meta name="twitter:description" content="SVOI, Свои Люди, MOTO-ZÜRICH, Frankenplatz, Kunstwerkstube, Atlas Integra, Creox — проекты Ксении Чудиной.">
-<meta name="twitter:image" content="https://chudina.me/img/ksenia_hero.jpg">
+<meta name="twitter:image" content="https://chudina.me/img/proekty-ksenia-chudina-baden-schweiz.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/favicon.svg">
 <style>
@@ -78,7 +79,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 48px;
+  padding: clamp(15px, 2vw, 22px) clamp(20px, 4.5vw, 48px);
   background: rgba(248,244,237,0.82);
   backdrop-filter: blur(14px);
   border-bottom: 2px solid rgba(0,0,0,0.06);
@@ -128,10 +129,25 @@ body {
 /* ─────────── SECTION SHELL ─────────── */
 .sect {
   position: relative;
-  padding: 100px 48px;
+  padding: clamp(56px, 8vw, 100px) clamp(20px, 4.5vw, 48px);
   overflow: hidden;
 }
 .wrap { max-width: 1180px; margin: 0 auto; position: relative; z-index: 2; }
+.acc-mula{position:relative}
+.fp-cow{position:absolute;right:-10px;bottom:0;width:min(680px,52%);height:auto;pointer-events:none;z-index:5;filter:drop-shadow(0 10px 24px rgba(0,0,0,.14))}
+@media(max-width:920px){.fp-cow{width:min(480px,60%);right:auto;left:50%;transform:translateX(-50%);opacity:1}.sect:has(> .fp-cow){padding-bottom:calc(min(480px,60vw)*.66 + 28px)}}
+@media(max-width:640px){.fp-cow{width:min(420px,88%)}.sect:has(> .fp-cow){padding-bottom:calc(min(420px,88vw)*.66 + 24px)}}
+.soon{align-self:center;justify-self:center;text-align:center}
+.soon .wnut{width:170px;height:170px;margin:0 auto 22px}
+.soon .wnut svg{width:100%;height:100%;overflow:visible}
+.soon .turn{transform-box:view-box;transform-origin:85px 85px;animation:toolturn 5s linear infinite}
+.soon .nut,.soon .hole{fill:none;stroke:var(--ajna);stroke-width:9;stroke-linejoin:round}
+.soon .wr{font-size:56px}
+@keyframes toolturn{to{transform:rotate(360deg)}}
+.soon .st{font-family:'Inter',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:15px;color:var(--ajna)}
+.soon .sd{margin-top:8px;font-family:'Fraunces','Playfair Display',serif;font-style:italic;font-size:22px;color:var(--text-soft)}
+@keyframes soonspin{to{transform:rotate(360deg)}}
+@media(max-width:960px){.soon{justify-self:start;margin-top:8px}}
 .bg-ajna  { background: var(--bg-ajna); }
 .bg-warm  { background: var(--bg-warm); }
 .bg-peach { background: var(--bg-peach); }
@@ -433,6 +449,31 @@ body {
 }
 .reflect strong { color: var(--text); font-weight: 700; }
 
+
+/* ─────────── PHOTO FRAMES (место для фото проекта) ─────────── */
+.wrap-duo{display:grid;grid-template-columns:minmax(0,7fr) minmax(280px,5fr);gap:56px;align-items:center}
+.pframe{justify-self:end;width:min(430px,100%);background:#fff;border:6px solid #fff;border-radius:18px;box-shadow:0 12px 0 rgba(0,0,0,.10);transform:rotate(1.6deg);position:relative;z-index:2}
+.pframe.tl{transform:rotate(-1.6deg)}
+.pframe img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+.pframe .ph-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;aspect-ratio:4/3;border-radius:12px;background:repeating-linear-gradient(-45deg,rgba(0,0,0,.035) 0 12px,transparent 12px 24px),#FAF6EF;color:var(--text-mute);font-family:'Inter',sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;line-height:1.5;text-align:center;padding:20px}
+.pframe .ph-empty .em{font-size:34px}
+.pframe{--pfc:var(--accent,var(--ajna))}
+.pframe.c-vish{--pfc:var(--vishuddha)}.pframe.c-anah{--pfc:var(--anahata)}.pframe.c-ajna{--pfc:var(--ajna)}.pframe.c-mula{--pfc:var(--muladhara)}.pframe.c-svad{--pfc:var(--svadhisthana)}.pframe.c-mani{--pfc:var(--manipura)}
+.pframe{box-shadow:0 12px 0 color-mix(in srgb,var(--pfc) 22%,transparent)}
+.pframe.sz-s{width:min(330px,100%)}
+.pframe.sz-m{width:min(430px,100%)}
+.pframe.sz-l{width:min(500px,100%)}
+.pframe.r-sq img,.pframe.r-sq .ph-empty{aspect-ratio:1/1}
+.pframe.r-tall img,.pframe.r-tall .ph-empty{aspect-ratio:3/4}
+.pframe .ph-empty{background:repeating-linear-gradient(-45deg,color-mix(in srgb,var(--pfc) 6%,transparent) 0 12px,transparent 12px 24px),#FAF6EF}
+.pframe .ph-empty .em{color:var(--pfc)}
+.pduo{position:relative;justify-self:end;width:min(460px,100%);z-index:2}
+.pduo .pframe{position:relative;justify-self:auto}
+.pduo .pf2{position:absolute;right:-34px;bottom:-46px;width:62%;z-index:3}
+.pduo .pf2 .ph-empty{aspect-ratio:1/1}
+@media(max-width:960px){.pduo{justify-self:start;margin-bottom:40px}.pduo .pf2{right:6px;width:62% !important}}
+@media(max-width:960px){.wrap-duo{grid-template-columns:1fr;gap:34px}.pframe{justify-self:start;width:min(380px,100%) !important}}
+
 /* ─────────── PROJECT CARDS (image) ─────────── */
 .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 54px; }
 .project-single { max-width: 760px; }
@@ -675,7 +716,7 @@ body {
 }
 
 /* page hero (inner pages) */
-.page-hero { padding: 80px 48px 70px; position: relative; overflow: hidden; }
+.page-hero { padding: clamp(56px, 6.5vw, 80px) clamp(20px, 4.5vw, 48px) clamp(48px, 5.5vw, 70px); position: relative; overflow: hidden; }
 .page-hero .pn {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -687,16 +728,8 @@ body {
 }
 
 /* ─────────── RESPONSIVE ─────────── */
-@media (max-width: 920px) {
-  .sect { padding: 52px 28px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-  .hero-portrait { max-width: 440px; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .cards.c3, .proj-grid { grid-template-columns: 1fr 1fr; }
-  .eco { grid-template-columns: 1fr; }
-  .eco-center { order: -1; max-width: 420px; margin: 0 auto 10px; }
-  .eco-col.right .eco-item { border-right: none; border-left: 5px solid var(--accent); text-align: left; }
-  .nav { padding: 18px 24px; }
+@media (max-width: 1024px) {
+  .nav { padding: clamp(13px,1.8vw,18px) clamp(20px,4.5vw,48px); }
   .nav-links {
     display: none;
     position: absolute;
@@ -711,9 +744,18 @@ body {
   .nav-links a { padding: 14px 0; border-bottom: 1px solid var(--paper-edge); }
   .nav-burger { display: block; }
 }
+@media (max-width: 920px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .hero-portrait { max-width: 440px; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .cards.c3, .proj-grid { grid-template-columns: 1fr 1fr; }
+  .eco { grid-template-columns: 1fr; }
+  .eco-center { order: -1; max-width: 420px; margin: 0 auto 10px; }
+  .eco-col.right .eco-item { border-right: none; border-left: 5px solid var(--accent); text-align: left; }
+}
 @media (max-width: 560px) {
-  .stats, .cards.c2, .cards.c3, .proj-grid { grid-template-columns: 1fr; }
-  .page-hero, .sect { padding-left: 22px; padding-right: 22px; }
+  .cards.c2, .cards.c3, .proj-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
 }
 
 .site-footer .foot-legal-info { margin-top: 30px; font-size: 14px; color: var(--text-soft); line-height: 1.6; }
@@ -727,6 +769,106 @@ body {
 .site-footer .foot-legal-info { margin-top: 22px; font-size: 14px; color: var(--text-soft); line-height: 1.55; }
 .site-footer .foot-links { margin-top: 16px; display: flex; gap: 12px; align-items: baseline; flex-wrap: nowrap; }
 .site-footer .legal { margin-top: 22px; font-size: 13px; color: var(--text-mute); }
+/* ── локальная настройка размера рамок (превью) ── */
+.pf-editbtn{position:absolute;top:8px;right:8px;z-index:9;display:none;border:0;cursor:pointer;background:#fff;color:var(--text);border-radius:999px;padding:7px 12px;font:800 12px/1 'Inter',sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.22)}
+.pframe:hover>.pf-editbtn{display:block}
+.pframe.editing>.pf-editbtn{display:block;background:var(--ajna);color:#fff}
+.pf-h{position:absolute;z-index:9;display:none;background:var(--ajna);border:2px solid #fff;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.pframe.editing>.pf-h{display:block}
+.pf-h.e{right:-9px;top:50%;margin-top:-16px;width:12px;height:32px;cursor:ew-resize}
+.pf-h.s{bottom:-9px;left:50%;margin-left:-16px;width:32px;height:12px;cursor:ns-resize}
+.pf-h.se{right:-9px;bottom:-9px;width:16px;height:16px;cursor:nwse-resize}
+.pframe.editing{z-index:20}
+.pframe.editing img{cursor:grab}
+.pf-clip{overflow:hidden;border-radius:12px}
+.pf-clip img{border-radius:0 !important;display:block}
+.pf-zoom{position:absolute;top:8px;left:8px;z-index:9;display:none;gap:6px}
+.pframe.editing>.pf-zoom{display:flex}
+.pf-zoom button{border:0;cursor:pointer;background:#fff;color:var(--text);border-radius:999px;width:30px;height:30px;font:900 16px/1 'Inter',sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.22)}
+
+/* ─────────── FOOTER v2 ─────────── */
+.site-footer{background:var(--bg-ajna,#F0E7FA);border-top:2px solid rgba(0,0,0,.08);padding:56px 48px 46px}
+.site-footer .fwrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:44px;align-items:start}
+.site-footer .fbrand{display:inline-block;font-family:'Inter',sans-serif;font-weight:900;font-size:32px;letter-spacing:-.02em;color:var(--text);text-decoration:none}
+.site-footer .fbrand .fire{color:var(--ajna)}
+.site-footer .foot-legal-info{margin-top:20px;font-size:14px;color:var(--text-soft);line-height:1.6}
+.site-footer .foot-legal-info .fli-name{font-weight:700;color:var(--text)}
+.site-footer .foot-links{margin-top:16px;display:flex;gap:12px;align-items:baseline}
+.site-footer .foot-links .fl-sep{color:var(--text-mute)}
+.site-footer .foot-links a{font-size:13px;color:var(--text-mute);text-decoration:none;border-bottom:1px solid transparent}
+.site-footer .foot-links a:hover{color:var(--ajna);border-color:var(--ajna)}
+.site-footer .legal{margin-top:20px;font-size:13px;color:var(--text-mute)}
+.site-footer .fright{justify-self:end;text-align:right}
+.site-footer .foot-invite{margin:0;font-family:'Fraunces','Playfair Display',serif;font-style:italic;font-weight:400;font-size:22px;line-height:1.35;color:var(--text-soft)}
+.site-footer .socials{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;justify-content:flex-end}
+.site-footer .socials a{font-family:'Inter',sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--text);border:2px solid var(--text);border-radius:999px;padding:10px 18px;transition:background .18s,color .18s,border-color .18s}
+.site-footer .socials a:hover{background:var(--ajna);border-color:var(--ajna);color:#fff}
+@media(max-width:760px){.site-footer{padding:44px 24px 38px}.site-footer .fwrap{grid-template-columns:1fr;gap:30px}.site-footer .fright{justify-self:start;text-align:left}.site-footer .socials{justify-content:flex-start}}
+
+/* nav выровнен с контентом (1180px) на широких экранах */
+.nav{gap:32px}
+@media(min-width:1277px){.nav{padding-left:calc((100% - 1180px)/2);padding-right:calc((100% - 1180px)/2)}}
+
+/* ─────────── FOOTER v3 ─────────── */
+.site-footer{background:#26202E;border-top:2px solid rgba(0,0,0,.08);padding:clamp(42px,6vw,56px) clamp(20px,4.5vw,48px) 40px;position:relative}
+.site-footer .fwrap{max-width:1180px;margin:0 auto;display:block}
+.site-footer .ftop{display:flex;justify-content:space-between;align-items:flex-start;gap:44px;flex-wrap:wrap}
+.site-footer .fbrand{display:inline-block;font-family:'Inter',sans-serif;font-weight:900;font-size:44px;letter-spacing:-.03em;color:#fff;text-decoration:none;line-height:1}
+.site-footer .fbrand .fire{color:#B395D6}
+.site-footer .fnote{margin-top:14px;font-family:'Caveat',cursive;font-size:24px;color:rgba(255,255,255,.66)}
+.site-footer .fright{text-align:right}
+.site-footer .foot-invite{margin:0;font-family:'Fraunces','Playfair Display',serif;font-style:italic;font-weight:400;font-size:21px;line-height:1.35;color:rgba(255,255,255,.85)}
+.site-footer .socials{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;justify-content:flex-end}
+.site-footer .socials a{font-family:'Inter',sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:#fff;border:2px solid rgba(255,255,255,.4);border-radius:999px;padding:10px 18px;transition:background .18s,color .18s,border-color .18s}
+.site-footer .socials a:hover{background:#fff;border-color:#fff;color:#26202E}
+.site-footer .fdivider{height:1px;background:rgba(255,255,255,.14);margin:44px 0 22px}
+.site-footer .fbottom{display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap}
+.site-footer .foot-legal-info{margin:0;font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.6}
+.site-footer .foot-legal-info .fli-name{font-weight:700;color:rgba(255,255,255,.8)}
+.site-footer .fli-dot{color:rgba(255,255,255,.3);padding:0 6px}
+.site-footer .foot-links{margin:0;display:flex;gap:22px;align-items:baseline}
+.site-footer .foot-links a{font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.site-footer .foot-links a:hover{color:#B395D6;border-color:#B395D6}
+.site-footer .legal{margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.35)}
+@media(max-width:920px){.site-footer .ftop{flex-direction:column;align-items:flex-start;text-align:left;gap:28px}.site-footer .fleft,.site-footer .fright{width:100%}.site-footer .fright{text-align:left}.site-footer .fnote{margin-top:12px}.site-footer .foot-invite br{display:none}.site-footer .socials{justify-content:flex-start;margin-top:20px}.site-footer .fbrand{font-size:40px}.site-footer .fdivider{margin:32px 0 24px}.site-footer .fbottom{flex-direction:column;align-items:flex-start;text-align:left;gap:16px}.site-footer .foot-legal-info{line-height:2}.site-footer .foot-links{justify-content:flex-start;flex-wrap:wrap;gap:14px 24px}.site-footer .legal{text-align:left}}
+@media(max-width:560px){.site-footer .fbrand{font-size:36px}}
+
+/* ─────────── FOOTER v3 light ─────────── */
+.site-footer{background:var(--bg-ajna,#F0E7FA)}
+.site-footer .fbrand{color:var(--text)}
+.site-footer .fbrand .fire{color:var(--ajna)}
+.site-footer .fnote{color:var(--text-soft)}
+.site-footer .foot-invite{color:var(--text-soft)}
+.site-footer .socials a{color:var(--text);border-color:var(--text)}
+.site-footer .socials a:hover{background:var(--ajna);border-color:var(--ajna);color:#fff}
+.site-footer .fdivider{background:rgba(0,0,0,.1)}
+.site-footer .foot-legal-info{color:var(--text-soft)}
+.site-footer .foot-legal-info .fli-name{color:var(--text)}
+.site-footer .fli-dot{color:var(--text-mute)}
+.site-footer .foot-links a{color:var(--text-mute)}
+.site-footer .foot-links a:hover{color:var(--ajna);border-color:var(--ajna)}
+.site-footer .legal{color:var(--text-mute)}
+
+/* цветные соцсети */
+.site-footer .socials a{border-width:2px}
+.site-footer .socials a[href*="instagram"]{color:var(--muladhara);border-color:var(--muladhara)}
+.site-footer .socials a[href*="instagram"]:hover{background:var(--muladhara);border-color:var(--muladhara);color:#fff}
+.site-footer .socials a[href*="threads"]{color:var(--vishuddha);border-color:var(--vishuddha)}
+.site-footer .socials a[href*="threads"]:hover{background:var(--vishuddha);border-color:var(--vishuddha);color:#fff}
+.site-footer .socials a[href*="t.me"]{color:var(--ajna);border-color:var(--ajna)}
+.site-footer .socials a[href*="t.me"]:hover{background:var(--ajna);border-color:var(--ajna);color:#fff}
+
+.site-footer{background:var(--bg-cream,var(--bg,#F8F4ED))}
+
+/* соцкнопки футера = стиль .btn дизайн-системы */
+.site-footer .socials a{font-family:'Inter',sans-serif;font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;padding:16px 28px;border-radius:999px;border:2px solid;display:inline-flex;align-items:center;transition:transform .15s,box-shadow .15s,background .15s,color .15s}
+.site-footer .socials a:hover{transform:rotate(-1deg) translateY(-2px);box-shadow:0 5px 0 rgba(0,0,0,.12)}
+.site-footer .socials a[href*="instagram"]{color:var(--muladhara);border-color:var(--muladhara)}
+.site-footer .socials a[href*="instagram"]:hover{background:var(--muladhara);color:#fff}
+.site-footer .socials a[href*="threads"]{color:var(--vishuddha);border-color:var(--vishuddha)}
+.site-footer .socials a[href*="threads"]:hover{background:var(--vishuddha);color:#fff}
+.site-footer .socials a[href*="t.me"]{color:var(--ajna);border-color:var(--ajna)}
+.site-footer .socials a[href*="t.me"]:hover{background:var(--ajna);color:#fff}
 </style>
 </head>
 <body>
@@ -755,7 +897,7 @@ body {
 
 <!-- MOTO -->
 <section class="sect bg-cream acc-vish">
-  <div class="wrap">
+  <div class="wrap wrap-duo"><div>
     <div class="project-single">
       <div>
         <span class="tape vish" style="margin-bottom:22px;">мото-выставка · Цюрих</span>
@@ -766,11 +908,11 @@ body {
         </div>
         <div style="margin-top:30px;"><a class="btn btn-solid" href="https://motozuerich.ch" target="_blank">Сайт выставки →</a></div>
       </div></div>
-  </div>
+  </div><div class="pduo"><aside class="pframe c-vish" style="width: 100%;"><img src="img/moto-stunt.jpg" alt="Стант-шоу на выставке MOTO-ZÜRICH"></aside><aside class="pframe pf2 tl c-vish"><img src="img/moto-halle.jpg" alt="Зал выставки MOTO-ZÜRICH" style="aspect-ratio:1/1;"></aside></div></div>
 </section>
 
 <section class="sect bg-peach acc-anah">
-  <div class="wrap">
+  <div class="wrap wrap-duo"><div>
     <div class="project-single">
       <span class="tape anah" style="margin-bottom:22px;">арт-галерея · Баден</span>
       <h2 class="shout l">галерея в <span class="it" style="color:var(--anahata);">Бадене</span></h2>
@@ -780,12 +922,12 @@ body {
       </div>
       <div style="margin-top:28px;"><a class="btn btn-solid" href="https://kunstwerkstube.ch" target="_blank">Сайт галереи →</a></div>
     </div>
-  </div>
+  </div><aside class="pframe tl sz-m r-sq c-anah"><img src="img/galerie-tagblatt.jpg" alt="Статья Badener Tagblatt о галерее Kunstwerkstube" style="aspect-ratio:auto;"></aside></div>
 </section>
 
 <!-- АРЕНДА ГАЛЕРЕИ / ВОЗМОЖНОСТИ -->
-<section class="sect bg-warm acc-anah">
-  <div class="wrap">
+<section class="sect bg-peach acc-anah">
+  <div class="wrap wrap-duo"><div>
     <span class="kicker">для организаторов · возможности</span>
     <h2 class="shout l" style="max-width:880px;">снять галерею под <span class="it" style="color:var(--anahata);">мероприятие</span></h2>
     <div style="margin-top:24px;max-width:680px;">
@@ -800,25 +942,25 @@ body {
     </div>
 
     <div style="margin-top:28px;"><a class="btn btn-solid" href="https://kunstwerkstube.ch" target="_blank">Аренда и условия →</a></div>
-  </div>
+  </div><div class="pduo"><aside class="pframe c-anah" style="width: 100%;"><img src="img/galerie-vernissage.jpg" alt="Вернисаж в галерее Kunstwerkstube"></aside><aside class="pframe pf2 tl c-anah"><img src="img/galerie-fassade.jpg" alt="Фасад галереи Kunstwerkstube в Бадене" style="aspect-ratio:1/1;"></aside></div></div>
 </section>
 
-<section class="sect bg-warm acc-ajna">
-  <div class="wrap">
+<section class="sect bg-ajna acc-ajna">
+  <div class="wrap"><div>
     <div class="project-single">
       <span class="tape ajna" style="margin-bottom:22px;">платформа · вся Швейцария</span>
       <h2 class="shout l">SVOI — <span class="it" style="color:var(--ajna);">платформа</span></h2>
       <div style="margin-top:24px;max-width:640px;">
         <p class="body-p">Платформа для русскоязычных жителей Швейцарии: <strong>образование, сервисы и услуги</strong> в одном месте.</p>
-        <p class="body-p">Если «Свои Люди» — это чаты и сообщество, то <strong>SVOI</strong> — платформенная, образовательная часть экосистемы. Soul · Matrix · Magic.</p>
+        <p class="body-p">Если «Свои Люди» — это чаты и сообщество, то <strong>SVOI</strong> — платформенная, образовательная часть экосистемы.<br>Soul · Matrix · Magic.</p>
       </div>
       <div style="margin-top:28px;"><a class="btn btn-solid" href="https://svoi.ch" target="_blank">Перейти на svoi.ch →</a></div>
     </div>
-  </div>
+  </div></div>
 </section>
 
-<section class="sect bg-cream acc-anah">
-  <div class="wrap">
+<section class="sect bg-warm acc-anah">
+  <div class="wrap wrap-duo"><div>
     <div class="project-single">
       <div>
         <span class="tape anah" style="margin-bottom:22px;">сообщество · все кантоны</span>
@@ -830,34 +972,23 @@ body {
         </div>
         <div style="margin-top:30px;"><a class="btn btn-solid" href="https://slswiss.ch/" target="_blank">Сайт сообщества →</a></div>
       </div></div>
-  </div>
+  </div><div class="pduo"><aside class="pframe r-sq c-anah" style="width: 100%;"><img src="img/svoi-lyudi-2.jpg" alt="Команда «Своих Людей» у галереи в Бадене"></aside><aside class="pframe pf2 c-anah"><img src="img/svoi-lyudi.jpg" alt="Встреча сообщества «Свои Люди» в Швейцарии" style="aspect-ratio:1/1;"></aside></div></div>
 </section>
 
 <section class="sect bg-peach acc-mula">
-  <div class="wrap">
+  <div class="wrap"><div>
     <span class="kicker">форум · октябрь 2026</span>
-    <h2 class="shout l" style="max-width:880px;">ФОРУМ <span class="it" style="color:var(--muladhara);">Frankenplatz</span></h2>
+    <h2 class="shout l" style="max-width:880px;">ФОРУМ<br><span class="it" style="color:var(--muladhara);">Frankenplatz</span></h2>
     <div style="margin-top:24px;max-width:640px;">
       <p class="body-p">Самый большой русскоязычный форум в Швейцарии. Планируется на <strong>октябрь 2026 года</strong>, на <strong>500 человек</strong> — такой объём зала. Самый крупный русскоязычный форум страны. <strong>Присоединяйся!</strong></p>
     </div>
     <div style="margin-top:30px;"><a class="btn btn-solid" href="https://frankenplatz.ch" target="_blank">frankenplatz.ch →</a></div>
-  </div>
+  </div></div>
+  <img class="fp-cow" src="img/frankenplatz-cow-crop.png" alt="Швейцарская корова в красном — Frankenplatz" aria-hidden="true">
 </section>
 
-<section class="sect bg-warm acc-ajna">
-  <div class="wrap">
-    <span class="kicker">event &amp; marketing agency</span>
-    <h2 class="shout l" style="max-width:880px;">CREOX<span class="it" style="color:var(--ajna);">.ch</span></h2>
-    <div style="margin-top:24px;max-width:660px;">
-      <p class="body-p">Event &amp; marketing agency в Швейцарии 🇨🇭. Придумываем и проводим мероприятия под ключ, выстраиваем маркетинг и продвижение — от идеи до результата.</p>
-      <p class="body-p">За плечами — мото-выставка на 22 000 человек, форумы, галерейные события и запуски. <strong>Знаем, как собрать людей и сделать так, чтобы событие работало.</strong></p>
-    </div>
-    <div style="margin-top:30px;"><a class="btn btn-solid" href="https://creox.ch" target="_blank">creox.ch →</a></div>
-  </div>
-</section>
-
-<section class="sect bg-cream acc-vish">
-  <div class="wrap">
+<section class="sect bg-warm acc-vish">
+  <div class="wrap"><div>
     <span class="kicker">Verein · интеграция и адаптация</span>
     <h2 class="shout l" style="max-width:880px;">ATLAS <span class="it" style="color:var(--vishuddha);">INTEGRA</span></h2>
     <div style="margin-top:24px;max-width:660px;">
@@ -869,11 +1000,23 @@ body {
       <p>Verein für Integration und Teilhabe · Schweiz. Лучшая карта новой страны рисуется <strong>не из инструкций, а из историй</strong> тех, чей путь уже пройден.</p>
     </div>
     <div style="margin-top:30px;"><a class="btn btn-solid" href="https://atlasintegra.ch" target="_blank">atlasintegra.ch →</a></div>
-  </div>
+  </div></div>
+</section><section class="sect bg-peach acc-ajna">
+  <div class="wrap"><div>
+    <span class="kicker">event &amp; marketing agency</span>
+    <h2 class="shout l" style="max-width:880px;">CREOX<span class="it" style="color:var(--ajna);">.ch</span></h2>
+    <div style="margin-top:24px;max-width:660px;">
+      <p class="body-p">Event &amp; marketing agency в Швейцарии 🇨🇭. Придумываем и проводим мероприятия под ключ, выстраиваем маркетинг и продвижение — от идеи до результата.</p>
+      <p class="body-p">За плечами — мото-выставка на 22 000 человек, форумы, галерейные события и запуски. <strong>Знаем, как собрать людей и сделать так, чтобы событие работало.</strong></p>
+    </div>
+    <div style="margin-top:30px;"><a class="btn btn-solid" href="https://creox.ch" target="_blank">creox.ch →</a></div>
+  </div></div>
 </section>
 
-<section class="sect bg-peach acc-ajna">
-  <div class="wrap">
+
+
+<section class="sect bg-ajna acc-ajna">
+  <div class="wrap wrap-duo"><div>
     <span class="kicker">моё-моё · личное</span>
     <h2 class="shout l" style="max-width:880px;">CHUDINA<span class="it" style="color:var(--ajna);">.me</span></h2>
     <div style="margin-top:24px;max-width:660px;">
@@ -885,7 +1028,7 @@ body {
       <p>Трансформационные игры и практики — сейчас. Практикум, консультации и наставничество — <strong>очень ограниченно</strong>.</p>
     </div>
     <div style="margin-top:30px;"><a class="btn btn-solid" href="/igry">Игры и практики →</a></div>
-  </div>
+  </div><aside class="pframe sz-m c-ajna r-tall"><img src="img/ksenia-chudina-paris.jpg" alt="Ксения Чудина — chudina.me" title="Ксения Чудина" style="aspect-ratio:3/4;"></aside></div>
 </section>
 
 <!-- CTA -->
@@ -906,28 +1049,114 @@ body {
 
 <footer class="site-footer" id="footer">
   <div class="fwrap">
-    <div class="foot-invite">Наблюдать и участвовать можно в соцсетях:</div>
-    <div class="socials">
-      <a href="https://www.instagram.com/chudina_fire" target="_blank">Instagram</a>
-      <a href="https://www.threads.com/@chudina_fire" target="_blank">Threads</a>
-      <a href="https://t.me/chudina_fire" target="_blank">Telegram</a>
+    <div class="ftop">
+      <div class="fleft">
+        <a class="fbrand" href="/">chudina<span class="fire">.me</span></a>
+        <div class="fnote">огонь, люди и проекты — Baden, Schweiz 🇨🇭</div>
+      </div>
+      <div class="fright">
+        <div class="foot-invite">Наблюдать и участвовать —<br>в соцсетях:</div>
+        <div class="socials">
+          <a href="https://www.instagram.com/chudina_fire" target="_blank">Instagram</a>
+          <a href="https://www.threads.com/@chudina_fire" target="_blank">Threads</a>
+          <a href="https://t.me/chudina_fire" target="_blank">Telegram</a>
+        </div>
+      </div>
     </div>
-    <div class="foot-legal-info">
-      <p class="fli-name">Kseniia Chudina Art + Event</p>
-      <p class="fli-line">Bäderstrasse 28, 5400 Baden, Schweiz 🇨🇭</p>
-      <p class="fli-line">CHE-202.191.691</p>
+    <div class="fdivider"></div>
+    <div class="fbottom">
+      <div class="foot-legal-info">
+        <span class="fli-name">Kseniia Chudina Art + Event</span>
+        <span class="fli-dot">·</span>
+        <span class="fli-line">Bäderstrasse 28, 5400 Baden</span>
+        <span class="fli-dot">·</span>
+        <span class="fli-line">CHE-202.191.691</span>
+      </div>
+      <div class="foot-links">
+        <a href="/impressum">Impressum</a>
+        <a href="/agb">AGB</a>
+        <a href="/datenschutz">Datenschutz</a>
+      </div>
     </div>
-    <div class="foot-links">
-      <a href="/impressum">Impressum</a>
-      <span class="fl-sep">·</span>
-      <a href="/agb">AGB</a>
-      <span class="fl-sep">·</span>
-      <a href="/datenschutz">Datenschutz</a>
-    </div>
-    <div class="legal">© 2026 Kseniia Chudina · chudina.me · Baden, Schweiz</div>
+    <div class="legal">© 2026 Kseniia Chudina · chudina.me</div>
   </div>
 </footer>
 
-<script defer src="/cookie-consent.js"></script>
-</body>
-</html>
+<script defer="" src="/cookie-consent.js"></script>
+
+
+<script>
+(function(){
+  if(/chudina\.me$/.test(location.hostname)&&location.hash!=='#edit')return;
+  document.querySelectorAll('.pframe').forEach(function(f,i){
+    var media=function(){return f.querySelector('img,.ph-empty');};
+    var im0=f.querySelector('img');
+    var pid=f.dataset.pfId||(im0?(im0.getAttribute('src')||'').split('/').pop().replace(/\.[a-z]+$/i,''):('ph-'+((media()&&media().textContent)||'').replace(/\s+/g,'-').slice(0,40)));
+    var kw='pfk-w-'+pid,kh='pfk-h-'+pid;
+    var applyW=function(v){f.style.setProperty('width',v+'px','important');};
+    var applyH=function(v){var m=media();if(!m)return;m.style.setProperty('height',v+'px','important');m.style.setProperty('aspect-ratio','auto','important');if(m.tagName==='IMG')m.style.setProperty('object-fit','cover','important');};
+    try{var sw=localStorage.getItem(kw);if(sw)applyW(sw);var sh=localStorage.getItem(kh);if(sh)applyH(sh);}catch(e){}
+    var btn=document.createElement('button');btn.className='pf-editbtn';btn.textContent='✎ edit';btn.type='button';
+    btn.addEventListener('click',function(e){e.stopPropagation();f.classList.toggle('editing');btn.textContent=f.classList.contains('editing')?'✓ готово':'✎ edit';});
+    f.appendChild(btn);
+    [['e',1,0],['s',0,1],['se',1,1]].forEach(function(cfg){
+      var h=document.createElement('div');h.className='pf-h '+cfg[0];
+      h.addEventListener('pointerdown',function(ev){
+        ev.preventDefault();ev.stopPropagation();
+        var m=media(),r=f.getBoundingClientRect(),mr=m?m.getBoundingClientRect():r;
+        var W0=r.width,H0=mr.height,x0=ev.clientX,y0=ev.clientY;
+        var ang=0;var tm=/rotate\((-?[\d.]+)deg\)/.exec(getComputedStyle(f).rotate||'')||null;
+        var move=function(e2){
+          var dx=e2.clientX-x0,dy=e2.clientY-y0;
+          if(cfg[1]){var w=Math.max(180,Math.min(700,Math.round(W0+dx)));applyW(w);try{localStorage.setItem(kw,w);}catch(e){}}
+          if(cfg[2]){var hh=Math.max(140,Math.min(700,Math.round(H0+dy)));applyH(hh);try{localStorage.setItem(kh,hh);}catch(e){}}
+        };
+        var up=function(){document.removeEventListener('pointermove',move);document.removeEventListener('pointerup',up);};
+        document.addEventListener('pointermove',move);document.addEventListener('pointerup',up);
+      });
+      f.appendChild(h);
+    });
+    // перетаскивание кадра внутри рамки (в режиме edit)
+    var kp='pfk-p-'+pid;
+    var applyP=function(px,py){var m=media();if(m&&m.tagName==='IMG')m.style.setProperty('object-position',px+'% '+py+'%','important');};
+    try{var sp=localStorage.getItem(kp);if(sp){var a=sp.split(',');applyP(a[0],a[1]);}}catch(e){}
+    f.addEventListener('pointerdown',function(ev){
+      if(!f.classList.contains('editing'))return;
+      var m=media();if(!m||m.tagName!=='IMG'||ev.target!==m)return;
+      ev.preventDefault();
+      var cs=getComputedStyle(m).objectPosition.split(' ');
+      var px0=parseFloat(cs[0])||50,py0=parseFloat(cs[1])||50;
+      var x0=ev.clientX,y0=ev.clientY,r=m.getBoundingClientRect();
+      var move=function(e2){
+        var px=Math.max(0,Math.min(100,px0-(e2.clientX-x0)/r.width*100));
+        var py=Math.max(0,Math.min(100,py0-(e2.clientY-y0)/r.height*100));
+        applyP(px.toFixed(1),py.toFixed(1));
+        try{localStorage.setItem(kp,px.toFixed(1)+','+py.toFixed(1));}catch(e){}
+      };
+      var up=function(){document.removeEventListener('pointermove',move);document.removeEventListener('pointerup',up);};
+      document.addEventListener('pointermove',move);document.addEventListener('pointerup',up);
+    });
+    // зум фото внутри рамки
+    var kz='pfk-z-'+pid;
+    var wrapImg=function(){var m=media();if(!m||m.tagName!=='IMG')return null;if(!m.parentElement.classList.contains('pf-clip')){var w=document.createElement('div');w.className='pf-clip';m.parentNode.insertBefore(w,m);w.appendChild(m);}return m;};
+    var z=1;
+    var applyZ=function(){var m=wrapImg();if(!m)return;m.style.setProperty('transform','scale('+z+')','important');try{localStorage.setItem(kz,z);}catch(e){}};
+    try{var sz2=parseFloat(localStorage.getItem(kz));if(sz2&&sz2!==1){z=sz2;applyZ();}}catch(e){}
+    var zoombox=document.createElement('div');zoombox.className='pf-zoom';
+    [['−',-0.1],['+',0.1]].forEach(function(b){
+      var bt=document.createElement('button');bt.type='button';bt.textContent=b[0];
+      bt.addEventListener('click',function(e){e.stopPropagation();z=Math.max(1,Math.min(3,Math.round((z+b[1])*10)/10));applyZ();});
+      zoombox.appendChild(bt);
+    });
+    f.appendChild(zoombox);
+    f.addEventListener('wheel',function(ev){
+      if(!f.classList.contains('editing'))return;
+      var m=media();if(!m||m.tagName!=='IMG'||ev.target!==m)return;
+      ev.preventDefault();
+      z=Math.max(1,Math.min(3,Math.round((z+(ev.deltaY<0?0.1:-0.1))*10)/10));applyZ();
+    },{passive:false});
+  });
+})();
+</script>
+<script src="_localnav.js"></script>
+</body></html>
