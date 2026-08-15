@@ -1,3 +1,9 @@
+// Авто-год: элементы <span class="js-year"> получают текущий год (работает на проде).
+(function(){
+  function setYear(){try{var y=new Date().getFullYear();var els=document.querySelectorAll('.js-year');for(var i=0;i<els.length;i++)els[i].textContent=y;}catch(e){}}
+  if(document.readyState!=='loading')setYear();else document.addEventListener('DOMContentLoaded',setYear);
+})();
+
 // Локальная навигация: сайт использует clean-URL ссылки (/put, /igry),
 // которые не открываются как локальные файлы. Здесь перехватываем клики
 // и переписываем их на соответствующий .html в этой же папке.
