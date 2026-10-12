@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -1380,7 +1380,7 @@ body {
 .bio a:not(.btn):focus-visible{outline:3px solid var(--ajna);outline-offset:2px;border-radius:3px}
 
 .bio /* ─── hero ─── */
-.hero{padding:72px 0 56px}
+.hero{padding:72px clamp(30px,7vw,44px) 56px}
 .bio .kicker{
   font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
   color:var(--ajna);margin:0 0 18px;
@@ -1531,7 +1531,7 @@ ul.roles{list-style:none;margin:0;padding:0;display:grid;gap:12px;max-width:66ch
 .bio ul.roles li b{color:var(--text);font-weight:700}
 
 .bio /* ─── cta ─── */
-.cta{text-align:center;padding:66px 0 76px}
+.cta{text-align:center;padding:66px clamp(30px,7vw,44px) 76px}
 .bio .cta h2{margin-bottom:14px}
 .bio .cta p{color:var(--text-soft);max-width:50ch;margin:0 auto 26px}
 .bio a.btn{
@@ -1543,7 +1543,7 @@ ul.roles{list-style:none;margin:0;padding:0;display:grid;gap:12px;max-width:66ch
 .bio a.btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(139,97,194,.55)}
 .bio a.btn:focus-visible{outline:3px solid var(--ajna-dark);outline-offset:3px}
 
-.bio .foot{border-top:1px solid var(--paper-edge);padding:24px 0 40px;font-size:13.5px;color:var(--text-mute)}
+.bio .foot{border-top:1px solid var(--paper-edge);padding:24px clamp(30px,7vw,44px) 40px;font-size:13.5px;color:var(--text-mute)}
 .bio .foot a{color:var(--text-mute);border-bottom-color:var(--paper-edge)}
 .bio .foot a:hover{color:var(--ajna)}
 @media (prefers-reduced-motion:reduce){.bio *{transition:none!important}}
