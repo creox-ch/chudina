@@ -727,6 +727,20 @@ body {
 .evt-day .d-city{font-size:18px;font-weight:800;letter-spacing:-.015em;color:var(--text)}
 .evt-day .d-what{font-size:14.5px;line-height:1.4;color:var(--text-soft)}
 
+.evt-perks{display:grid;gap:10px;margin:20px 0 0}
+.perk{
+  display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:start;
+  background:var(--bg-cream,#F9F7F4);border:1px dashed var(--accent,var(--ajna));
+  border-radius:14px;padding:14px 16px;min-width:0;
+}
+.perk p{margin:0;font-size:15px;line-height:1.45;color:var(--text-soft);min-width:0}
+.perk p strong{color:var(--text);font-weight:700}
+.perk-code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:700;font-size:15px;
+  letter-spacing:.08em;background:var(--accent,var(--ajna));color:#fff;
+  padding:4px 11px;border-radius:8px;white-space:nowrap;
+}
+.perk-ico{font-size:19px;line-height:1.2}
 .evt-note{font-size:15px;color:var(--text-mute);margin:18px 0 0;max-width:62ch}
 .evt-cta{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center;margin:22px 0 0}
 .evt-small{font-size:14px;color:var(--text-mute)}
@@ -927,6 +941,18 @@ body {
       </div>
 
       <p class="evt-note">Каждый день 09:30–19:30, <span style="white-space:nowrap">нетворк-обед,</span> апе́ро и афтепати для VIP. Можно взять один день или оба.</p>
+
+      <div class="evt-perks">
+        <div class="perk">
+          <span class="perk-code">SVOI</span>
+          <p>Промокод на специальную цену — просто введи его при покупке.</p>
+        </div>
+        <div class="perk">
+          <span class="perk-ico">🤝</span>
+          <p><strong>Свои приводят своих.</strong> Если ведёшь своё сообщество или просто соберёшь компанию — есть амбассадорская программа: <strong>20%</strong> с каждого билета по твоему коду. Сама решаешь, как их разделить: скидкой гостям, деньгами себе или пополам. <a href="https://frankenplatz.ch/ambassador" target="_blank" style="color:var(--muladhara);font-weight:700;">Как это работает →</a></p>
+        </div>
+      </div>
+
 
       <div class="evt-cta">
         <a class="btn btn-solid" style="--accent:var(--muladhara);" href="https://frankenplatz.ch" target="_blank">Выбрать билет →</a>
