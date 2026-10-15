@@ -689,6 +689,48 @@ body {
   margin-bottom: 22px;
 }
 
+
+/* ─── карточка события ─── */
+.evt{
+  background:#fff;border:1px solid var(--paper-edge);border-radius:22px;
+  padding:clamp(22px,3.4vw,34px);margin-top:26px;
+  box-shadow:0 8px 28px -18px rgba(0,0,0,.35);
+  border-top:4px solid var(--accent,var(--ajna));
+  container-type:inline-size;
+}
+.evt-top{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:baseline;justify-content:space-between}
+.evt-tag{
+  font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--accent,var(--ajna));
+}
+.evt-when{font-size:14px;font-weight:700;color:var(--text-mute);font-variant-numeric:tabular-nums}
+.evt-name{
+  font-family:'Inter',sans-serif;font-weight:900;
+  font-size:min(clamp(28px,4.4vw,46px),11cqi);line-height:1.04;letter-spacing:-.03em;
+  margin:12px 0 0;color:var(--text);
+}
+.evt-lead{font-size:16.5px;line-height:1.55;color:var(--text-soft);margin:14px 0 0;max-width:62ch}
+.evt-lead strong{color:var(--text);font-weight:700}
+
+.evt-days{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:22px 0 0}
+.evt-day{
+  display:grid;gap:4px;align-content:start;
+  background:var(--bg-cream,#F9F7F4);border:1px solid var(--paper-edge);border-radius:14px;
+  padding:16px 18px;text-decoration:none;min-width:0;
+  transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease;
+}
+.evt-day:hover{
+  border-color:var(--accent,var(--ajna));transform:translateY(-2px);
+  box-shadow:0 8px 20px -12px rgba(0,0,0,.4);
+}
+.evt-day .d-when{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent,var(--ajna))}
+.evt-day .d-city{font-size:18px;font-weight:800;letter-spacing:-.015em;color:var(--text)}
+.evt-day .d-what{font-size:14.5px;line-height:1.4;color:var(--text-soft)}
+
+.evt-note{font-size:15px;color:var(--text-mute);margin:18px 0 0;max-width:62ch}
+.evt-cta{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center;margin:22px 0 0}
+.evt-small{font-size:14px;color:var(--text-mute)}
+
 /* ─────────── RESPONSIVE ─────────── */
 @media (max-width: 1024px) {
   .nav { padding: clamp(13px,1.8vw,18px) clamp(20px,4.5vw,48px); }
@@ -852,17 +894,62 @@ body {
   <div class="wrap">
     <span class="kicker">где меня встретить</span>
     <h2 class="shout l" style="max-width:880px;">приходи на <span style="white-space:nowrap">мои <span class="it" style="color:var(--muladhara);">мероприятия</span></span></h2>
-    <div style="margin-top:30px;max-width:680px;">
-      <p class="body-p">В основном я делаю <strong>большие, прикольные мероприятия</strong> — форумы, выставки, завтраки, встречи. О каждом проекте есть короткое видео: посмотри, чтобы узнать чуть больше, прежде чем прийти.</p>
-    </div>
-    <div class="answer-card" style="--accent:var(--ajna);margin-top:30px;">
-      <div class="lbl">ближайшее</div>
-      <p><strong>«Трусики и бусики»</strong> — камерный девичник в галерее, <strong>16 октября, 16:00–21:00</strong>. Собираем люстру из винтажной рамы, жемчуга и хрусталя. До десяти человек, бесплатно.</p>
-      <p style="margin-top:10px;"><a href="/trusiki-i-busiki" style="color:var(--ajna);font-weight:700;">Подробности и запись →</a></p>
+    <div style="margin-top:26px;max-width:700px;">
+      <p class="body-p">Я делаю <strong>большие события</strong> — форумы, выставки, завтраки, встречи. Вот ближайшие, на которые можно попасть.</p>
     </div>
 
-    <div style="margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;">
-      <a class="btn btn-solid" href="/proekty">Смотреть проекты →</a>
+    <!-- ФОРУМ -->
+    <div class="evt" style="--accent:var(--muladhara);">
+      <div class="evt-top">
+        <span class="evt-tag">форум о деньгах · 2 дня</span>
+        <span class="evt-when">12 · <span style="white-space:nowrap">14–15 ноября</span> 2026</span>
+      </div>
+      <h3 class="evt-name">Frankenplatz</h3>
+      <p class="evt-lead">Крупнейший русскоязычный форум о деньгах в Швейцарии 🇨🇭. Пенсионная система, налоги, Säule 3a, недвижимость, юридическая база для своего дела — в цифрах и на практике.</p>
+      <p class="evt-lead"><strong>Со сцены ничего не продают.</strong> Ни один спикер не платит за выступление — поэтому говорят по делу, а не про свои услуги.</p>
+
+      <div class="evt-days">
+        <a class="evt-day" href="https://frankenplatz.ch" target="_blank">
+          <span class="d-when">12 ноября</span>
+          <span class="d-city">Лозанна</span>
+          <span class="d-what">Закрытое превью — камерный вечер до форума</span>
+        </a>
+        <a class="evt-day" href="https://frankenplatz.ch" target="_blank">
+          <span class="d-when">14 ноября</span>
+          <span class="d-city">Баден · день 1</span>
+          <span class="d-what">Личные финансы: пенсия, налоги семьи, Säule 3a, недвижимость</span>
+        </a>
+        <a class="evt-day" href="https://frankenplatz.ch" target="_blank">
+          <span class="d-when">15 ноября</span>
+          <span class="d-city">Баден · день 2</span>
+          <span class="d-what">Своё дело: AG или GmbH, налоги бизнеса, найм, масштабирование</span>
+        </a>
+      </div>
+
+      <p class="evt-note">Каждый день 09:30–19:30, <span style="white-space:nowrap">нетворк-обед,</span> апе́ро и афтепати для VIP. Можно взять один день или оба.</p>
+
+      <div class="evt-cta">
+        <a class="btn btn-solid" style="--accent:var(--muladhara);" href="https://frankenplatz.ch" target="_blank">Выбрать билет →</a>
+        <span class="evt-small">Места именные, VIP — первый ряд от центра</span>
+      </div>
+    </div>
+
+    <!-- ДЕВИЧНИК -->
+    <div class="evt" style="--accent:var(--ajna);">
+      <div class="evt-top">
+        <span class="evt-tag">девичник в галерее · бесплатно</span>
+        <span class="evt-when">16 октября 2026</span>
+      </div>
+      <h3 class="evt-name">Трусики и бусики</h3>
+      <p class="evt-lead">Собираем люстру, которую нельзя купить: винтажная рама, жемчуг, хрусталь, подвески, свет — <span style="white-space:nowrap">и 10–15 женщин,</span> которым нескучно вместе. Пятница, 16:00–21:00, Баден.</p>
+      <div class="evt-cta">
+        <a class="btn btn-solid" style="--accent:var(--ajna);" href="/trusiki-i-busiki">Подробности и запись →</a>
+        <span class="evt-small">Без взносов и билетов</span>
+      </div>
+    </div>
+
+    <div style="margin-top:30px;display:flex;gap:16px;flex-wrap:wrap;">
+      <a class="btn btn-ghost" href="/proekty">Все мои проекты</a>
       <a class="btn btn-ghost" href="https://youtube.com/@chudina_fire" target="_blank">Видео на YouTube</a>
     </div>
   </div>
