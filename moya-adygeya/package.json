@@ -1,0 +1,16 @@
+{
+  "name": "moya-adygeya",
+  "version": "0.1.0",
+  "description": "Платформа «Моя Адыгея»: коалиционная программа лояльности, каталог бизнеса, справочник туриста, доставка и аудиогид",
+  "private": true,
+  "type": "commonjs",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "UNLICENSED"
+}
