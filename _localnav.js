@@ -12,7 +12,7 @@
   // работают нативно (Vercel cleanUrls) — переписывать /put в put.html не нужно
   // и вредно (лишний редирект). Поэтому на https/http выходим сразу.
   if(location.protocol!=='file:')return;
-  var pages=['index','put','biografiya','proekty','igry','konsultacii','mesto','cashflow','team','komanda','master','partnerstvo','kontakty','impressum','agb','datenschutz'];
+  var pages=['index','put','biografiya','proekty','igry','konsultacii','mesto','cashflow','trusiki-i-busiki','team','komanda','master','partnerstvo','kontakty','impressum','agb','datenschutz'];
   function toFile(h){
     if(!h||/^(https?:|mailto:|tel:|#)/.test(h))return null;
     var base=h.split('#')[0].split('?')[0].replace(/^\.\//,'').replace(/^\//,'').replace(/\/$/,'');

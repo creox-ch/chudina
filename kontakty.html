@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Встречи со мной · Ксения Чудина</title>
+<title>Встречи со мной · Ксения Чудина</title>
 <meta name="description" content="Записаться на встречу или созвон с Ксенией Чудиной. Контакты и онлайн-запись.">
 <link rel="canonical" href="https://chudina.me/kontakty">
 <meta property="og:type" content="website">
@@ -158,7 +158,9 @@ body {
 }
 .shout.xxl { font-size: clamp(60px, 10vw, 150px); }
 .shout.xl  { font-size: clamp(46px, 7.5vw, 112px); }
-.shout.l   { font-size: clamp(38px, 6vw, 84px); }
+.shout.l   { font-size: min(clamp(38px, 6vw, 84px), 9.4cqi); }
+.sect, .page-hero { container-type: inline-size; }
+.wrap { container-type: inline-size; }
 .shout.m   { font-size: clamp(30px, 4.4vw, 60px); }
 .shout.s   { font-size: clamp(24px, 3vw, 40px); }
 
@@ -822,25 +824,25 @@ body {
   <button class="nav-burger" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
   <div class="nav-links" id="navlinks">
     <a href="/">Главная</a>
-    <a href="/put">Мой путь</a>
+    <a href="/put">Мой путь</a>
     <a href="/proekty">Проекты</a>
     <a href="/igry">Игры</a>
     <a href="/konsultacii">Консультации</a>
     <a href="/kontakty" class="active">Встречи</a>
-    <a href="/team">В команду</a>
+    <a href="/team">В команду</a>
     <a href="/partnerstvo">Партнёрство</a>
   </div>
 </nav>
 
 <section class="page-hero bg-ajna acc-ajna">
   <div class="wrap">
-    <div class="pn">встречи со мной · 04</div>
+    <div class="pn">встречи со мной · 04</div>
     <span class="scribble big" style="transform:rotate(-2deg);">честно?</span>
     <h1 class="shout xl" style="margin-top:12px;max-width:1000px;">
-      у меня нет времени пить <span class="it" style="color:var(--ajna);">чай</span>
+      у меня нет времени пить <span class="it" style="color:var(--ajna);">чай</span>
     </h1>
     <div class="subtitle" style="margin-top:26px;max-width:820px;">
-      Мой календарь собран как тетрис: проекты, игры, галерея, люди. Поэтому долгие чаепития «просто поболтать» я не тяну — встречаюсь <span class="hl ajna" style="font-weight:700;">очень по делу</span>. Зато знакомиться в деле я люблю и умею: там, где мне интересно, я вся твоя — и встреча сразу пройдёт с пользой для тебя. Ниже — форматы по приоритету ↓
+      Мой календарь собран как тетрис: проекты, игры, галерея, люди. Поэтому долгие чаепития «просто поболтать» я не тяну — встречаюсь <span class="hl ajna" style="font-weight:700;">очень по делу</span>. Зато знакомиться в деле я люблю и умею: там, где мне интересно, я вся твоя — и встреча сразу пройдёт с пользой для тебя. Ниже — форматы по приоритету ↓
     </div>
   </div>
 </section>
@@ -848,14 +850,20 @@ body {
 <!-- МЕРОПРИЯТИЯ -->
 <section class="sect bg-peach acc-mula">
   <div class="wrap">
-    <span class="kicker">где меня встретить</span>
-    <h2 class="shout l" style="max-width:880px;">приходи на мои <span class="it" style="color:var(--muladhara);">мероприятия</span></h2>
+    <span class="kicker">где меня встретить</span>
+    <h2 class="shout l" style="max-width:880px;">приходи на <span style="white-space:nowrap">мои <span class="it" style="color:var(--muladhara);">мероприятия</span></span></h2>
     <div style="margin-top:30px;max-width:680px;">
-      <p class="body-p">В основном я делаю <strong>большие, прикольные мероприятия</strong> — форумы, выставки, завтраки, встречи. О каждом проекте есть короткое видео: посмотри, чтобы узнать чуть больше, прежде чем прийти.</p>
+      <p class="body-p">В основном я делаю <strong>большие, прикольные мероприятия</strong> — форумы, выставки, завтраки, встречи. О каждом проекте есть короткое видео: посмотри, чтобы узнать чуть больше, прежде чем прийти.</p>
     </div>
+    <div class="answer-card" style="--accent:var(--ajna);margin-top:30px;">
+      <div class="lbl">ближайшее</div>
+      <p><strong>«Трусики и бусики»</strong> — камерный девичник в галерее, <strong>16 октября, 16:00–21:00</strong>. Собираем люстру из винтажной рамы, жемчуга и хрусталя. До десяти человек, бесплатно.</p>
+      <p style="margin-top:10px;"><a href="/trusiki-i-busiki" style="color:var(--ajna);font-weight:700;">Подробности и запись →</a></p>
+    </div>
+
     <div style="margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;">
       <a class="btn btn-solid" href="/proekty">Смотреть проекты →</a>
-      <a class="btn btn-ghost" href="https://youtube.com/@chudina_fire" target="_blank">Видео на YouTube</a>
+      <a class="btn btn-ghost" href="https://youtube.com/@chudina_fire" target="_blank">Видео на YouTube</a>
     </div>
   </div>
 </section>
@@ -863,37 +871,37 @@ body {
 <!-- ДВА ФОРМАТА -->
 <section class="sect bg-ajna acc-svad">
   <div class="wrap">
-    <span class="kicker">как познакомиться</span>
+    <span class="kicker">как познакомиться</span>
     <h2 class="shout l" style="max-width:820px;">самые <span class="it" style="color:var(--svadhisthana);">оптимальные</span> способы</h2>
     <div class="cards c3">
       <div class="meet-card" style="--accent:var(--svadhisthana);">
         <div class="mc-num">01</div>
         <h4>Игра «Cashflow»</h4>
-        <p>Почти все сотрудничества у меня начинаются здесь. За игрой мы точно <strong>познакомимся быстрее</strong>, а ты сразу получишь пользу. Приходи играть и записывайся.</p>
-        <a class="mlink" href="/cashflow" target="_blank">Записаться на игру →</a>
+        <p>Почти все сотрудничества у меня начинаются здесь. За игрой мы точно <strong>познакомимся быстрее</strong>, а ты сразу получишь пользу. Приходи играть и записывайся.</p>
+        <a class="mlink" href="/cashflow" target="_blank">Записаться на игру →</a>
       </div>
       <div class="meet-card" style="--accent:var(--vishuddha);">
         <div class="mc-num">02</div>
-        <h4>Spa в Бадене</h4>
-        <p>Я регулярно хожу в <strong>Limmathof</strong> в Бадене — и люблю совмещать. Там <strong>нельзя пользоваться телефоном</strong>, поэтому это идеальное место, чтобы спокойно поговорить и познакомиться без спешки.</p>
-        <p style="margin-top:10px;"><strong>Вход со мной — 24.50 CHF.</strong> Я обычно захожу часа на два, но при желании можно провести там весь день.</p>
-        <a class="mlink" href="https://calendar.app.google/2GV6Bmko5WoLrHu2A" target="_blank" style="color:var(--vishuddha);">Забронировать спа-встречу →</a>
+        <h4>Spa в Бадене</h4>
+        <p>Я регулярно хожу в <strong>Limmathof</strong> в Бадене — и люблю совмещать. Там <strong>нельзя пользоваться телефоном</strong>, поэтому это идеальное место, чтобы спокойно поговорить и познакомиться без спешки.</p>
+        <p style="margin-top:10px;"><strong>Вход со мной — 24.50 CHF.</strong> Я обычно захожу часа на два, но при желании можно провести там весь день.</p>
+        <a class="mlink" href="https://calendar.app.google/2GV6Bmko5WoLrHu2A" target="_blank" style="color:var(--vishuddha);">Забронировать <span style="display:inline-block;max-width:100%">спа<wbr><span style="white-space:nowrap">-встречу</span></span> →</a>
       </div>
       <div class="meet-card" style="--accent:var(--manipura);">
         <div class="mc-num">03</div>
         <h4>Запись подкастов</h4>
-        <p>Хочешь записать со мной <strong>подкаст или интервью</strong> — выбирай свободный слот в календаре и приходи с темой.</p>
+        <p>Хочешь записать со мной <strong>подкаст или интервью</strong> — выбирай свободный слот в календаре и приходи с темой.</p>
         <a class="mlink" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0ZKOrbOKfnsBy80dKWdxFzTgliBwWLFzWtgvCLDkQG4NNEXixl0DnCSKD-Mt9fGFOrfp3wft7Q" target="_blank" style="color:var(--manipura);">Забронировать запись →</a>
       </div>
       <div class="meet-card" style="--accent:var(--ajna);">
         <div class="mc-num">04</div>
         <h4>Встреча / созвон</h4>
-        <p>Если нужен именно <strong>отдельный разговор</strong> — бронируй по свободным слотам в календаре. Приходи с конкретным вопросом или идеей.</p>
+        <p>Если нужен именно <strong>отдельный разговор</strong> — бронируй по свободным слотам в календаре. Приходи с конкретным вопросом или идеей.</p>
         <a class="mlink" href="https://calendar.app.google/2GV6Bmko5WoLrHu2A" target="_blank" style="color:var(--ajna);">Забронировать встречу →</a>
       </div>
     </div>
     <div style="margin-top:36px;max-width:680px;">
-      <p class="body-p">А все мои истории — как, почему и какие возможности есть для других — доступны в <a href="/put" style="color:var(--ajna);font-weight:700;">мемуарах</a> и <a href="/proekty" style="color:var(--ajna);font-weight:700;">проектах</a>.</p>
+      <p class="body-p">А все мои истории — как, почему и какие возможности есть для других — доступны в <a href="/put" style="color:var(--ajna);font-weight:700;">мемуарах</a> и <a href="/proekty" style="color:var(--ajna);font-weight:700;">проектах</a>.</p>
     </div>
   </div>
 </section>
@@ -902,32 +910,32 @@ body {
 <section class="sect bg-warm acc-ajna">
   <div class="wrap">
     <span class="kicker">частые вопросы</span>
-    <h2 class="shout l" style="max-width:880px;">ответы на популярные <span class="it" style="color:var(--ajna);">вопросы</span></h2>
+    <h2 class="shout l" style="max-width:880px;">ответы на популярные <span class="it" style="color:var(--ajna);">вопросы</span></h2>
     <div class="cards c2">
       <div class="card" style="--accent:var(--ajna);">
-        <h4>Можно просто на кофе?</h4>
-        <p>К сожалению, на бесконечные кофе времени нет. Зато есть игра Cashflow и спа — там и познакомимся, и с пользой.</p>
+        <h4>Можно просто на кофе?</h4>
+        <p>К сожалению, на бесконечные кофе времени нет. Зато есть игра Cashflow и спа — там и познакомимся, и с пользой.</p>
       </div>
       <div class="card" style="--accent:var(--ajna);">
-        <h4>Как начать сотрудничество?</h4>
-        <p>Почти всё начинается с игры. Так мы быстрее понимаем друг друга — и тебе сразу полезно.</p>
+        <h4>Как начать сотрудничество?</h4>
+        <p>Почти всё начинается с игры. Так мы быстрее понимаем друг друга — и тебе сразу полезно.</p>
       </div>
       <div class="card" style="--accent:var(--ajna);">
-        <h4>Есть ли консультации?</h4>
-        <p>Запись в личные консультации и наставничество откроется чуть позже — очень ограниченно.</p>
+        <h4>Есть ли консультации?</h4>
+        <p>Запись в личные консультации и наставничество откроется чуть позже — очень ограниченно.</p>
       </div>
       <div class="card" style="--accent:var(--ajna);">
-        <h4>Где узнать о проектах?</h4>
-        <p>У каждого проекта есть короткое видео и своя страница. Загляни в раздел «Проекты».</p>
+        <h4>Где узнать о проектах?</h4>
+        <p>У каждого проекта есть короткое видео и своя страница. Загляни в раздел «Проекты».</p>
       </div>
       <div class="card" style="--accent:var(--anahata);">
-        <h4>Я или моя мама / друг / брат / сват / художник / художница?</h4>
-        <p>Тогда тебе на&nbsp;страницу про место&nbsp;— там адрес, дорога из&nbsp;Цюриха, парковка и&nbsp;условия аренды пространства <strong>CADRE</strong> (бывшая галерея Kunstwerkstube). <a href="/mesto" style="color:var(--anahata);font-weight:700;">Про место →</a> · <a href="https://www.le-cadre.ch/" target="_blank" style="color:var(--anahata);font-weight:700;">le-cadre.ch →</a></p>
+        <h4>Я или моя мама / друг / брат / сват / художник / художница?</h4>
+        <p>Тогда тебе на&nbsp;страницу про место&nbsp;— там адрес, дорога из&nbsp;Цюриха, парковка и&nbsp;условия аренды пространства <strong>CADRE</strong> (бывшая галерея Kunstwerkstube). <a href="/mesto" style="color:var(--anahata);font-weight:700;">Про место →</a> · <a href="https://www.le-cadre.ch/" target="_blank" style="color:var(--anahata);font-weight:700;">le-cadre.ch →</a></p>
       </div>
     </div>
     <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
-      <a class="btn btn-solid" href="/cashflow" target="_blank">Записаться на игру →</a>
-      <span class="scribble" style="transform:rotate(-4deg);">до встречи 🔥</span>
+      <a class="btn btn-solid" href="/cashflow" target="_blank">Записаться на игру →</a>
+      <span class="scribble" style="transform:rotate(-4deg);">до встречи 🔥</span>
     </div>
   </div>
 </section>
@@ -935,10 +943,10 @@ body {
 <!-- ВСТРЕЧА — в конце -->
 <section class="sect bg-ajna acc-ajna">
   <div class="wrap">
-    <span class="kicker">если нужна именно встреча</span>
-    <h2 class="shout l" style="max-width:860px;">встреча и созвон — <span class="it" style="color:var(--ajna);">по слотам</span></h2>
+    <span class="kicker">если нужна именно встреча</span>
+    <h2 class="shout l" style="max-width:860px;">встреча и созвон — <span class="it" style="color:var(--ajna);">по слотам</span></h2>
     <div style="margin-top:24px;max-width:680px;">
-      <p class="body-p">Сначала — мероприятия и игра, потом спа. Если всё же нужен отдельный разговор — бронируй <strong>только по свободным слотам в календаре</strong>.</p>
+      <p class="body-p">Сначала — мероприятия и игра, потом спа. Если всё же нужен отдельный разговор — бронируй <strong>только по свободным слотам в календаре</strong>.</p>
     </div>
     <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;">
       <a class="btn btn-solid" href="https://calendar.app.google/2GV6Bmko5WoLrHu2A" target="_blank">Забронировать встречу →</a>
@@ -952,10 +960,10 @@ body {
     <div class="ftop">
       <div class="fleft">
         <a class="fbrand" href="/">chudina<span class="fire">.me</span></a>
-        <div class="fnote">огонь, люди и проекты — Baden, Schweiz 🇨🇭</div>
+        <div class="fnote">огонь, люди и проекты — Baden, Schweiz 🇨🇭</div>
       </div>
       <div class="fright">
-        <div class="foot-invite">Наблюдать и участвовать —<br>в соцсетях:</div>
+        <div class="foot-invite">Наблюдать и участвовать —<br>в соцсетях:</div>
         <div class="socials">
           <a href="https://www.instagram.com/chudina_fire" target="_blank">Instagram</a>
           <a href="https://www.threads.com/@chudina_fire" target="_blank">Threads</a>
@@ -970,7 +978,7 @@ body {
         <span class="fli-dot">·</span>
         <span class="fli-line">Bäderstrasse 28, 5400 Baden</span>
         <span class="fli-dot">·</span>
-        <span class="fli-line">CHE-202.191.691</span>
+        <span class="fli-line"><span style="display:inline-block;max-width:100%">CHE<wbr><span style="white-space:nowrap">-202</span></span>.191.691</span>
       </div>
       <div class="foot-links">
         <a href="/impressum">Impressum</a>

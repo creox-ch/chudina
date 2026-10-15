@@ -3,12 +3,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Проекты · Ксения Чудина</title>
-<meta name="description" content="Проекты Ксении Чудиной: SVOI, Свои Люди, MOTO-ZÜRICH, Frankenplatz, CADRE, Atlas Integra, Creox — сообщество, искусство и предпринимательство.">
+<meta name="description" content="Проекты Ксении Чудиной: MOTO-ZÜRICH, CADRE, Frankenplatz, SVOI, Creox, Atlas Integra, Fashion Reborn — сообщество, искусство и предпринимательство.">
 <link rel="canonical" href="https://chudina.me/proekty">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="chudina.me · Ксения Чудина">
 <meta property="og:title" content="Проекты · Ксения Чудина">
-<meta property="og:description" content="Проекты Ксении Чудиной: SVOI, Свои Люди, MOTO-ZÜRICH, Frankenplatz, CADRE, Atlas Integra, Creox — сообщество, искусство и предпринимательство.">
+<meta property="og:description" content="Проекты Ксении Чудиной: MOTO-ZÜRICH, CADRE, Frankenplatz, SVOI, Creox, Atlas Integra, Fashion Reborn — сообщество, искусство и предпринимательство.">
 <meta property="og:url" content="https://chudina.me/proekty">
 <meta property="og:image" content="https://chudina.me/img/proekty-ksenia-chudina-baden-schweiz.jpg?og">
 <meta property="og:image:width" content="1200">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Проекты · Ксения Чудина">
-<meta name="twitter:description" content="SVOI, Свои Люди, MOTO-ZÜRICH, Frankenplatz, CADRE, Atlas Integra, Creox — проекты Ксении Чудиной.">
+<meta name="twitter:description" content="MOTO-ZÜRICH, CADRE, Frankenplatz, SVOI, Creox, Atlas Integra, Fashion Reborn — проекты Ксении Чудиной.">
 <meta name="twitter:image" content="https://chudina.me/img/proekty-ksenia-chudina-baden-schweiz.jpg?og">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/favicon.svg">
@@ -172,7 +172,9 @@ body {
 }
 .shout.xxl { font-size: clamp(60px, 10vw, 150px); }
 .shout.xl  { font-size: clamp(46px, 7.5vw, 112px); }
-.shout.l   { font-size: clamp(38px, 6vw, 84px); }
+.shout.l   { font-size: min(clamp(38px, 6vw, 84px), 9.4cqi); }
+.sect, .page-hero { container-type: inline-size; }
+.wrap { container-type: inline-size; }
 .shout.m   { font-size: clamp(30px, 4.4vw, 60px); }
 .shout.s   { font-size: clamp(24px, 3vw, 40px); }
 
@@ -878,21 +880,21 @@ body {
   <button class="nav-burger" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
   <div class="nav-links" id="navlinks">
     <a href="/">Главная</a>
-    <a href="/put">Мой путь</a>
+    <a href="/put">Мой путь</a>
     <a href="/proekty" class="active">Проекты</a>
     <a href="/igry">Игры</a>
     <a href="/konsultacii">Консультации</a>
     <a href="/kontakty">Встречи</a>
-    <a href="/team">В команду</a>
+    <a href="/team">В команду</a>
     <a href="/partnerstvo">Партнёрство</a>
   </div>
 </nav>
 
 <section class="page-hero bg-ajna acc-ajna">
   <div class="wrap">
-    <div class="pn">проекты в Швейцарии · 02</div>
+    <div class="pn">проекты в Швейцарии · 02</div>
     <h1 class="shout xl" style="max-width:1000px;">много проектов. <span class="it" style="color:var(--ajna);">один</span> огонь.</h1>
-    <div class="subtitle" style="margin-top:26px;">Платформа, сообщество, форум, галерея, выставка, игры — разные форматы, <span class="hl ajna" style="font-weight:700;">одна экосистема</span>.</div>
+    <div class="subtitle" style="margin-top:26px;">Платформа, сообщество, форум, галерея, выставка, игры — разные форматы, <span class="hl ajna" style="font-weight:700;">одна экосистема</span>.</div>
   </div>
 </section>
 
@@ -901,11 +903,11 @@ body {
   <div class="wrap wrap-duo"><div>
     <div class="project-single">
       <div>
-        <span class="tape vish" style="margin-bottom:22px;">мото-выставка · Цюрих</span>
-        <h2 class="shout l">MOTO-<span class="it" style="color:var(--vishuddha);">ZÜRICH</span></h2>
+        <span class="tape vish" style="margin-bottom:22px;"><span style="display:inline-block;max-width:100%">мото<wbr><span style="white-space:nowrap">-выставка</span></span> · Цюрих</span>
+        <h2 class="shout l"><span style="white-space:nowrap">MOTO-<span class="it" style="color:var(--vishuddha);">ZÜRICH</span></span></h2>
         <div style="margin-top:24px;max-width:560px;">
-          <p class="body-p">Нет, <strong>я не езжу на мотоцикле</strong> и даже не люблю их. Просто мы сделали выставку в феврале 2026 на 10 000 м² — и 22 000 посетителей за 2,5 дня.</p>
-          <p class="body-p">Сделали это вдвоём с нуля за 7 месяцев. Конечно, будем повторять: <strong>19–21.02.2027</strong>.</p>
+          <p class="body-p">Нет, <strong>я не езжу на мотоцикле</strong> и даже не люблю их. Просто мы сделали выставку в феврале 2026 на 10 000 м² — и 22 000 посетителей за 2,5 дня.</p>
+          <p class="body-p">Сделали это вдвоём с нуля за 7 месяцев. Конечно, будем повторять: <strong><span style="white-space:nowrap">19–21</span>.02.2027</strong>.</p>
         </div>
         <div style="margin-top:30px;"><a class="btn btn-solid" href="https://motozuerich.ch" target="_blank">Сайт выставки →</a></div>
       </div></div>
@@ -915,13 +917,13 @@ body {
 <section class="sect bg-peach acc-anah">
   <div class="wrap wrap-duo"><div>
     <div class="project-single">
-      <span class="tape anah" style="margin-bottom:22px;">art-café · Баден</span>
-      <h2 class="shout l">CADRE, бывшая <span class="it" style="color:var(--anahata);">галерея</span></h2>
+      <span class="tape anah" style="margin-bottom:22px;"><span style="display:inline-block;max-width:100%">art<wbr><span style="white-space:nowrap">-café</span></span> · бывшая Kunstwerkstube</span>
+      <h2 class="shout l">CADRE<span class="it" style="color:var(--anahata);"> в Бадене</span></h2>
       <div style="margin-top:24px;max-width:640px;">
-        <p class="body-p">Нет, <strong>я&nbsp;не&nbsp;рисую</strong> и&nbsp;даже в&nbsp;художественной школе не&nbsp;училась. Два года это была галерея <strong>Kunstwerkstube</strong>: больше тридцати выставок и&nbsp;картин продано на&nbsp;150&nbsp;000&nbsp;CHF.</p>
-        <p class="body-p">Сейчас место выросло в&nbsp;<strong>CADRE</strong>&nbsp;— art-café: те&nbsp;же стены с&nbsp;работами сотни художников, плюс бранчи, аперо и&nbsp;сезонные ужины. И&nbsp;по-прежнему сдаётся под события&nbsp;— <strong>от&nbsp;выставки до&nbsp;девичника</strong>.</p>
+        <p class="body-p">Нет, <strong>я&nbsp;не&nbsp;рисую</strong> и&nbsp;даже в&nbsp;художественной школе не&nbsp;училась. Два года это была галерея <strong>Kunstwerkstube</strong>: больше тридцати выставок и&nbsp;картин продано на&nbsp;150&nbsp;000&nbsp;CHF.</p>
+        <p class="body-p">Сейчас место выросло в&nbsp;<strong>CADRE</strong>&nbsp;— <span style="display:inline-block;max-width:100%">art<wbr><span style="white-space:nowrap">-café</span></span>: те&nbsp;же стены с&nbsp;работами сотни художников, плюс бранчи, аперо и&nbsp;сезонные ужины. Пространство <span style="display:inline-block;max-width:100%">по<wbr><span style="white-space:nowrap">-прежнему</span></span> сдаётся под события&nbsp;— <strong>от&nbsp;выставки до&nbsp;девичника</strong>.</p>
       </div>
-      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;"><a class="btn btn-solid" href="https://www.le-cadre.ch/" target="_blank">Сайт CADRE →</a><a class="btn btn-ghost" href="/mesto">Как добраться</a></div>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;"><a class="btn btn-solid" href="https://www.le-cadre.ch/" target="_blank">Сайт CADRE →</a><a class="btn btn-ghost" href="/mesto">Как добраться</a></div>
     </div>
   </div><aside class="pframe tl sz-m r-sq c-anah"><img src="img/galerie-tagblatt.jpg" alt="Статья Badener Tagblatt о галерее Kunstwerkstube, теперь CADRE" style="aspect-ratio:auto;"></aside></div>
 </section>
@@ -929,33 +931,45 @@ body {
 <!-- АРЕНДА ГАЛЕРЕИ / ВОЗМОЖНОСТИ -->
 <section class="sect bg-peach acc-anah">
   <div class="wrap wrap-duo"><div>
-    <span class="kicker">для организаторов · возможности</span>
-    <h2 class="shout l" style="max-width:880px;">снять галерею под <span class="it" style="color:var(--anahata);">мероприятие</span></h2>
+    <span class="kicker">для организаторов · возможности</span>
+    <h2 class="shout l" style="max-width:880px;">снять галерею <span style="white-space:nowrap">под <span class="it" style="color:var(--anahata);">мероприятие</span></span></h2>
     <div style="margin-top:24px;max-width:680px;">
-      <p class="body-p">Пространство <strong>CADRE</strong> на&nbsp;Bäderstrasse&nbsp;28 в&nbsp;Бадене можно арендовать под своё событие: презентация, воркшоп, день рождения, девичник, съёмка, нетворкинг.</p>
-      <p class="body-p">Вместимость: <strong>до&nbsp;20&nbsp;человек сидя</strong> и&nbsp;<strong>до&nbsp;35 в&nbsp;формате апе́ро</strong> (стоя, с&nbsp;фуршетом). Условия, цены и&nbsp;подробности&nbsp;— на&nbsp;сайте CADRE.</p>
+      <p class="body-p">Пространство <strong>CADRE</strong> на&nbsp;Bäderstrasse&nbsp;28 в&nbsp;Бадене можно арендовать под своё событие: презентация, воркшоп, день рождения, девичник, съёмка, нетворкинг.</p>
+      <p class="body-p">Вместимость: <strong>до&nbsp;20&nbsp;человек сидя</strong> и&nbsp;<strong>до&nbsp;35 в&nbsp;формате апе́ро</strong> (стоя, с&nbsp;фуршетом). Условия, цены и&nbsp;подробности&nbsp;— на&nbsp;сайте CADRE.</p>
     </div>
 
     <div class="answer-card" style="--accent:var(--anahata);">
-      <div class="lbl">техника в аренду</div>
-      <p>А ещё у меня куча полезной техники, которую можно взять к мероприятию:</p>
-      <p style="margin-top:8px;">штативы · камеры · <strong>Insta 360</strong> · очки <strong>Ray-Ban Meta</strong> · беспроводные микрофоны · диско-свет · дым-машина.</p>
+      <div class="lbl">техника в аренду</div>
+      <p>А ещё у меня куча полезной техники, которую можно взять к мероприятию:</p>
+      <p style="margin-top:8px;">штативы · камеры · <strong>Insta 360</strong> · очки <strong><span style="display:inline-block;max-width:100%">Ray<wbr><span style="white-space:nowrap">-Ban</span></span> Meta</strong> · беспроводные микрофоны · <span style="display:inline-block;max-width:100%">диско<wbr><span style="white-space:nowrap">-свет</span></span> · <span style="display:inline-block;max-width:100%">дым<wbr><span style="white-space:nowrap">-машина</span></span>.</p>
     </div>
 
-    <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;"><a class="btn btn-solid" href="https://www.le-cadre.ch/" target="_blank">Аренда и&nbsp;условия →</a><a class="btn btn-ghost" href="/mesto">Про место</a></div>
+    <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;"><a class="btn btn-solid" href="https://www.le-cadre.ch/" target="_blank">Аренда и&nbsp;условия →</a><a class="btn btn-ghost" href="/mesto">Про место</a></div>
   </div><div class="pduo"><aside class="pframe c-anah" style="width: 100%;"><img src="img/galerie-vernissage.jpg" alt="Вернисаж в пространстве CADRE в Бадене"></aside><aside class="pframe pf2 tl c-anah"><img src="img/galerie-fassade.jpg" alt="Фасад дома на Bäderstrasse 28 в Бадене" style="aspect-ratio:1/1;"></aside></div></div>
+</section>
+
+<section class="sect bg-peach acc-mula">
+  <div class="wrap"><div>
+    <span class="kicker">форум · октябрь 2026</span>
+    <h2 class="shout l" style="max-width:880px;">ФОРУМ<br><span class="it" style="color:var(--muladhara);">Frankenplatz</span></h2>
+    <div style="margin-top:24px;max-width:640px;">
+      <p class="body-p">Самый большой русскоязычный форум в Швейцарии. Планируется на <strong>октябрь 2026 года</strong>, на <strong>500 человек</strong> — такой объём зала. Самый крупный русскоязычный форум страны. <strong>Присоединяйся!</strong></p>
+    </div>
+    <div style="margin-top:30px;"><a class="btn btn-solid" href="https://frankenplatz.ch" target="_blank">frankenplatz.ch →</a></div>
+  </div></div>
+  <img class="fp-cow" src="img/frankenplatz-cow-crop.png" alt="Швейцарская корова в красном — Frankenplatz" aria-hidden="true">
 </section>
 
 <section class="sect bg-ajna acc-ajna">
   <div class="wrap"><div>
     <div class="project-single">
       <span class="tape ajna" style="margin-bottom:22px;">платформа · вся Швейцария</span>
-      <h2 class="shout l">SVOI — <span class="it" style="color:var(--ajna);">платформа</span></h2>
+      <h2 class="shout l">SVOI — <span class="it" style="color:var(--ajna);">платформа</span></h2>
       <div style="margin-top:24px;max-width:640px;">
-        <p class="body-p">Платформа для русскоязычных жителей Швейцарии: <strong>образование, сервисы и услуги</strong> в одном месте.</p>
-        <p class="body-p">Если «Свои Люди» — это чаты и сообщество, то <strong>SVOI</strong> — платформенная, образовательная часть экосистемы.<br>Soul · Matrix · Magic.</p>
+        <p class="body-p">Платформа для русскоязычных жителей Швейцарии: <strong>образование, сервисы и услуги</strong> в одном месте.</p>
+        <p class="body-p">Если «Свои Люди» — это чаты и сообщество, то <strong>SVOI</strong> — платформенная, образовательная часть экосистемы.<br>Soul · Matrix · Magic.</p>
       </div>
-      <div style="margin-top:28px;"><a class="btn btn-solid" href="https://svoi.ch" target="_blank">Перейти на svoi.ch →</a></div>
+      <div style="margin-top:28px;"><a class="btn btn-solid" href="https://svoi.ch" target="_blank">Перейти на svoi.ch →</a></div>
     </div>
   </div></div>
 </section>
@@ -965,50 +979,24 @@ body {
     <div class="project-single">
       <div>
         <span class="tape anah" style="margin-bottom:22px;">сообщество · все кантоны</span>
-        <h2 class="shout l">свои <span class="it" style="color:var(--anahata);">люди</span></h2>
+        <h2 class="shout l"><span style="white-space:nowrap">свои <span class="it" style="color:var(--anahata);">люди</span></span></h2>
         <div style="margin-top:24px;max-width:560px;">
-          <p class="body-p">Русскоязычное сообщество в Швейцарии. Онлайн — чаты в Telegram и WhatsApp по всем кантонам, информационно-познавательные каналы.</p>
-          <p class="body-p">Бизнес-сообщество и маркетплейс русскоязычных бизнесов и специалистов.</p>
-          <p class="body-p">Офлайн — регулярные славянские завтраки в галерее (нет, <strong>я не готовлю</strong>), воркшопы, тренинги и мастер-классы.</p>
+          <p class="body-p">Русскоязычное сообщество в Швейцарии. Онлайн — чаты в Telegram и WhatsApp по всем кантонам, <span style="display:inline-block;max-width:100%">информационно<wbr><span style="white-space:nowrap">-познавательные</span></span> каналы.</p>
+          <p class="body-p"><span style="display:inline-block;max-width:100%">Бизнес<wbr><span style="white-space:nowrap">-сообщество</span></span> и маркетплейс русскоязычных бизнесов и специалистов.</p>
+          <p class="body-p">Офлайн — регулярные славянские завтраки в галерее (нет, <strong>я не готовлю</strong>), воркшопы, тренинги <span style="display:inline-block;max-width:100%">и мастер<wbr><span style="white-space:nowrap">-классы</span></span>.</p>
         </div>
         <div style="margin-top:30px;"><a class="btn btn-solid" href="https://slswiss.ch/" target="_blank">Сайт сообщества →</a></div>
       </div></div>
   </div><div class="pduo"><aside class="pframe r-sq c-anah" style="width: 100%;"><img src="img/svoi-lyudi-2.jpg" alt="Команда «Своих Людей» у галереи в Бадене"></aside><aside class="pframe pf2 c-anah"><img src="img/svoi-lyudi.jpg" alt="Встреча сообщества «Свои Люди» в Швейцарии" style="aspect-ratio:1/1;"></aside></div></div>
 </section>
 
-<section class="sect bg-peach acc-mula">
-  <div class="wrap"><div>
-    <span class="kicker">форум · октябрь 2026</span>
-    <h2 class="shout l" style="max-width:880px;">ФОРУМ<br><span class="it" style="color:var(--muladhara);">Frankenplatz</span></h2>
-    <div style="margin-top:24px;max-width:640px;">
-      <p class="body-p">Самый большой русскоязычный форум в Швейцарии. Планируется на <strong>октябрь 2026 года</strong>, на <strong>500 человек</strong> — такой объём зала. Самый крупный русскоязычный форум страны. <strong>Присоединяйся!</strong></p>
-    </div>
-    <div style="margin-top:30px;"><a class="btn btn-solid" href="https://frankenplatz.ch" target="_blank">frankenplatz.ch →</a></div>
-  </div></div>
-  <img class="fp-cow" src="img/frankenplatz-cow-crop.png" alt="Швейцарская корова в красном — Frankenplatz" aria-hidden="true">
-</section>
-
-<section class="sect bg-warm acc-vish">
-  <div class="wrap"><div>
-    <span class="kicker">Verein · интеграция и адаптация</span>
-    <h2 class="shout l" style="max-width:880px;">ATLAS <span class="it" style="color:var(--vishuddha);">INTEGRA</span></h2>
-    <div style="margin-top:24px;max-width:660px;">
-      <p class="body-p">Швейцарский <strong>Verein</strong> — некоммерческое объединение для интеграции и адаптации. Мы собираем реальные истории людей, которые нашли свою дорогу в Швейцарии, и превращаем их в понятную карту для тех, кто только в начале пути.</p>
-      <p class="body-p">Интеграция и адаптация, поиск работы, языки Швейцарии, документы и ВНЖ, жильё, страховка и здоровье — <strong>всё в одном месте</strong>. Проект сообщества «Свои Люди».</p>
-    </div>
-    <div class="answer-card" style="--accent:var(--vishuddha);">
-      <div class="lbl">кто · что</div>
-      <p>Verein für Integration und Teilhabe · Schweiz. Лучшая карта новой страны рисуется <strong>не из инструкций, а из историй</strong> тех, чей путь уже пройден.</p>
-    </div>
-    <div style="margin-top:30px;"><a class="btn btn-solid" href="https://atlasintegra.ch" target="_blank">atlasintegra.ch →</a></div>
-  </div></div>
-</section><section class="sect bg-peach acc-ajna">
+<section class="sect bg-peach acc-ajna">
   <div class="wrap"><div>
     <span class="kicker">event &amp; marketing agency</span>
     <h2 class="shout l" style="max-width:880px;">CREOX<span class="it" style="color:var(--ajna);">.ch</span></h2>
     <div style="margin-top:24px;max-width:660px;">
-      <p class="body-p">Event &amp; marketing agency в Швейцарии 🇨🇭. Придумываем и проводим мероприятия под ключ, выстраиваем маркетинг и продвижение — от идеи до результата.</p>
-      <p class="body-p">За плечами — мото-выставка на 22 000 человек, форумы, галерейные события и запуски. <strong>Знаем, как собрать людей и сделать так, чтобы событие работало.</strong></p>
+      <p class="body-p">Event &amp; marketing agency в Швейцарии 🇨🇭. Придумываем и проводим мероприятия под ключ, выстраиваем маркетинг и продвижение — от идеи до результата.</p>
+      <p class="body-p">За плечами — <span style="display:inline-block;max-width:100%">мото<wbr><span style="white-space:nowrap">-выставка</span></span> на 22 000 человек, форумы, галерейные события и запуски. <strong>Знаем, как собрать людей и сделать так, чтобы событие работало.</strong></p>
     </div>
     <div style="margin-top:30px;"><a class="btn btn-solid" href="https://creox.ch" target="_blank">creox.ch →</a></div>
   </div></div>
@@ -1016,32 +1004,60 @@ body {
 
 
 
+<section class="sect bg-warm acc-vish">
+  <div class="wrap"><div>
+    <span class="kicker">Verein · интеграция и адаптация</span>
+    <h2 class="shout l" style="max-width:880px;">ATLAS <span class="it" style="color:var(--vishuddha);">INTEGRA</span></h2>
+    <div style="margin-top:24px;max-width:660px;">
+      <p class="body-p">Швейцарский <strong>Verein</strong> — некоммерческое объединение для интеграции и адаптации. Мы собираем реальные истории людей, которые нашли свою дорогу в Швейцарии, и превращаем их в понятную карту для тех, кто только в начале пути.</p>
+      <p class="body-p">Интеграция и адаптация, поиск работы, языки Швейцарии, документы и ВНЖ, жильё, страховка и здоровье — <strong>всё в одном месте</strong>. Проект сообщества «Свои Люди».</p>
+    </div>
+    <div class="answer-card" style="--accent:var(--vishuddha);">
+      <div class="lbl">кто · что</div>
+      <p>Verein für Integration und Teilhabe · Schweiz. Лучшая карта новой страны рисуется <strong>не из инструкций, а из историй</strong> тех, чей путь уже пройден.</p>
+    </div>
+    <div style="margin-top:30px;"><a class="btn btn-solid" href="https://atlasintegra.ch" target="_blank">atlasintegra.ch →</a></div>
+  </div></div>
+</section>
+
+<section class="sect bg-warm acc-mula">
+  <div class="wrap"><div>
+    <span class="kicker"><span style="display:inline-block;max-width:100%">онлайн<wbr><span style="white-space:nowrap">-каталог</span></span> · Баден</span>
+    <h2 class="shout l" style="max-width:880px;">FASHION<span class="it" style="color:var(--muladhara);"> REBORN</span></h2>
+    <div style="margin-top:24px;max-width:660px;">
+      <p class="body-p">Брендовые вещи со второй жизнью: <span style="display:inline-block;max-width:100%">онлайн<wbr><span style="white-space:nowrap">-каталог</span></span> и маркет в Бадене. Вещи, которые жалко выбросить и глупо держать в шкафу, находят нового хозяина.</p>
+      <p class="body-p">Сооснователь. Проект вырос из простого наблюдения: у всех в эмиграции шкафы забиты, а носить нечего.</p>
+    </div>
+    <div style="margin-top:30px;"><a class="btn btn-solid" href="https://www.fashionreborn.ch/" target="_blank">fashionreborn.ch →</a></div>
+  </div></div>
+</section>
+
 <section class="sect bg-ajna acc-ajna">
   <div class="wrap wrap-duo"><div>
-    <span class="kicker">моё-моё · личное</span>
+    <span class="kicker"><span style="display:inline-block;max-width:100%">моё<wbr><span style="white-space:nowrap">-моё</span></span> · личное</span>
     <h2 class="shout l" style="max-width:880px;">CHUDINA<span class="it" style="color:var(--ajna);">.me</span></h2>
     <div style="margin-top:24px;max-width:660px;">
-      <p class="body-p">Это про меня и от меня напрямую: <strong>лекции, практики, трансформационные тренинги, семинары, игры и наставничество</strong>. То, что я провожу сама.</p>
-      <p class="body-p">На это у меня меньше всего времени — поэтому <strong>предложения ограничены</strong>. Если откликается — лучше не откладывать.</p>
+      <p class="body-p">Это про меня и от меня напрямую: <strong>лекции, практики, трансформационные тренинги, семинары, игры и наставничество</strong>. То, что я провожу сама.</p>
+      <p class="body-p">На это у меня меньше всего времени — поэтому <strong>предложения ограничены</strong>. Если откликается — лучше не откладывать.</p>
     </div>
     <div class="answer-card" style="--accent:var(--ajna);">
-      <div class="lbl">что доступно</div>
-      <p>Трансформационные игры и практики — сейчас. Практикум, консультации и наставничество — <strong>очень ограниченно</strong>.</p>
+      <div class="lbl">что доступно</div>
+      <p>Трансформационные игры и практики — сейчас. Практикум, консультации и наставничество — <strong>очень ограниченно</strong>.</p>
     </div>
-    <div style="margin-top:30px;"><a class="btn btn-solid" href="/igry">Игры и практики →</a></div>
+    <div style="margin-top:30px;"><a class="btn btn-solid" href="/igry">Игры и практики →</a></div>
   </div><aside class="pframe sz-m c-ajna r-tall"><img src="img/ksenia-chudina-paris.jpg" alt="Ксения Чудина — chudina.me" title="Ксения Чудина" style="aspect-ratio:3/4;"></aside></div>
 </section>
 
 <!-- CTA -->
 <section class="sect bg-warm acc-ajna">
   <div class="wrap">
-    <span class="scribble big" style="transform:rotate(-2deg);">хочешь так же?</span>
-    <h2 class="shout xl" style="margin-top:12px;max-width:900px;">давай <span class="it" style="color:var(--ajna);">создадим</span> что-то вместе</h2>
+    <span class="scribble big" style="transform:rotate(-2deg);">хочешь так же?</span>
+    <h2 class="shout xl" style="margin-top:12px;max-width:900px;">давай <span class="it" style="color:var(--ajna);">создадим</span> <span style="display:inline-block;max-width:100%">что<wbr><span style="white-space:nowrap">-то</span></span> вместе</h2>
     <div style="margin-top:24px;max-width:640px;">
-      <p class="body-p">Делать что-то вместе — <s style="opacity:0.5;">только через постель</s> через игру 😄. За игрой видно человека: как думает, как решает, как ведёт себя с деньгами и людьми. Так и понимаем, наши ли мы люди.</p>
+      <p class="body-p">Делать <span style="display:inline-block;max-width:100%">что<wbr><span style="white-space:nowrap">-то</span></span> вместе — <s style="opacity:0.5;">только через постель</s> через игру 😄. За игрой видно человека: как думает, как решает, как ведёт себя с деньгами и людьми. Так и понимаем, наши ли мы люди.</p>
     </div>
     <div style="margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;">
-      <a class="btn btn-solid" href="/cashflow">Познакомиться на игре →</a>
+      <a class="btn btn-solid" href="/cashflow">Познакомиться на игре →</a>
       <a class="btn btn-ghost" href="/team">Стать частью команды →</a>
       <a class="btn btn-ghost" href="/kontakty#svyaz">Стать партнёром →</a>
     </div>
@@ -1053,10 +1069,10 @@ body {
     <div class="ftop">
       <div class="fleft">
         <a class="fbrand" href="/">chudina<span class="fire">.me</span></a>
-        <div class="fnote">огонь, люди и проекты — Baden, Schweiz 🇨🇭</div>
+        <div class="fnote">огонь, люди и проекты — Baden, Schweiz 🇨🇭</div>
       </div>
       <div class="fright">
-        <div class="foot-invite">Наблюдать и участвовать —<br>в соцсетях:</div>
+        <div class="foot-invite">Наблюдать и участвовать —<br>в соцсетях:</div>
         <div class="socials">
           <a href="https://www.instagram.com/chudina_fire" target="_blank">Instagram</a>
           <a href="https://www.threads.com/@chudina_fire" target="_blank">Threads</a>
@@ -1071,7 +1087,7 @@ body {
         <span class="fli-dot">·</span>
         <span class="fli-line">Bäderstrasse 28, 5400 Baden</span>
         <span class="fli-dot">·</span>
-        <span class="fli-line">CHE-202.191.691</span>
+        <span class="fli-line"><span style="display:inline-block;max-width:100%">CHE<wbr><span style="white-space:nowrap">-202</span></span>.191.691</span>
       </div>
       <div class="foot-links">
         <a href="/impressum">Impressum</a>
